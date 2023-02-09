@@ -13,33 +13,45 @@ I requisiti\textsubscript{G} sono stati individuati e classificati durante l'att
  \hline
   RF-2 & Obbligatorio & L'utente deve potersi autenticare all'interno del sistema tramite un modulo di login &  UC1, Capitolato\\
  \hline
- RF-3 & Obbligatorio &  L'utente deve poter inserire il proprio username &  UC1.1, Capitolato\\
+ RF-3 & Obbligatorio &  L'utente deve poter inserire il proprio username &  UC1.1, UC1.1.1, Capitolato\\
  \hline
- RF-4 & Obbligatorio & L'utente deve poter inserire la propria password &  UC1.1, Capitolato\\
+ RF-4 & Obbligatorio & L'utente deve poter inserire la propria password &  UC1.1, UC1.1.2 Capitolato\\
  \hline
- RF-5 & Obbligatorio & L'utente deve superare il CAPTCHA\textsubscript{G}\textsubscript{G} immagini proposto dal sistema per poter effettuare l'autenticazione &  UC1.2, Capitolato, VE\_20221111\\
+ RF-5 & Obbligatorio & L'utente deve superare il CAPTCHA\textsubscript{G} immagini proposto dal sistema per poter effettuare l'autenticazione &  UC1.2, Capitolato, VE\_20221111\\
  \hline
- RF-6 & Obbligatorio & Alla correttezza della soluzione del CAPTCHA\textsubscript{G}\textsubscript{G} immagini fornita dall'utente viene applicato un margine di errore &  UC1.2, VE\_20221111\\
+ RF-6 & Obbligatorio & Alla correttezza della soluzione del CAPTCHA\textsubscript{G} immagini fornita dall'utente viene applicato un margine di errore &  UC1.2, VE\_20221111\\
  \hline
  RF-7 & Opzionale & L'utente deve superare una trappola honeypot\textsubscript{G} per poter effettuare l'autenticazione &  UC1.3\\
  \hline
  RF-8 & Opzionale & L'utente deve calcolare il proof of work\textsubscript{G} per poter effettuare l'autenticazione &  UC1.4, VE\_20221111\\
  \hline
- RF-9 & Obbligatorio & All'utente viene mostrato un messaggio di errore nel caso in cui non riesca ad autenticarsi &  UC2, UC2.1, UC2.2, UC2.3, UC2.4, UC2.5\\
+ RF-9 & Obbligatorio & All'utente viene mostrato un messaggio di errore nel caso in cui non riesca ad autenticarsi &  UC2\\
  \hline
- RF-10 & Obbligatorio & All'utente viene mostrato un messaggio di errore nel caso in cui abbia superato il numero massimo di tentativi di autenticazione consentito &  UC2.5, VI\_20221115\\
+ RF-10 & Obbligatorio & All'utente viene mostrato un messaggio di errore nel caso in cui inserisca un'username non valida &  UC2.1, UC2.1.1\\
  \hline
- RF-11 & Obbligatorio & L'utente deve poter richiedere la generazione di un altro CAPTCHA\textsubscript{G}\textsubscript{G} immagini &  UC3, VI\_20221115\\
+ RF-11 & Obbligatorio & All'utente viene mostrato un messaggio di errore nel caso in cui inserisca una password non valida &  UC2.1, UC2.1.2\\
+  \hline
+ RF-12 & Obbligatorio & All'utente viene mostrato un messaggio di errore nel caso in cui non abbia superato il CAPTCHA\textsubscript{G} immagini &  UC2.2\\
+   \hline
+ RF-13 & Obbligatorio & All'utente viene mostrato un messaggio di errore nel caso in cui non abbia superato l'honeypot &  UC2.3\\
+   \hline
+ RF-14 & Obbligatorio & All'utente viene mostrato un messaggio di errore nel caso in cui non abbia calcolato il proof of work\textsubscript{G} &  UC2.4\\
+   \hline
+ RF-15 & Obbligatorio & All'utente viene mostrato un messaggio di errore nel caso in cui abbia superato i tentativi massimi consentiti &  UC2.5, VI\_20221115\\
  \hline
- RF-12 & Obbligatorio & All'utente viene mostrato un messaggio di errore nel caso in cui abbia superato il limite di richieste di rigenerazione CAPTCHA\textsubscript{G} immagini &  UC4\\
+ RF-16 & Obbligatorio & L'utente deve poter richiedere la generazione di un altro CAPTCHA\textsubscript{G} immagini &  UC3, VI\_20221115\\
  \hline
- RF-13 & Obbligatorio & Il sistema deve fornire la possibilità di richiedere la generazione di un CAPTCHA\textsubscript{G}\textsubscript{G} immagini & UC5, VE\_20221214\\
+ RF-17 & Obbligatorio & All'utente viene mostrato un messaggio di errore nel caso in cui abbia superato il limite di richieste di rigenerazione CAPTCHA\textsubscript{G} immagini &  UC4\\
  \hline
- RF-14 & Obbligatorio & Il sistema deve comunicare un'eventuale errore nella generazione di un CAPTCHA\textsubscript{G}\textsubscript{G} immagini & UC6, VE\_20221214\\
+ RF-18 & Obbligatorio & Il sistema deve fornire la possibilità di richiedere la generazione di un CAPTCHA\textsubscript{G}\ immagini & UC5, UC5.1, VE\_20221214\\
+  \hline
+ RF-19 & Opzionale & Il sistema deve fornire la possibilità di richiedere il calcolo del proof of work\textsubscript{G} & UC5, UC5.2, VE\_20221111\\
  \hline
- RF-15 & Opzionale & Il sistema deve richiedere il calcolo il proof of work\textsubscript{G} & UC7, VE\_20221111\\
+ RF-20 & Obbligatorio & Il sistema deve offrire le funzionalità di verifica della correttezza del CAPTCHA\textsubscript{G} immagini compilato dall'utente & UC6, UC6.1, VE\_20221214\\
  \hline
- RF-16 & Obbligatorio & Il sistema deve offrire le funzionalità di verifica della correttezza del CAPTCHA\textsubscript{G}\textsubscript{G} compilato dall'utente & UC8, VE\_20221214\\
+ RF-21 & Opzionale & Il sistema deve offrire le funzionalità di verifica del calcolo del proof of work\textsubscript{G} & UC6, UC6.2, VE\_20221111\\
+  \hline
+     RF-22 & Opzionale & Il sistema deve essere in grado di generare un test di proof of work\textsubscript{G} anche in caso di indisponibilità della mining pool & UC7\\
  \hline
  \caption{Requisiti\textsubscript{G} funzionali}
 \end{tabularx}
@@ -104,9 +116,9 @@ Non sono stati individuati requisiti\textsubscript{G} prestazionali misurabili.
 		\hline
 		RF-2 & UC1, Capitolato\\
 		\hline
-		RF-3 & UC1.1, Capitolato\\
+		RF-3 & UC1.1, UC1.1.1, Capitolato\\
 		\hline
-		RF-4 & UC1.1, Capitolato\\
+		RF-4 & UC1.1, UC1.1.2, Capitolato\\
 		\hline
 		RF-5 & UC1.2, Capitolato, VE\_20221111\\
 		\hline
@@ -116,21 +128,33 @@ Non sono stati individuati requisiti\textsubscript{G} prestazionali misurabili.
 		\hline
 		RF-8 & UC1.4, VE\_20221111\\
 		\hline
-		RF-9 & UC2, UC2.1, UC2.2, UC2.3, UC2.4, UC2.5\\
+		RF-9 & UC2\\
+        \hline
+		RF-10 & UC2.1, UC2.1.1\\
+        \hline
+		RF-11 & UC2.1, UC2.1.2\\
+        \hline
+		RF-12 & UC2.2\\
+        \hline
+		RF-13 & UC2.3\\
+        \hline
+		RF-14 & UC2.4\\
 		\hline
-		RF-10 & UC2.5, VI\_20221115\\
+		RF-15 & UC2.5, VI\_20221115\\
          \hline
-		RF-11 & UC3, VI\_20221115\\
+		RF-16 & UC3, VI\_20221115\\
         \hline
-		RF-12 & UC4\\
+		RF-17 & UC4\\
          \hline
-		RF-13 & UC5, VE\_20221214\\
+		RF-18 & UC5, UC5.1, VE\_20221214\\
         \hline
-		RF-14 & UC6, VE\_20221214\\
+		RF-19 & UC5, UC5.2, VE\_20221111\\
          \hline
-		RF-15 & UC7, VE\_20221111\\
+		RF-20 & UC6, UC6.1, VE\_20221214\\
          \hline
-		RF-16 & UC8, VE\_20221214\\
+		RF-21 & UC6, UC6.2, VE\_20221111\\
+        \hline
+		RF-22 & UC7\\
 		\hline
 		RQ-1 & Capitolato, VE\_20221111\\
 		\hline
@@ -172,6 +196,10 @@ Non sono stati individuati requisiti\textsubscript{G} prestazionali misurabili.
 	UC1 & RF-2\\
 	\hline
 	UC1.1 & RF-3, RF-4\\
+    \hline
+	UC1.1.1 & RF-3\\
+    \hline
+	UC1.1.2 & RF-4\\
 	\hline
 	UC1.2 & RF-5, RF-6\\
 	\hline
@@ -181,27 +209,37 @@ Non sono stati individuati requisiti\textsubscript{G} prestazionali misurabili.
 	\hline
 	UC2 & RF-9\\
  	\hline
-	UC2.1 & RF-9\\
+	UC2.1 & RF-10, RF-11\\
+ \hline
+	UC2.1.1 & RF-10\\
+  \hline
+	UC2.1.2 & RF-11\\
  	\hline
-	UC2.2 & RF-9\\
+	UC2.2 & RF-12\\
   	\hline
-	UC2.3 & RF-9\\
+	UC2.3 & RF-3\\
   	\hline
-	UC2.4 & RF-9\\
+	UC2.4 & RF-14\\
   	\hline
-	UC2.5 & RF-9, RF-10\\
+	UC2.5 & RF-15\\
 	\hline
-	UC3 & RF-11\\ 
+	UC3 & RF-16\\ 
 	\hline
-	UC4 & RF-12\\
+	UC4 & RF-17\\
  	\hline
-	UC5 & RF-13\\
+	UC5 & RF-18, RF-19\\
+ \hline
+	UC5.1 & RF-18\\
+ \hline
+	UC5.2 & RF-19\\
  	\hline
-	UC6 & RF-14\\
+	UC6 & RF-20, RF-21\\
+ \hline
+	UC6.1 & RF-20\\
+ \hline
+	UC6.2 & RF-21\\
  	\hline
-	UC7 & RF-15\\
- 	\hline
-	UC8 & RF-16\\
+	UC7 & RF-22\\
 	\hline
 	Capitolato & RF-1, RF-2, RF-3, RF-4, RF-5, RQ-1, RQ-2, RQ-3, RQ-4, RQ-7, RV-1, RV-3, RV-4\\
  	\hline
@@ -225,13 +263,13 @@ Non sono stati individuati requisiti\textsubscript{G} prestazionali misurabili.
 		\hline
 		\textbf{Classificazione} & \textbf{Obbligatorio} & \textbf{Opzionale} & \textbf{Totale} \\
 		\hline
-		Funzionali & 13 & 3 & 16\\
+		Funzionali & 17 & 5 & 22\\
 		\hline
 		Di qualità & 7 & 0 & 7\\
 		\hline
 		Di vincolo & 6 & 0 & 6\\
 		\hline
-		\textbf{Totale} & \textbf{26} &\textbf {3} &  \textbf{29}\\
+		\textbf{Totale} & \textbf{30} &\textbf {5} &  \textbf{35}\\
 		\hline
 	\end{tabular}
 	\caption{Riepilogo dei requisiti\textsubscript{G}}
