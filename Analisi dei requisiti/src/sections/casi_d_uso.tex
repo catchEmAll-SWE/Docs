@@ -50,6 +50,12 @@ La WebApp, che potrà accedere alle funzionalità offerte dal servizio CAPTCHA\t
     \caption{UC1 Autenticazione}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{img/inserimento_credenziali.png}
+    \caption{UC1.1 Inserimento credenziali}
+\end{figure}
+
 \paragraph{UC1.1 - Inserimento credenziali}
 \textbf{Attore primario}: Utente generico.\\
 \textbf{Precondizioni}: Il sistema non riconosce l'utente.\\
@@ -57,7 +63,27 @@ La WebApp, che potrà accedere alle funzionalità offerte dal servizio CAPTCHA\t
 
 \textbf{Scenario principale}: L'utente:
 \begin{enumerate}
-   \item Inserisce il proprio username;
+   \item Inserisce il proprio username [UC1.1.1];
+   \item Inserisce la propria password [UC1.1.2].
+\end{enumerate}
+
+\subparagraph{UC1.1.1 - } \textbf{Inserimento username}\\
+\textbf{Attore primario}: Utente generico.\\
+\textbf{Precondizioni}: L'username non è stata inserita.\\
+\textbf{Postcondizioni}: Il sistema ha ricevuto lo username dell'utente.\\
+
+\textbf{Scenario principale}: L'utente:
+\begin{enumerate}
+   \item Inserisce il proprio username.
+\end{enumerate}
+
+\subparagraph{UC1.1.2 - } \textbf{Inserimento password} \\
+\textbf{Attore primario}: Utente generico.\\
+\textbf{Precondizioni}: La password non è stata inserita.\\
+\textbf{Postcondizioni}: Il sistema ha ricevuto la password dell'utente.\\
+
+\textbf{Scenario principale}: L'utente:
+\begin{enumerate}
    \item Inserisce la propria password.
 \end{enumerate}
 
@@ -97,7 +123,7 @@ La WebApp, che potrà accedere alle funzionalità offerte dal servizio CAPTCHA\t
 \subsubsection{UC2 - Autenticazione fallita}
 \textbf{Attore primario}: Utente generico.\\
 \textbf{Precondizioni}: L’utente ha commesso un errore durante l'autenticazione.\\
-\textbf{Postcondizioni}:L’utente visualizza un messaggio di errore e l’operazione di autenticazione fallisce.\\
+\textbf{Postcondizioni}: L’utente visualizza un messaggio di errore e l’operazione di autenticazione fallisce.\\
 
 \textbf{Scenario principale}:
 \begin{enumerate}
@@ -122,12 +148,37 @@ La WebApp, che potrà accedere alle funzionalità offerte dal servizio CAPTCHA\t
 
 \textbf{Scenario principale}:
 \begin{enumerate}
-    \item L'utente inserisce in alternativa:
-        \begin{itemize}
-            \item Username non registrato nel sistema;
-            \item Una password sbagliata per lo username scelto;
-            \item Non inserisce le credenziali.
-        \end{itemize}
+    \item L'utente inserisce credenziali non valide per l'autenticazione nel sistema;
+	\item L’utente visualizza un messaggio di errore;
+	\item Il numero di tentativi consecutivi compiuti dall’utente aumenta di 1.
+\end{enumerate}
+
+\textbf{Generalizzazioni}:
+\begin{enumerate}
+    \item L'utente inserisce un'username non valida per l'autenticazione [UC2.1.1];
+	\item L'utente inserisce una password non valida per l'autenticazione [UC2.1.2].
+\end{enumerate}
+
+\subparagraph{UC2.1.1 - } \textbf{Username errata}\\
+\textbf{Attore primario:} Utente generico.\\
+\textbf{Precondizioni}: L’utente ha inserito un'username non valida per l'autenticazione.\\
+\textbf{Postcondizioni}: L’utente visualizza un messaggio di errore e l’operazione di autenticazione fallisce.\\
+
+\textbf{Scenario principale}:
+\begin{enumerate}
+    \item L'utente inserisce un'username non riconosciuta dal sistema, compresa la possibilità che l'username sia vuota;
+	\item L’utente visualizza un messaggio di errore;
+	\item Il numero di tentativi consecutivi compiuti dall’utente aumenta di 1.
+\end{enumerate}
+
+\subparagraph{UC2.1.2 - } \textbf{Password errata}\\
+\textbf{Attore primario:} Utente generico.\\
+\textbf{Precondizioni}: L’utente ha inserito una password non valida per l'autenticazione.\\
+\textbf{Postcondizioni}: L’utente visualizza un messaggio di errore e l’operazione di autenticazione fallisce.\\
+
+\textbf{Scenario principale}:
+\begin{enumerate}
+    \item L'utente inserisce una password non corretta per l'username scelta, compresa la possibilità che la password sia vuota;
 	\item L’utente visualizza un messaggio di errore;
 	\item Il numero di tentativi consecutivi compiuti dall’utente aumenta di 1.
 \end{enumerate}
@@ -217,97 +268,71 @@ La WebApp, che potrà accedere alle funzionalità offerte dal servizio CAPTCHA\t
     \caption{CAPTCHA\textsubscript{G}}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{img/generazione.png}
+    \caption{UC5 Generazione CAPTCHA\textsubscript{G}}
+\end{figure}
 
-\subsubsection{UC5 - Generazione CAPTCHA\textsubscript{G} immagini}
+\subsubsection{UC5 - Generazione CAPTCHA\textsubscript{G}}
 \textbf{Attore primario:} WebApp.\\
-\textbf{Precondizioni}: La WebApp richiede la generazione di un CAPTCHA\textsubscript{G} immagini.\\
-\textbf{Postcondizioni}: Il CAPTCHA\textsubscript{G} immagini viene generato e restituito alla WebApp.\\
+\textbf{Precondizioni}: La WebApp richiede la generazione di un CAPTCHA\textsubscript{G}.\\
+\textbf{Postcondizioni}: Il CAPTCHA\textsubscript{G} viene generato e restituito alla WebApp.\\
 
 \textbf{Scenario principale}:
 \begin{enumerate}
-    \item La WebApp richiede la generazione di un CAPTCHA\textsubscript{G} immagini;
-    \item Il CAPTCHA\textsubscript{G} immagini viene generato utilizzando le immagini fornite da Unsplash e quelle presenti nel database\textsubscript{G} interno;
-    \item Viene generato un immagine aggiuntiva che funge da honeypot\textsubscript{G};
-    \item Il CAPTCHA\textsubscript{G} immagini viene restituito alla WebApp.
-\end{enumerate}
-\textbf{Scenari alternativi}:
-\begin{enumerate}
-    \item Si verifica un errore durante la richiesta delle immagini al servizio Unsplash [UC6].
+    \item La WebApp richiede la generazione di un CAPTCHA\textsubscript{G};
+    \item Il CAPTCHA\textsubscript{G} immagini viene generato utilizzando le immagini presenti nel database interno, assieme ad un'immagine aggiuntiva che funge da honeypot\textsubscript{G} [UC5.1];
+    \item Viene generato il Proof of Work [UC5.2];
+    \item Il CAPTCHA\textsubscript{G} viene restituito alla WebApp.
 \end{enumerate}
 
-\subsubsection{UC6 - Errore richiesta immagini ad Unsplash}
+\paragraph{UC5.1  - Generazione CAPTCHA\textsubscript{G} immagini}
 \textbf{Attore primario:} WebApp.\\
-\textbf{Precondizioni}: Il servizio Unsplash non restituisce le immagini richieste.\\
-\textbf{Postcondizioni}: Il CAPTCHA\textsubscript{G} immagini viene generato senza appoggiarsi al servizio Unsplash.\\
+\textbf{Precondizioni}: La WebApp richiede la generazione del CAPTCHA\textsubscript{G} immagini.\\
+\textbf{Postcondizioni}: Viene generato il CAPTCHA\textsubscript{G} immagini.\\
 
 \textbf{Scenario principale}:
 \begin{enumerate}
-    \item Il servizio Unsplash non restituisce le immagini richieste dalla WebApp;
-    \item Il CAPTCHA\textsubscript{G} viene generato utilizzando solo le immagini presenti nel database\textsubscript{G} interno;
-    \item Il CAPTCHA\textsubscript{G} immagini viene restituito alla WebApp.
+    \item La WebApp richiede la generazione del CAPTCHA\textsubscript{G} immagini;
+    \item Viene creato il CAPTCHA\textsubscript{G} immagini assieme all'immagine aggiuntiva che funge da honeypot.
 \end{enumerate}
 
-\paragraph{UC6.1 - Servizio Unsplash non disponibile}
-\textbf{Attore primario:} WebApp.\\
-\textbf{Precondizioni}: Il servizio Unsplash non restituisce le immagini richieste.\\
-\textbf{Postcondizioni}: Il CAPTCHA\textsubscript{G} immagini viene generato senza appoggiarsi al servizio Unsplash.\\
-
-\textbf{Scenario principale}:
-\begin{enumerate}
-    \item Il servizio Unsplash non risulta raggiungibile, non fornendo una risposta entro il limite di tempo massimo prestabilito;
-    \item Il CAPTCHA\textsubscript{G} viene generato utilizzando solo le immagini presenti nel database\textsubscript{G} interno;
-    \item Il CAPTCHA\textsubscript{G} immagini viene restituito alla WebApp.
-\end{enumerate}
-
-\paragraph{UC6.2 - Superato limite di richieste nuove immagini}
-\textbf{Attore primario:} WebApp.\\
-\textbf{Precondizioni}: Il servizio Unsplash restituisce un messaggio di errore.\\
-\textbf{Postcondizioni}: Il CAPTCHA\textsubscript{G} immagini viene generato senza appoggiarsi al servizio Unsplash.\\
-
-\textbf{Scenario principale}:
-\begin{enumerate}
-    \item Il servizio Unsplash restituisce un messaggio di errore che indica che è stato superato il limite massimo di immagini che si possono richiedere in un'ora;
-    \item Il CAPTCHA\textsubscript{G} viene generato utilizzando solo le immagini presenti nel database\textsubscript{G} interno;
-    \item Il CAPTCHA\textsubscript{G} immagini viene restituito alla WebApp.
-\end{enumerate}
-
-\subsubsection{UC7  - Generazione proof of work\textsubscript{G}}
+\paragraph{UC5.2  - Generazione proof of work\textsubscript{G}}
 \textbf{Attore primario:} WebApp.\\
 \textbf{Precondizioni}: La WebApp richiede la generazione del proof of work\textsubscript{G}.\\
-\textbf{Postcondizioni}: Viene generato il proof of work\textsubscript{G} e restituito alla WebApp.\\
+\textbf{Postcondizioni}: Viene generato il proof of work\textsubscript{G}.\\
 
 \textbf{Scenario principale}:
 \begin{enumerate}
     \item La WebApp richiede la generazione del proof of work\textsubscript{G};
-    \item Viene creato il Proof of work\textsubscript{G} per il CAPTCHA\textsubscript{G};
-    \item Il proof of work\textsubscript{G} viene restituito alla WebApp.
+    \item Viene creato il proof of work\textsubscript{G} per il CAPTCHA\textsubscript{G}.
 \end{enumerate}
 
-\subsubsection{UC8 - Verifica CAPTCHA\textsubscript{G}}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{img/verifica.png}
+    \caption{UC6 Verifica CAPTCHA\textsubscript{G}}
+\end{figure}
+
+\subsubsection{UC6 - Verifica CAPTCHA\textsubscript{G}}
 \textbf{Attore primario:} WebApp.\\
 \textbf{Precondizioni}: La WebApp richiede la verifica 
  del CAPTCHA\textsubscript{G}.\\
-\textbf{Postcondizioni}: Viene data una risposta alla WebApp per indicare se il CAPTCHA\textsubscript{G} è stato superato o meno.\\
+\textbf{Postcondizioni}: Viene data una risposta alla WebApp per indicare se il test CAPTCHA\textsubscript{G} è stato superato o meno.\\
 
 \textbf{Scenario principale}:
 \begin{enumerate}
     \item La WebApp richiede la verifica della corretteza del CAPTCHA\textsubscript{G} compilato;
     \item Viene verificata la correttezza di:
     \begin{itemize}
-		\item CAPTCHA\textsubscript{G} immagini [UC8.1];
-		\item Honeypot\textsubscript{G} [UC8.2;
-		\item Proof of Work\textsubscript{G} [UC8.3].
+		\item CAPTCHA\textsubscript{G} immagini e superamento honeypot [UC6.1];
+		\item proof of work\textsubscript{G} [UC6.2].
     \end{itemize}
-    \item In base alla percentuale di correttezza, viene emesso il risultato booleano\textsubscript{G} e restituito alla WebApp.
+    \item Viene emesso il risultato booleano\textsubscript{G} e restituito alla WebApp.
 \end{enumerate}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.6]{img/verifica_captcha.png}
-    \caption{UC8 Verifica CAPTCHA\textsubscript{G}}
-\end{figure}
-
-\paragraph{UC8.1 - Verifica CAPTCHA\textsubscript{G} immagini}
+\paragraph{UC6.1 - Verifica CAPTCHA\textsubscript{G} immagini e superamento honeypot}
 \textbf{Attore primario:} WebApp.\\
 \textbf{Precondizioni}: La WebApp richiede la verifica del CAPTCHA\textsubscript{G} immagini.\\
 \textbf{Postcondizioni}: Il superamento del CAPTCHA\textsubscript{G} immagini viene verificato.\\
@@ -315,21 +340,10 @@ La WebApp, che potrà accedere alle funzionalità offerte dal servizio CAPTCHA\t
 \textbf{Scenario principale}:
 \begin{enumerate}
     \item La WebApp richiede la verifica della corretteza del CAPTCHA\textsubscript{G} immagini;
-    \item In base alla percentuale di correttezza, viene verificato se il CAPTCHA\textsubscript{G} immagini è stato superato o meno.
+    \item In base alla percentuale di correttezza viene verificato se il CAPTCHA\textsubscript{G} immagini è stato superato o meno, e che l'honeypot sia stato superato.
 \end{enumerate}
 
-\paragraph{UC8.2 - Verifica superamento Honeypot\textsubscript{G}}
-\textbf{Attore primario:} WebApp.\\
-\textbf{Precondizioni}: La WebApp richiede la verifica del superamento dell'Honeypot.\\
-\textbf{Postcondizioni}: Il superamento dell'Honeypot\textsubscript{G} viene verificato.\\
-
-\textbf{Scenario principale}:
-\begin{enumerate}
-    \item La WebApp richiede la verifica del superamento dell'Honeypot\textsubscript{G};
-    \item Se è stata selezionata l'immagine che funge da Honeypot\textsubscript{G}, allora significa che il sistema ha rilevato la presenza di un bot\textsubscript{G}; altrimenti l'Honeypot\textsubscript{G} viene considerato superato.
-\end{enumerate}
-
-\paragraph{UC8.3 - Verifica Proof of Work\textsubscript{G}}
+\paragraph{UC8.2 - Verifica Proof of Work\textsubscript{G}}
 \textbf{Attore primario:} WebApp.\\
 \textbf{Precondizioni}: La WebApp richiede la verifica del superamento del Proof of Work\textsubscript{G}.\\
 \textbf{Postcondizioni}: Il superamento del Proof of Work\textsubscript{G} viene verificato.\\
@@ -340,7 +354,7 @@ La WebApp, che potrà accedere alle funzionalità offerte dal servizio CAPTCHA\t
     \item L'esecuzione dei calcoli richiesti viene verificata sulla base di quanto fornito dalla WebApp come soluzione.
 \end{enumerate}
 
-\subsubsection{UC9  - Mining Pool non disponibile}
+\subsubsection{UC7  - Mining Pool non disponibile}
 \textbf{Attore primario:} WebApp.\\
 \textbf{Precondizioni}: La Mining Pool non risulta raggiungibile.\\
 \textbf{Postcondizioni}: Viene generato il Proof of Work\textsubscript{G} senza appoggiarsi alla Mining Pool.\\
