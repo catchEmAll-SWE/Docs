@@ -17,6 +17,12 @@ L'utente generico, che potrà essere una persona fisica o anche un bot\textsubsc
     \caption{Utente WebApp}
 \end{figure}
 La WebApp, che potrà accedere alle funzionalità offerte dal servizio CAPTCHA\textsubscript{G}. \\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.8]{img/mining_pool.png}\\
+    \caption{Mining Pool}
+\end{figure}
+La Mining Pool, attore secondario per la generazione del proof of work\textsubscript{G}. \\
 
 \subsection{WebApp}
 
@@ -300,6 +306,7 @@ La WebApp, che potrà accedere alle funzionalità offerte dal servizio CAPTCHA\t
 
 \paragraph{UC5.2  - Generazione proof of work\textsubscript{G}}
 \textbf{Attore primario:} WebApp.\\
+\textbf{Attori secondari:} Mining Pool.\\
 \textbf{Precondizioni}: La WebApp richiede la generazione del proof of work\textsubscript{G}.\\
 \textbf{Postcondizioni}: Viene generato il proof of work\textsubscript{G}.\\
 
