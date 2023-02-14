@@ -17,12 +17,6 @@ L'utente generico, che potrà essere una persona fisica o anche un bot\textsubsc
     \caption{Utente WebApp}
 \end{figure}
 La WebApp, che potrà accedere alle funzionalità offerte dal servizio CAPTCHA\textsubscript{G}. \\
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale = 0.8]{img/mining_pool.png}\\
-    \caption{Mining Pool}
-\end{figure}
-La Mining Pool, attore secondario per la generazione del proof of work\textsubscript{G}. \\
 
 \subsection{WebApp}
 
@@ -30,6 +24,12 @@ La Mining Pool, attore secondario per la generazione del proof of work\textsubsc
     \centering
     \includegraphics[scale=0.6]{img/web_app.png}
     \caption{Webapp}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{img/Autenticazione.png}
+    \caption{UC1 Autenticazione}
 \end{figure}
 
 \subsubsection{UC1 - Autenticazione}
@@ -49,12 +49,6 @@ La Mining Pool, attore secondario per la generazione del proof of work\textsubsc
 \begin{enumerate}
     \item L’utente non supera l'autenticazione [UC2].
 \end{enumerate}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.8]{img/Autenticazione.png}
-    \caption{UC1 Autenticazione}
-\end{figure}
 
 \begin{figure}[H]
     \centering
@@ -254,6 +248,10 @@ La Mining Pool, attore secondario per la generazione del proof of work\textsubsc
    \item Il numero di rigenerazioni CAPTCHA\textsubscript{G} immagini richieste dall’utente aumenta di 1;
    \item L'utente può procedere con la risoluzione del CAPTCHA\textsubscript{G} immagini.
 \end{enumerate}
+\textbf{Scenari alternativi}:
+\begin{enumerate}
+   \item L'utente ha superato il numero massimo di richieste di rigenerazione CAPTCHA\textsubscript{G} immagini consentito [UC4].
+\end{enumerate}
 
 \subsubsection{UC4 - Limite di rigenerazioni aggiunto}
 \textbf{Attore primario:} Utente generico.\\
@@ -306,7 +304,6 @@ La Mining Pool, attore secondario per la generazione del proof of work\textsubsc
 
 \paragraph{UC5.2  - Generazione proof of work\textsubscript{G}}
 \textbf{Attore primario:} WebApp.\\
-\textbf{Attori secondari:} Mining Pool.\\
 \textbf{Precondizioni}: La WebApp richiede la generazione del proof of work\textsubscript{G}.\\
 \textbf{Postcondizioni}: Viene generato il proof of work\textsubscript{G}.\\
 
@@ -350,25 +347,13 @@ La Mining Pool, attore secondario per la generazione del proof of work\textsubsc
     \item In base alla percentuale di correttezza viene verificato se il CAPTCHA\textsubscript{G} immagini è stato superato o meno, e che l'honeypot sia stato superato.
 \end{enumerate}
 
-\paragraph{UC8.2 - Verifica Proof of Work\textsubscript{G}}
+\paragraph{UC6.2 - Verifica proof of work\textsubscript{G}}
 \textbf{Attore primario:} WebApp.\\
 \textbf{Precondizioni}: La WebApp richiede la verifica del superamento del Proof of Work\textsubscript{G}.\\
-\textbf{Postcondizioni}: Il superamento del Proof of Work\textsubscript{G} viene verificato.\\
+\textbf{Postcondizioni}: Il superamento del proof of work\textsubscript{G} viene verificato.\\
 
 \textbf{Scenario principale}:
 \begin{enumerate}
     \item La WebApp richiede la verifica del superamento del Proof of Work\textsubscript{G};
     \item L'esecuzione dei calcoli richiesti viene verificata sulla base di quanto fornito dalla WebApp come soluzione.
-\end{enumerate}
-
-\subsubsection{UC7  - Mining Pool non disponibile}
-\textbf{Attore primario:} WebApp.\\
-\textbf{Precondizioni}: La Mining Pool non risulta raggiungibile.\\
-\textbf{Postcondizioni}: Viene generato il Proof of Work\textsubscript{G} senza appoggiarsi alla Mining Pool.\\
-
-\textbf{Scenario principale}:
-\begin{enumerate}
-    \item La Mining Pool non risulta raggiungibile, non fornendo una risposta entro il limite di tempo massimo prestabilito;
-    \item Viene creato il Proof of Work\textsubscript{G} tramite una procedura alternativa interna, che non richiede alcun dato a servizi esterni;
-    \item Il Proof of Work\textsubscript{G} viene restituito alla WebApp.
 \end{enumerate}
