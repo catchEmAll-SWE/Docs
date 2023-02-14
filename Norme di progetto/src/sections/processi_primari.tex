@@ -21,17 +21,10 @@ Durante il corso del progetto il gruppo ha intenzione di instaurare un rapporto 
 \end{itemize} 
 
 \subsubsection{Prodotti e documenti forniti}
-\subsubsubsection{Documenti per la candidatura}
-Al fine di scegliere il capitolato per il quale proporre la candidatura il gruppo ha organizzato degli incontri per la valutazione dei capitolati. Dopo aver scelto il capitolato i vari membri hanno stilato i vari documenti per la candidatura:
-\begin{itemize}
-	\item \textbf{Lettera di candidatura}: Contiene l'impegno di svolgere il capitolato scelto e un primo preventivo \textit{Preventivo\_Costi\_Ore\_Rischi};
-	\item \textbf{Motivazione dei capitolati}: Contiene l'analisi fatta dai membri del gruppo sui 7 capitolati proposti, valutandone per ognuno i pro e contro e dando le motivazioni per le quali siano stati presi in considerazione o meno;
-	\item \textbf{Preventivo costi ore e rischi}: Contiene un primo preventivo dei costi di tempo e il relativo costo in denaro e una prima bozza dell'analisi dei rischi che si potrebbero incontrare durante il corso del progetto.
-\end{itemize}
 \subsubsubsection{Analisi\_dei\_requisiti v 1.0.0}
 Questo documento stilato dagli analisti del gruppo contiene tutti i requisiti e casi d'uso individuati per il progetto. I seguenti sono ottenuti dal documento di presentazione del capitolato e in seguito integrati sia attraverso discussioni tra i membri del gruppo, sia organizzando incontri con il proponente. 
 \subsubsubsection{Piano\_di\_progetto v 1.0.0}
-\paragraph {Descrizione}\mbox{}\\
+\paragraph {Scopo}\mbox{}\\
 Questo documento stilato dal responsabile di progetto servirà ad organizzare le varie fasi del progetto individuate, di fare preventivi temporali e di costi su di esse e di compiere un'analisi dei rischi che si possono incontrare durante il corso del progetto.
 \paragraph {Analisi dei rischi}\mbox{}\\
 In questa sezione si analizzano i diversi rischi in cui il team può incombere durante tutta la durata del progetto.
@@ -84,7 +77,7 @@ In questa sezione sono contenuti i preventivi sulla distribuzione oraria del lav
 Iin questa sezione vengono indicati il numero di ore di lavoro impiegate e i relativi costi effettivi di ogni periodo. Questi vengono poi relazionati con i preventivi fatti nella sezione \textit{preventivo}.
 
 \subsubsubsection{Piano\_di\_qualifica v 1.0.0}
-\paragraph {Descrizione}\mbox{}\\
+\paragraph {Scopo}\mbox{}\\
 Questo documento stilato dai membri con il ruolo di analista e di verificatore contiene i vari obiettivi e metriche che permettono di garantire la qualità della verifica e della validazione dei processi e dei prodotti del progetto.
 \paragraph {Struttura documento}\mbox{}\\
 Questo documento è suddiviso in:
@@ -102,7 +95,9 @@ Questo documento è suddiviso in:
 		\item Test di regressione;
 		\item Test di collaudo.
 	\end{itemize}
-	\item \textbf{Risultati dei test}: dove vengono illustrati i risultati dei test definiti nella sezione \textit{Specifiche dei test}.
+	\item \textbf{Resoconto delle attività di verifica}: nella quale vengono illustrati i risultati ottenuti rispetto alle metriche scelte.
+	\item \textbf{Risultati dei test}: nella quale vengono inseriti i vari risultati ottenuti dai test definiti nella sezione \textit{Specifiche dei test}.
+	\item \textbf{Valutazione per il miglioramento}: nella quale sono inserite le varie osservazioni e valutazioni fatte dal gruppo sia per poter migliorare l'efficacia e l'efficienza delle varie attività di verifica future, che per migliorare i risultati ottenuti nei resoconti delle verifiche.
 \end{itemize} 
 \paragraph {Struttura obiettivi}\mbox{}\\
 Ogni obiettivo sarà contrassegnato da un codice univoco così composto:
@@ -135,11 +130,19 @@ Un software esempio che va ad analizzare alcune sezioni critiche per lo sviluppo
     \subsubsection{Scopo}
     L'obiettivo del processo di sviluppo è definire le attività che il gruppo deve eseguire per realizzare il prodotto finale richiesto dal proponente.
     \subsubsection{Analisi dei requisiti}
-    \subsubsubsection{Scopo e descrizione}
-    In questa fase vengono stilati tutti i requisiti che saranno necessari per la successiva fase di progettazione e quindi per lo sviluppo di un prodotto che risponda in maniera completa ai bisogni del proponente.
-    Il documento stilato in questa fase contiene:
+    \subsubsubsection{Scopo}
+    Lo scopo di questa attività è quello di stilare tutti i requisiti che saranno necessari per la successiva fase di progettazione e quindi per lo sviluppo di un prodotto che risponda in maniera completa ai bisogni del proponente. \\
+    I requisiti individuati dovranno quindi:
+    \begin{itemize}
+    	\item Fornire dei riferimenti affidabili e precisi per la fase di progettazione;
+    	\item Fissare le funzionalità che il prodotto finale dovrà avere; 
+    	\item Aiutare a definire dei test precisi e dettagliati per agevolare le verifiche future.    	
+    \end{itemize}
+	\subsubsubsection{Contenuti}
+    Il documento stilato dovrà quindi contenere:
     \begin{itemize}
     	\item Una descrizione generale del prodotto;
+    	\item La scelta delle tecnologie da utilizzare;
     	\item L'analisi dettagliata dei casi d'uso;
     	\item I requisiti individuati tramite:
         \begin{itemize}
@@ -206,8 +209,8 @@ Un software esempio che va ad analizzare alcune sezioni critiche per lo sviluppo
 	
 	\subsubsection{Progettazione}
 	\subsubsubsection{Scopo e descrizione}
-	Lo scopo di questa fase è quello di individuare le varie caratteristiche che comporranno il prodotto richiesto dal proponente. Queste verranno individuate attraverso i vari requisiti e casi d'uso identificati nella fase \textit{Analisi dei requisiti}. Le varie caratteristiche verranno poi messe insieme per costruire una singola soluzione che rispetti i vari obiettivi di qualità del prodotto.
-	\subsubsubsection{Suddivisione attività:}\:
+	Lo scopo di questa attività è quello di individuare le varie caratteristiche che comporranno il prodotto richiesto dal proponente avendo come riferimento i requisiti definiti nel documento \textit{Analisi\_dei\_requisiti v 1.0.0}. Le varie caratteristiche verranno poi messe insieme per costruire una singola soluzione che rispetti i vari obiettivi di qualità del prodotto.
+	I vari periodi in cui sarà svolta l'attività di progettazione sono:
 	\begin{itemize}
 		\item \textbf{Proof of concept};
 		\item \textbf{Progettazione architetturale};
@@ -215,7 +218,7 @@ Un software esempio che va ad analizzare alcune sezioni critiche per lo sviluppo
 	\end{itemize}
 	\subsubsubsection{Proof of concept}
 	\paragraph {Scopo}\mbox{}\\
-	In questa fase viene prodotto un software esempio che sarà anche la technology baseline del prodotto finale. Questo andrà ad analizzare alcune sezioni critiche per lo sviluppo del progetto e servirà ad agevolare le successive scelte di progettazione del gruppo, aiutando a determinare la fattibilità e l'applicabilità di alcune scelte analizzate.
+	In questa fase viene prodotto un software esempio che sarà anche la technology baseline del prodotto finale. Questo andrà ad analizzare alcune sezioni critiche per lo sviluppo del progetto e servirà ad agevolare le successive scelte di progettazione del gruppo, aiutando a determinare la fattibilità e l'applicabilità di alcune scelte fatte.
 	\paragraph {Suddivisione periodi}\mbox{}\\
 	Questa fase è divisa in due periodi:
 	\begin{itemize}
@@ -230,14 +233,15 @@ Un software esempio che va ad analizzare alcune sezioni critiche per lo sviluppo
 	Lo scopo di questa fase è definire le specifiche di dettaglio dell’architettura del prodotto e di tutte le sue componenti, scomposte in unità. Queste saranno correlate a diagrammi UML che le descriveranno e ai test di verifica per la qualità, i quali saranno indicati nel documento \textit{Piano\_di\_qualifica v1.0.0}. Tali informazioni costituiranno la Product Baseline, la quale conterrà:
 	\begin{itemize}
 		\item Desing patterns utilizzati;
+		\item Tecnologie utilizzate;
 		\item Definizione delle classi;
+		\item Tracciamento dei componenti;
 		\item Diagrammi UML:
 		\begin{itemize}
 			\item Diagrammi delle attività;
-			\item Diagrammi delle classi;
-			\item Diagrammi di sequenza.
+			\item Diagrammi delle classi.
 		\end{itemize}
-		\item Test di verifica per ogni componente.
+		\item Test di integrazione.
 	\end{itemize}
 	\subsubsection{Codifica}
 	\subsubsubsection{Scopo e descrizione}
