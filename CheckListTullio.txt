@@ -1,18 +1,18 @@
 Consegna e considerazioni generali: 
 [ ]-Deve essere presente una lettera di presentazione
 [ ]-I verbali riportano le decisioni prese e devono essere tracciabili singolarmente.
-[X]-Deve essere presente il registro delle modifiche.
+[ ]-Deve essere presente il registro delle modifiche.
 [ ]-Se si riferiscono libri, bisogna citare l'edizione e la parte di interesse.
 [ ]-Data nel nome dei documenti non necessaria, tranne per i verbali che per un ordine lessicografico
     significativo è utile siano in forma AAAA-MM-GG.
 [ ]-Attribuzione delle fonti: ogni frase, termine, figura tratte da terzi deve citare esplicitamente
     la fonte da cui deriva.
-[X]-Attenzione a errore di annidamento nei valori dell'indice dei documenti. No 3.0.x
+[ ]-Attenzione a errore di annidamento nei valori dell'indice dei documenti. No 3.0.x
 [ ]-Attenzione agli errori grammaticali
 [ ]-I documenti richiesti in ingresso alla RR sono da intendere come
     un aggregato unico (pur se internamente suddiviso in opportune cartelle), da
     consegnare attraverso una singola cartella radice che ne racchiuda le parti. (la consegna non viene ritenuta professionale altrimenti)
-[X]-Il nome dei documenti rilasciati in esterni deve includere il proprio numero di versione,
+[ ]-Il nome dei documenti rilasciati in esterni deve includere il proprio numero di versione,
     per riflettere la loro identità corrente
 [ ]-le regole del bando d’appalto specificano che il prezzo minimo ammissibile per il
     candidato fornitore nel vostro caso sia fissato, e non deve essere superiore al prezzo da
