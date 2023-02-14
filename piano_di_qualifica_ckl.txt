@@ -1,0 +1,6 @@
+TODO in piano di qualifica
+    [ ] aggiornare la tabella delle modifiche assegnando alle modifiche i _capitolati
+    [ ] rinominare norme di progetto in pagina 3 con nome corretto
+    [ ] rendere i link dei riferimenti cliccabili
+    [ ] domanda: le parole del glossario devono essere cliccabili??
+    [ ] pagina 10: cambiare nome documento analisi dei requisiti
