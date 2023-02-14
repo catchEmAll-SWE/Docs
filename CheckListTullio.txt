@@ -1,18 +1,18 @@
 Consegna e considerazioni generali: 
 [ ]-Deve essere presente una lettera di presentazione
 [ ]-I verbali riportano le decisioni prese e devono essere tracciabili singolarmente.
-[ ]-Deve essere presente il registro delle modifiche.
+[X]-Deve essere presente il registro delle modifiche.
 [ ]-Se si riferiscono libri, bisogna citare l'edizione e la parte di interesse.
 [ ]-Data nel nome dei documenti non necessaria, tranne per i verbali che per un ordine lessicografico
     significativo è utile siano in forma AAAA-MM-GG.
 [ ]-Attribuzione delle fonti: ogni frase, termine, figura tratte da terzi deve citare esplicitamente
     la fonte da cui deriva.
-[ ]-Attenzione a errore di annidamento nei valori dell'indice dei documenti. No 3.0.x
+[X]-Attenzione a errore di annidamento nei valori dell'indice dei documenti. No 3.0.x
 [ ]-Attenzione agli errori grammaticali
 [ ]-I documenti richiesti in ingresso alla RR sono da intendere come
     un aggregato unico (pur se internamente suddiviso in opportune cartelle), da
     consegnare attraverso una singola cartella radice che ne racchiuda le parti. (la consegna non viene ritenuta professionale altrimenti)
-[ ]-Il nome dei documenti rilasciati in esterni deve includere il proprio numero di versione,
+[X]-Il nome dei documenti rilasciati in esterni deve includere il proprio numero di versione,
     per riflettere la loro identità corrente
 [ ]-le regole del bando d’appalto specificano che il prezzo minimo ammissibile per il
     candidato fornitore nel vostro caso sia fissato, e non deve essere superiore al prezzo da
@@ -23,7 +23,7 @@ Consegna e considerazioni generali:
     propria composizione, corredata dei ruoli correnti. 
 [ ]-Uno “scatto” di versione che consegua a un’azione di incremento prima della sua verifica di validità,
     innesca rischi di iterazione che contraddicono l’approccio incrementale se si è deciso di adottarlo.
-[ ]-Per ovvie ragioni di sintesi, il luogo di modifica dovrebbe essere riferito numericamente invece che per nome.
+[ ]-Per ovvie ragioni di sintesi, il luogo di modifica dovrebbe essere riferito numericamente invece che per nome.(fatto per norme di progetto)
 [ ]-Per convenzione e anche per funzione, i riferimenti sono riportati
     all’inizio del documento, invece che in conclusione. 
 [ ]-Stile tipografico: tutte le iniziali maiuscole che usate nei titoli delle parti di documento devono essere
@@ -37,10 +37,10 @@ Studio di fattibilità:
             attività rilasciano: questo vostro errore rende molto debole e frammentaria la
             normazione dei processi di fornitura e sviluppo, del tutto insufficiente a supportare
             le attività richieste in questo stesso periodo.
-        [ ]-La documentazione è un processo di supporto.
+        [X]-La documentazione è un processo di supporto.
         [ ]-Il versionamento è parte del processo di gestione della configurazione, anch’esso processo
             di supporto.
-        [ ]-La struttura canonica del documento è: categoria di processi → processo
+        [X]-La struttura canonica del documento è: categoria di processi → processo
             specifico → suoi obiettivi (inclusi quelli qualitativi), attività, procedure e
             strumenti di supporto. In alcuni esempi viene spesso seguita lascamente e
             in modo diseguale, sia per categorizzazione (talvolta non
@@ -48,7 +48,7 @@ Studio di fattibilità:
             copertura dei processi deve essere completa, e la loro
             attribuzione alle tre categorie principali deve essere corretta. 
             La codifica è un'attività del processo di sviluppo. 
-        [ ]-Le attività coinvolte dal processo di fornitura sono molte di più delle
+        [X]-Le attività coinvolte dal processo di fornitura sono molte di più delle
             poche che riportate in §2.1(progetto qbteam di riferimento per questa correzione anno 2019/2020), per esempio i rapporti con il proponente.
         [ ]-Considerare l'aggiunta del processo di gestione dei
             cambiamenti, che sarà presto per voi essenziale per dare ordine alle attività
@@ -67,7 +67,7 @@ Studio di fattibilità:
             documento, per evitare di convivere a lungo con tali difetti. (progetto qbteam di riferimento per questa correzione anno 2019/2020)
 
     Analisi dei requisiti:
-        [ ]-Qualsiasi diagramma riportato nel documento deve avere una descrizione testuale associata. 
+        [X]-Qualsiasi diagramma riportato nel documento deve avere una descrizione testuale associata. 
         [ ]-I casi d’uso che costituiscono il cuore dell'applicazione vanno analizzati in dettaglio.
         [ ]-Ciò che viene descritto come “Estensione”, che dovrebbe essere chiamato
             “Scenario alternativo”, dovrebbe essere inserito all’interno della descrizione
