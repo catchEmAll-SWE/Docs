@@ -1,13 +1,13 @@
 Consegna e considerazioni generali: 
 [ ]-Deve essere presente una lettera di presentazione
 [ ]-I verbali riportano le decisioni prese e devono essere tracciabili singolarmente.
-[ ]-Deve essere presente il registro delle modifiche.
+[X]-Deve essere presente il registro delle modifiche.
 [ ]-Se si riferiscono libri, bisogna citare l'edizione e la parte di interesse.
 [ ]-Data nel nome dei documenti non necessaria, tranne per i verbali che per un ordine lessicografico
     significativo è utile siano in forma AAAA-MM-GG.
 [ ]-Attribuzione delle fonti: ogni frase, termine, figura tratte da terzi deve citare esplicitamente
     la fonte da cui deriva.
-[ ]-Attenzione a errore di annidamento nei valori dell'indice dei documenti. No 3.0.x
+[X]-Attenzione a errore di annidamento nei valori dell'indice dei documenti. No 3.0.x
 [ ]-Attenzione agli errori grammaticali
 [ ]-I documenti richiesti in ingresso alla RR sono da intendere come
     un aggregato unico (pur se internamente suddiviso in opportune cartelle), da
@@ -24,7 +24,7 @@ Consegna e considerazioni generali:
 [ ]-Uno “scatto” di versione che consegua a un’azione di incremento prima della sua verifica di validità,
     innesca rischi di iterazione che contraddicono l’approccio incrementale se si è deciso di adottarlo.
 [ ]-Per ovvie ragioni di sintesi, il luogo di modifica dovrebbe essere riferito numericamente invece che per nome.(fatto per norme di progetto)
-[ ]-Per convenzione e anche per funzione, i riferimenti sono riportati
+[X]-Per convenzione e anche per funzione, i riferimenti sono riportati
     all’inizio del documento, invece che in conclusione. 
 [ ]-Stile tipografico: tutte le iniziali maiuscole che usate nei titoli delle parti di documento devono essere
     appropriate, e non inconsistenti. Controllare bene e essere attenti nei controlli. (Errori grammaticali)
@@ -33,7 +33,7 @@ Consegna e considerazioni generali:
 
 Studio di fattibilità:
     Norme di progetto:
-        [ ]-Ogni singolo processo si compone di attività, non dei prodotti che le sue
+        [?]-Ogni singolo processo si compone di attività, non dei prodotti che le sue
             attività rilasciano: questo vostro errore rende molto debole e frammentaria la
             normazione dei processi di fornitura e sviluppo, del tutto insufficiente a supportare
             le attività richieste in questo stesso periodo.
@@ -53,12 +53,12 @@ Studio di fattibilità:
         [ ]-Considerare l'aggiunta del processo di gestione dei
             cambiamenti, che sarà presto per voi essenziale per dare ordine alle attività
             correttive che conseguono alla rilevazione di un difetto da correggere
-        [ ]-Tra i processi organizzativi, è opportuno considerare il processo di formazione
+        [X]-Tra i processi organizzativi, è opportuno considerare il processo di formazione
             (rilevante per normare la ripartizione intelligente degli impegni e la
             condivisione efficace delle conoscenze acquisite), e rapportare meglio la
             vostra interpretazione di tale categoria di processi con quanto previsto dallo
             standard. 
-        [ ]-La normazione dell’attività di progettazione è gravemente
+        [X]-La normazione dell’attività di progettazione è gravemente
             insufficiente, soprattutto alla luce del fatto che tale attività è di imminente
             attuazione e di elevata criticità. Ancor più grave è la totale assenza di misuredi qualità associate alle attività. 
             Nel complesso, il documento ha struttura non lontana dal desiderabile, ma contenuti ancora largamente inadeguati e
@@ -68,18 +68,18 @@ Studio di fattibilità:
 
     Analisi dei requisiti:
         [X]-Qualsiasi diagramma riportato nel documento deve avere una descrizione testuale associata. 
-        [ ]-I casi d’uso che costituiscono il cuore dell'applicazione vanno analizzati in dettaglio.
-        [ ]-Ciò che viene descritto come “Estensione”, che dovrebbe essere chiamato
+        [X]-I casi d’uso che costituiscono il cuore dell'applicazione vanno analizzati in dettaglio.
+        [X]-Ciò che viene descritto come “Estensione”, che dovrebbe essere chiamato
             “Scenario alternativo”, dovrebbe essere inserito all’interno della descrizione
             del caso d’uso esteso. 
-        [ ]-Non avere use case inutili.
-        [ ]-Anche i requisiti funzionali devono essere descritti un buon dettaglio.
-        [ ]-Tutti i requisiti funzionali devono mappare su un caso d’uso.
-        [ ]-La descrizione e lo scenario principale devono essere inseriti
+        [X]-Non avere use case inutili.
+        [X]-Anche i requisiti funzionali devono essere descritti un buon dettaglio.
+        [X]-Tutti i requisiti funzionali devono mappare su un caso d’uso.
+        [X]-La descrizione e lo scenario principale devono essere inseriti
             in ogni caso d’uso, per quanto triviali esse siano.
-        [ ]-In generale, l’inclusione non può essere utilizzata per modellare pre-condizioni o flussi
+        [X]-In generale, l’inclusione non può essere utilizzata per modellare pre-condizioni o flussi
             temporali fra casi d’uso. 
-        [ ]-I requisiti sui test sono di qualità
+        [X]-I requisiti sui test sono di qualità
 
     Piano di progetto:
         [ ]Attualizzazione dell'analisi dei rischi va fatta in un'appendice all'interno del documento.
