@@ -2,10 +2,12 @@
 \subsection{Obiettivi e metriche di qualità di processo}
 In questa sezione viene illustrato come il gruppo vuole verificare e misurare i progressi dei processi primari e di supporto nel corso del progetto. 
 \subsubsection{Obiettivi di qualità di processo}
-\begin{table}[H]
-	\centering
+\begin{center}
+	\setlength\extrarowheight{5pt}
+	\rowcolors{2}{gray!10}{gray!40}
 	\begin{tabularx}{\textwidth}{|c|X|X|X|}
 	\hline
+	\rowcolor{white}
 	\textbf{ID} & \textbf{Nome} & \textbf{Descrizione} & \textbf{Metriche associate}\\
 	\hline
 	OQPC01 & Miglioramento continuo & Il processo si deve poter valutare e migliorare continuamente & MQPC01 - SPICE\\
@@ -14,15 +16,18 @@ In questa sezione viene illustrato come il gruppo vuole verificare e misurare i 
 	\hline
 	OQPC03 & Variazioni dalla pianificazione & Assicurare che le scadenze e i limiti di costi illustrati nel documento \textit{Piano di progetto} siano rispettati &  MPC05: Variazioni nella programmazione;\hspace{65pt} MPC06: Variazioni nei costi. \\
 	\hline
+	\rowcolor{white}
 	\caption{Obiettivi di qualità di processo.}
 	\end{tabularx}
-\end{table}
+\end{center}
 
 \subsubsection{Metriche di qualità di processo}
-\begin{table}[H]
-	\centering
+\begin{center}
+	\setlength\extrarowheight{5pt}
+	\rowcolors{2}{gray!10}{gray!40}
 	\begin{tabularx}{\textwidth}{|c|X|X|X|X|}
 		\hline
+		\rowcolor{white}
 		\textbf{ID} & \textbf{Nome} & \textbf{Obiettivo} & \textbf{Valore accettabile} & \textbf{Valore ottimo}\\
 		\hline
 		MQPC01 & SPICE & OQPC01 - Miglioramento continuo & Level of Capability\textsubscript{G} $\geq$ 2 (Managed process) & Level of Capability\textsubscript{G} $\geq$ 4 (Predictable process) \\
@@ -37,32 +42,39 @@ In questa sezione viene illustrato come il gruppo vuole verificare e misurare i 
 		\hline
 		MQPC06 & Variazioni nei costi & OQPC03 - Rispetto della pianificazione & -15\% & 0\% \\
 		\hline
+		\rowcolor{white}
 		\caption{Metriche di qualità di processo.}
 	\end{tabularx}
-\end{table}
-
+\end{center}
+\newpage
 \subsection{Obiettivi e metriche di qualità di prodotto}
 Riferendoci alla serie di standard ISO/IEC 25000 SQuaRE possiamo osservare un insieme di caratteristiche che il prodotto deve avere per essere considerato di qualità. Queste caratteristiche saranno misurabili tramite metriche apposite, le quali forniranno i valori accettabili per il raggiungimento dell'obiettivo.
 \subsubsection{Obiettivi di qualità di prodotto}
 \subsubsubsection{Documentazione}
-\begin{table}[H]
-	\centering
+\begin{center}
+	\setlength\extrarowheight{5pt}
+	\rowcolors{2}{gray!10}{gray!40}
 	\begin{tabularx}{\textwidth}{|c|X|X|X|}
 		\hline
+		\rowcolor{white}
 		\textbf{ID} & \textbf{Nome} & \textbf{Descrizione} & \textbf{Metriche associate}\\
 		\hline
 		OQPD01 & Leggibilità dei documenti & I documenti devono essere comprensibile all'utente medio & MQPD01 - Indice di Gulpease\\
 		\hline
 		OQPD02 & Correttezza ortografica & I documenti devono essere scritti senza errori ortografici & MQPD02 - Correttezza documento \\
 		\hline
+		\rowcolor{white}
 		\caption{Obiettivi di qualità di processo specifici.}
 	\end{tabularx}
-\end{table}
+\end{center}
+
 \subsubsubsection{Software}
-\begin{table}[H]
-	\centering
-	\begin{tabularx}{\textwidth}{|c|c|X|X|}
+\begin{center}
+	\setlength\extrarowheight{5pt}
+	\rowcolors{2}{gray!10}{gray!40}
+	\begin{xltabular}{\textwidth}{|c|c|X|X|}
 		\hline
+		\rowcolor{white}
 		\textbf{ID} & \textbf{Nome} & \textbf{Descrizione} & \textbf{Metriche associate}\\
 		\hline
 		OQPD03 & Appropriatezza funzionale & Si vogliono soddisfare in modo completo i requisiti presenti nel documento \textit{Analisi dei requisiti} & MQPD03 - Copertura funzionale \\
@@ -79,17 +91,20 @@ Riferendoci alla serie di standard ISO/IEC 25000 SQuaRE possiamo osservare un in
 		\hline
 		OQPD09 & Compatibilità & Il prodotto dovrà essere accessibile al numero più elevato di utenti possibile, garantendo quindi la compatibilità con tutti i browser più diffusi. & MQPD14 - Browser supportati \\
 		\hline
+		\rowcolor{white}
 		\caption{Obiettivi di qualità di prodotto.}
-	\end{tabularx}
-	
-\end{table}
+	\end{xltabular}
+\end{center}
 
+\newpage
 \subsubsection{Metriche di qualità di prodotto}
 Alcuni valori accettabili e ottimi per le metriche di qualità di prodotto verranno fissati in futuro.
-\begin{table}[H]
-	\centering
-	\begin{tabularx}{\textwidth}{|c|X|X|X|X|}
+\begin{center}
+	\setlength\extrarowheight{2pt}
+	\rowcolors{2}{gray!10}{gray!40}
+	\begin{xltabular}{\textwidth}{|c|X|X|X|X|}
 		\hline
+		\rowcolor{white}
 		\textbf{ID} & \textbf{Descrizione} & \textbf{Obiettivo} & \textbf{Valore accettabile} & \textbf{Valore ottimo}\\
 		\hline
 		MQPD01 & Indice di Gulpease & OQPD01 - Leggibilità dei documenti & $\geq$ 40 & $\geq$ 80 \\
@@ -120,6 +135,7 @@ Alcuni valori accettabili e ottimi per le metriche di qualità di prodotto verra
 		\hline
 		MQPD14 & Browser supportati & OQPD09 - Compatibilità & 75\% & 100\% \\
 		\hline
+		\rowcolor{white}
 		\caption{Metriche di qualità di prodotto.}
-	\end{tabularx}
-\end{table}
+	\end{xltabular}
+\end{center}

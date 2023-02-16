@@ -17,6 +17,57 @@ Nei test di integrazione le singole unità\textsubscript{G} software che insieme
 
 \subsection{Test di sistema}
 I test di sistema sono finalizzati all'accertamento della copertura dei requisiti individuati nella fase di analisi, e sono quindi test propedeutici al collaudo.
+\newpage
+\begin{center}
+	\setlength\extrarowheight{5pt}
+	\rowcolors{2}{gray!10}{gray!40}
+	\begin{xltabular}{\textwidth}{|c|X|c|c|}
+		\hline
+		\rowcolor{white}
+		\textbf{ID} & \textbf{Obiettivo test} & \textbf{Stato di implementazione} & \textbf{Requisito correlato}\\
+		\hline
+		TS01 & Si verifica che l’utente riesca ad effettuare
+		il login in seguito alla corretta compilazione dei campi per le credenziali e del CAPTCHA e dopo aver svolto il Proof of Work & Non implementato & RF-1\\
+		\hline
+		TS02 & Si verifica che l'utente possa inserire l'username nel campo corrispondente & Non implementato & RF-2\\
+		\hline
+		TS03 & Si verifica che l'utente possa inserire la password nel campo corrispondente & Non implementato & RF-3\\
+		\hline
+		TS04 & Si verifica che l'utente abbia superato con successo il CAPTCHA in caso di autenticazione riuscita & Non implementato & RF-4\\
+		\hline
+		TS05 & Si verifica che il margine di errore dato all'utente per la soluzione fornita sia calcolato correttamente & Non implementato & RF-5\\
+		\hline
+		TS06 & Si verifica che l'utente abbia evitato l'honeypot in caso di  autenticazione riuscita & Non implementato & RF-6\\
+		\hline
+		TS07 & Si verifica che l'utente abbia completato il lavoro di proof of work in caso di autenticazione riuscita & Non implementato & RF-7\\
+		\hline
+		TS08 & Si verifica che all’utente venga mostrato un errore in caso di autenticazione fallita & Non implementato & RF-8\\
+		\hline
+		TS09 & Si verifica che all’utente venga mostrato un errore in caso di inserimento di username non valido & Non implementato & RF-9\\
+		\hline
+		TS10 & Si verifica che all’utente venga mostrato un errore in caso di inserimento di password non valida & Non implementato & RF-10\\
+		\hline
+		TS11 & Si verifica che all’utente venga mostrato un errore in caso di non superamento del test CAPTCHA immagini & Non implementato & RF-11\\
+		\hline
+		TS12 & Si verifica che all’utente venga mostrato un errore in caso di non superamento del test honeypot & Non implementato & RF-12\\
+		\hline
+		TS13 & Si verifica che all’utente venga mostrato un errore in caso di non completamento del lavoro di proof of work & Non implementato & RF-13\\
+		\hline
+		TS14 & Si verifica che all’utente venga mostrato un errore in caso di superamento dei tentativi consentiti & Non implementato & RF-14\\
+		\hline
+		TS15 & Si verifica che alla richiesta di un nuovo CAPTCHA da parte dell'utente, questo venga generato correttamente & Non implementato & RF-15\\
+		\hline
+		TS16 & Si verifica che all’utente venga mostrato un errore in caso di superamento delle richieste di generazione di nuovi CAPTCHA & Non implementato & RF-16\\
+		\hline
+		TS17 & Si verifica che il sistema fornisca correttamente i CAPTCHA immagini & Non implementato & RF-17\\
+		\hline
+		TS18 & Si verifica che il sistema fornisca correttamente il test per il calcolo del proof of work & Non implementato & RF-18\\
+		\hline
+		\rowcolor{white}
+		\caption{Test di sistema.}
+	\end{xltabular}
+\end{center}
+
 
 \subsection{Test di regressione}
 I test di regressione vengono utilizzati per accertare che le modifiche effettuate per aggiunta, correzione o rimozione, non pregiudichino le funzionalità già verificate in un periodo precedente, causando regressione. Consistono nella ripetizione dei test già definiti ed eseguiti con esito positivo in precedenza.
