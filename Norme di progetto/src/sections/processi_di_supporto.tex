@@ -479,19 +479,23 @@ I verificatori che utilizzano questo metodo devono rilevare la presenza di error
 \end{enumerate}
 
 \paragraph{File correctness script\textsubscript{G}}\mbox{}\\
-Allo scopo di eseguire in modo automatizzato l'inspection dei file è stato scritto un programma in python\textsubscript{G} che permette di verificare determinati elementi:
+Al fine di mantenere la qualità dei documenti elevata durante il loro intero sviluppo (quindi lungo l'intero arco di vita del progetto) è stato sviluppato un programma in python\textsubscript{G} che permette di verificare ripetutamente e agilmente la correttezza dei file.
+Il buon esito di tale controllo è obbligatorio per poter scrivere sul ramo main del repository della documentazione (in questo modo la documentazione è sempre coerente).
+Il programma permette di verificare determinati elementi:
 \begin{itemize}
 	\item All'interno del file;
 	\item Nomi dei file;
-	\item Estensioni dei file e numero;
-	\item Nomi di cartelle.
+	\item Nomi delle cartelle;
+	\item Strutture delle cartelle.
 \end{itemize}
-\noindent Queste verifiche sono per la maggior parte delegate ad un modulo chiamato "specific\_rules.py" il quale contiene tutte le verifiche da fare tramite espresssioni regolari (regex) su vari input forniti alle funzioni del file. Questo modulo viene incluso da un altro modulo "checks.py" il quale a sua volta è incluso dallo script\textsubscript{G} "file\_correctness.py".\\
+\noindent Queste verifiche sono per la maggior parte delegate ad un modulo chiamato "specific\_rules" il quale contiene tutte le verifiche da fare tramite espresssioni regolari (regex). 
+La struttura di questo programma prevede una checklist di macro controlli da effettuare (contenuta nel file principale "file\_correctness.py") i quali a loro volta contengono una serie di controlli più specifici (contenuti nel modulo "checks" il quale si avvale del modulo "specifics_rules").\\
+Questo modulo viene incluso da un altro modulo "checks.py" il quale a sua volta è incluso dallo script\textsubscript{G} "file\_correctness.py".\\
 \noindent Le verifiche effettuate dallo script\textsubscript{G} sono:
 \begin{enumerate}
 	\item Presenza di tutte le directory;
 	\item Correttezza nome delle directory;
-	\item Sottoalbero delle directory di documentazione principale presente e corretto;
+	\item Struttura delle directory coerenti tra loro;
 	\item Presenza di un solo file pdf e di nessun altro file;
 	\item Presenza di un solo file LaTeX nella cartella "src" e nessun altro file;
 	\item File LaTeX nella cartella "src" con determinati parametri;
