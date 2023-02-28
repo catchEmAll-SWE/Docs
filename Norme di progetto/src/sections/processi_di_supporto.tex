@@ -9,8 +9,9 @@ Lo scopo di questa sezione è definire gli standard necessari per la stesura di 
 Tutti i documenti prodotti dal team seguono il seguente ciclo di vita:
 \begin{itemize}
     \item \textbf{Stesura}: Il documento viene scritto utilizzando la metodologia AGILE, adottando sprint\textsubscript{G} di durata settimanale;
-    \item \textbf{Revisione}: Alla fine di ogni sprint\textsubscript{G} i documenti modificati devono essere revisionati da un membro del gruppo diverso dal redattore. Solo dopo una revisione con esito positivo le modifiche e i nuovi contenuti possono essere integrati nel documento finale;
-    \item \textbf{verifica\textsubscript{G}}: Avviene in un periodo della fase di analisi indicata nel documento \textit{Piano\_di\_progetto v 1.0.0}. Tale attività viene svolta da almeno una persona. Il documento è considerato verificato quando i Verificatori dichiarano che le modifiche necessarie per renderlo coerente con tutte le norme sono state portate a termine;
+    \item \textbf{Revisione}: I documenti modificati devono essere revisionati da un membro del gruppo diverso dal redattore. Solo dopo una revisione con esito positivo le modifiche e i nuovi contenuti possono essere integrati nel documento finale;
+    \item \textbf{Verifica\textsubscript{G}}: La verifica dei documenti accompagna il progetto lungo tutta la sua durata. Tale attività viene svolta da almeno una persona. Il documento è considerato 
+	vericato quando i Verificatori dichiarano che le modifiche necessarie per renderlo coerente con tutte le norme sono state portate a termine; 
     \item \textbf{Approvazione}: Il Responsabile di Progetto dichiara che il documento è completo in ogni sua parte e pronto per essere rilasciato, marcandolo come approvato.
 \end{itemize}
 \begin{figure}[H]
@@ -68,13 +69,13 @@ Tutti i documenti prodotti sono divisi in uso interno e uso esterno:
 \subsubsubsection{Nome del file}
 Di seguito viene descritto il formato dei nomi dei documenti:
 \begin{itemize}
-\item Iniziano tutti con la lettera maiuscola;
+\item Iniziano tutti con la lettera minuscola;
 \item Se il nome comprende più parole allora ognuna di esse è separata dal simbolo '\_';
 \item Deve essere seguito dalla versione in cui si trova.
 \end{itemize}
 La sigla della versione deve essere così strutturata:
 \begin{center}
-    \large{\textbf{v.X.Y.Z}}
+    \large{\textbf{\_v.X.Y.Z}}
 \end{center}
 Dove:
 \begin{itemize}
@@ -91,7 +92,7 @@ I verbali non seguono questa norma e hanno una nomenclatura diversa, poiché non
 Dove:
 \begin{itemize}
 	\item \verb|V| sta a indicare che si tratta di un verbale;
-	\item \verb|Tipo di verbale| indica se è interno o esterno;
+	\item \verb|Tipo di verbale| indica se è interno (|VI|) o esterno(|VE|);
 	\item \verb|Data verbale| indica la data in cui è stato redatto, ed deve essere scritta nel formato YYYYMMDD.
 \end{itemize}
 
@@ -113,10 +114,10 @@ Le norme da seguire relative al \textit{Glossario} sono:
 \subsubsubsection{Elenchi puntati e numerati} \label{sec:elenchi_puntati_numerati}
 Di seguito vengono descritti come utilizzare elenchi puntati e numerati:
 \begin{itemize}
+\item La frase introduttiva all'elenco deve terminare con \textbf{':'};
 \item Ogni punto dell'elenco inizia con la lettera maiuscola;
 \item Alla fine di ogni punto vi è un \textbf{';'};
 \item Dopo l'ultima voce vi è un \textbf{'.'};
-\item Se vi è un concetto da spiegare esso viene scritto in grassetto seguito da \textbf{':'} e segue la spiegazione di esso, la quale deve iniziare con la lettera maiuscola.
 \end{itemize}
 
 \subsubsubsection{Sigle}
@@ -183,15 +184,15 @@ Di seguito vengono elencati gli strumenti usati per redigere i documenti:
 \subsection{Gestione della configurazione}
 
 \subsubsection{Scopo}
-Lo scopo di questa sezione è descrivere come il team ha deciso di mantenere traccia delle varie documentazioni stese.
+Lo scopo di questa sezione è descrivere come il team ha deciso di mantenere traccia delle attività e del loro risultato durante il corso del progetto. 
 
 \subsubsection{Sistemi software utilizzati}
-Per la gestione dei file e gli aggiornamenti dei documenti viene utilizzato il sistema di controllo di versione Git, attraverso il servizio di GitHub\textsubscript{G}. Per la scrittura dei verbali interni ed esterni si è deciso di utilizzare il servizio Confluence offerto da JIRA\textsubscript{G}.
-
-\subsubsection{Struttura del repository\textsubscript{G}}
-Di seguito viene data una lista di cartelle presenti nella repository\textsubscript{G} su Git:
+La gestione delle versioni dei documenti viene effettuata utilizzato il sistema di controllo di versione Git, attraverso il servizio di GitHub\textsubscript{G}. Per la scrittura dei verbali interni ed esterni si è deciso di utilizzare il servizio Confluence offerto da JIRA\textsubscript{G}.
+Al fine di una migliore organizzazione sono stati creati 3 repository per: documentazione, PoC\textsubscript{G} e codice sorgente.
+\subsubsection{Strutture dei repository\textsubscript{G}}
+Di seguito vengono illustrate le varie organizzazione dei repository:
 \begin{itemize}
-\item \textbf{catchEmAll-SWE/catchEmAll-Docs} è la repository\textsubscript{G} contenente documentazione riguardante:
+\item \textbf{catchEmAll-SWE/Docs} è la repository\textsubscript{G} contenente documentazione riguardante:
 \begin{itemize}
     \item \textbf{Assegnazione dell'appalto}: Con al suo interno i documenti \textit{LetteraCandidatura}, \textit{Preventivo\_Ore\_Costi\_rischi}, \textit{motivazione\_capitolati};
     \item \textbf{Diari di bordo};
