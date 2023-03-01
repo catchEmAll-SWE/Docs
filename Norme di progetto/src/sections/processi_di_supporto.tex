@@ -9,7 +9,7 @@ Lo scopo di questa sezione è definire gli standard necessari per la stesura di 
 Tutti i documenti prodotti dal team seguono il seguente ciclo di vita:
 \begin{itemize}
     \item \textbf{Stesura}: Il documento viene scritto utilizzando la metodologia AGILE, adottando sprint\textsubscript{G} di durata settimanale;
-    \item \textbf{Revisione}: I documenti modificati devono essere revisionati da un membro del gruppo diverso dal redattore. Solo dopo una revisione con esito positivo le modifiche e i nuovi contenuti possono essere integrati nel documento finale (implementazione di branch protection rules\textsubscript{G});
+    \item \textbf{Revisione}: I documenti modificati devono essere revisionati da un membro del gruppo diverso dal redattore. Solo dopo una revisione con esito positivo le modifiche e i nuovi contenuti possono essere integrati nel documento finale (implementazione attraverso branch protection rules\textsubscript{G});
     \item \textbf{Verifica\textsubscript{G}}: La verifica dei documenti accompagna il progetto lungo tutta la sua durata. Tale attività viene svolta da almeno una persona. Il documento è considerato 
 	vericato quando i Verificatori dichiarano che le modifiche necessarie per renderlo coerente con tutte le norme sono state portate a termine; 
     \item \textbf{Approvazione}: Il Responsabile di Progetto dichiara che il documento è completo in ogni sua parte e pronto per essere rilasciato, marcandolo come approvato.
@@ -19,7 +19,7 @@ Tutti i documenti prodotti dal team seguono il seguente ciclo di vita:
     \includegraphics[scale=0.8]{img/ciclo_di_vita.png}
     \caption{Ciclo di vita dei documenti}
 \end{figure}
-
+\newpage
 \subsubsection{Struttura dei documenti}
 Tutti i documenti ufficiali seguono una struttura ben definita cosi da mantenere l'omogeneità. Più precisamente ogni documento è composto da:
 \begin{itemize}
@@ -188,7 +188,7 @@ Lo scopo di questa sezione è descrivere come il team ha deciso di mantenere tra
 
 \subsubsection{Sistemi software utilizzati}
 La gestione delle versioni dei documenti viene effettuata utilizzato il sistema di controllo di versione Git, attraverso il servizio di GitHub\textsubscript{G}. Per la scrittura dei verbali interni ed esterni si è deciso di utilizzare il servizio Confluence offerto da JIRA\textsubscript{G}.
-Al fine di una migliore organizzazione sono stati creati 3 repository per: documentazione, PoC\textsubscript{G} e codice sorgente.
+Al fine di una migliore organizzazione sono stati creati 3 repository per: documentazione, PoC\textsubscript{G} e RTB.
 \subsubsection{Strutture dei repository\textsubscript{G}}
 Di seguito vengono illustrati i conenuti dei repository:
 \begin{itemize}
@@ -224,7 +224,7 @@ Tale scelta è stata guidata dalla qualità dei template forniti dallo strumento
 Per evitare i conflitti tra le modifiche, mantenere in ordine i file e garantire che all'interno del branch\textsubscript{G} principale ci siano solo documenti verificati, il gruppo ha deciso che ogni qual volta sia necessaria una modifica in uno specifico documento deve essere creato un branch\textsubscript{G} per apportarla. La modifica in questione potrà essere integrata nel branch\textsubscript{G} principale soltanto se revisionata con successo dal \textit{Ve}.
 
 \subsubsection{Tipi di file presenti}
-Nella repository\textsubscript{G} \textit{Docs} sono presenti esclusivamente file \textbf{.tex}, \textbf{.txt}, \textbf{.png} e \textbf{.pdf}. Altri file prodotti durante la stesura dei documenti con estensioni diverse da quelle citate sono escluse attraverso il file \textbf{.gitignore}.
+Nella repository\textsubscript{G} \textit{Docs} sono presenti esclusivamente file \textit{.tex}, \textit{.txt}, \textit{.png} e \textit{.pdf}. Altri file prodotti durante la stesura dei documenti con estensioni diverse da quelle citate sono escluse attraverso il file \textit{.gitignore}.
 
 
 
@@ -479,10 +479,14 @@ I verificatori che utilizzano questo metodo devono rilevare la presenza di error
 	\item Lettura;
 	\item Correzione degli errori, svolta dagli autori.
 \end{enumerate}
-
+Per garantire e mantenere la qualità dei documenti elevata durante il loro intero sviluppo (quindi lungo
+l’intero arco di vita del progetto) il gruppo si è impegnato nello sviluppo di 2 programmi di analisi statica:
+uno riguardante i documenti e l'altro per le parole del glossario.\\
+Etrambi gli script\textsubscript{G} sono eseguibili da qualunque ambiente di sviluppo e sono stati sviluppati in python\textsubscript{G}.\\
+La loro semplice e breve esecuzione permette un controllo frequente.\\
+Sono stati, inoltre, integrati e resi obbligatori nel repository pubblico attraverso le branch protection rules\textsubscript{G} di GitHub\textsubscript{G}.
 \paragraph{File correctness script\textsubscript{G}}\mbox{}\\
-Al fine di mantenere la qualità dei documenti elevata durante il loro intero sviluppo (quindi lungo l'intero arco di vita del progetto) è stato sviluppato un programma in python\textsubscript{G} che permette di verificare ripetutamente e agilmente la correttezza dei file.
-Il buon esito di tale controllo è obbligatorio per poter scrivere sul ramo main del repository della documentazione (in questo modo la documentazione è sempre coerente).
+Questo script\textsubscript{G} permette di controllare la correttezza dei file di testo (ad esempio i file .tex) e delle cartelle.\\
 Il programma permette di verificare determinati elementi:
 \begin{itemize}
 	\item All'interno del file;
@@ -490,36 +494,51 @@ Il programma permette di verificare determinati elementi:
 	\item Nomi delle cartelle;
 	\item Strutture delle cartelle.
 \end{itemize}
-\noindent Queste verifiche sono per la maggior parte delegate ad un modulo chiamato "specific\_rules" il quale contiene tutte le verifiche da fare tramite espresssioni regolari (regex). 
-La struttura di questo programma prevede una checklist di macro controlli da effettuare (contenuta nel file principale "file\_correctness.py") i quali a loro volta contengono una serie di controlli più specifici (contenuti nel modulo "checks" il quale si avvale del modulo "specifics_rules").\\
-Questo modulo viene incluso da un altro modulo "checks.py" il quale a sua volta è incluso dallo script\textsubscript{G} "file\_correctness.py".\\
-\noindent Le verifiche effettuate dallo script\textsubscript{G} sono:
-\begin{enumerate}
-	\item Presenza di tutte le directory;
-	\item Correttezza nome delle directory;
-	\item Struttura delle directory coerenti tra loro;
-	\item Presenza di un solo file pdf e di nessun altro file;
-	\item Presenza di un solo file LaTeX nella cartella "src" e nessun altro file;
-	\item File LaTeX nella cartella "src" con determinati parametri;
-	\newline In particolare:
+\noindent Queste verifiche sono per la maggior parte delegate ad un modulo chiamato "specific\_rules" il quale contiene tutte le verifiche da fare tramite espresssioni regolari (regex). \\
+La struttura di questo programma prevede una checklist di macro controlli da effettuare (contenuta nel file principale "file\_correctness.py") i quali a loro volta contengono una serie di controlli più specifici (contenuti nel modulo "checks" il quale si avvale del modulo "specifics\_rules"). \\
+I documenti analizzati sono:
+\begin{itemize}
+	\item Analisi dei requisiti\textsubscript{G}
+	\item Norme di progetto
+	\item Piano di progetto
+	\item Piano di qualifica
+	\item Glossario
+\end{itemize}
+\noindent Le verifiche effettuate dallo script\textsubscript{G} in generale sono:
+\begin{itemize}
+	\item Presenza delle cartelle contententi i file sopra citati;
+	\item Correttezza nome cartella;
+	\item Struttura delle cartelle:
+		\begin{itemize}
+			\item Presenza di una sola cartella "src";
+				\begin{itemize}
+					\item Presenza di una cartella "sections" (contenente i file LaTeX che compongono il documento);
+					\item Eventuale presenza della cartella "img" contenente immagini necessarie al documento.
+				\end{itemize}
+			\item Presenza di un unico file "pdf" il quale identifica il documento.
+		\end{itemize}
+\end{itemize}
+In particolare:
+\begin{itemize}
+	\item Ogni documento deve avere 
 	\begin{lstlisting}
-	'font size': r'.*\\documentclass\[10pt\]\{article\}.*',
-        'packages file': r'.*\\input\{sections/packages\}.*',
-        'style file': r'.*\\input\{sections/style\}.*',
-        'title page': r'.*\\input\{sections/title_page\}.*',
-        'page roman numbering': r'.*\\pagenumbering\{roman\}.*',
-        'table of contents': r'.*\\tableofcontents.*',
-	\end{lstlisting}
-	\item Controllo della presenza di almeno un file LaTeX nella cartella "sections" e di nessun altro tipo di file;
-	\item Controllo della presenza dei file necessari nella cartella "sections", precedentemente inclusi nel file LaTeX in "src";
+		'font size': r'.*\\documentclass\[10pt\]\{article\}.*',
+		'packages file': r'.*\\input\{sections/packages\}.*',
+		'style file': r'.*\\input\{sections/style\}.*',
+		'title page': r'.*\\input\{sections/title_page\}.*',
+		'page roman numbering': r'.*\\pagenumbering\{roman\}.*',
+		'table of contents': r'.*\\tableofcontents.*',
+		\end{lstlisting}
+		\item Controllo della presenza di almeno un file LaTeX nella cartella "sections" e di nessun altro tipo di file;
+		\item Controllo della presenza dei file necessari nella cartella "sections", precedentemente inclusi nel file LaTeX in "src";
 	Ovvero:
 	\begin{lstlisting}
 	necessary_sections_files = [
-        'style.tex',
-        'packages.tex',
-        'title_page.tex',
-        'modifiche.tex',
-    	]
+		'style.tex',
+		'packages.tex',
+		'title_page.tex',
+		'modifiche.tex',
+		]
 	\end{lstlisting}
 	\item Controllo della presenza di determinati parametri nel file title\_page.tex, tra cui il titolo che coincida con il nome della cartella in cui si trova il file;
 	\item Controllo della presenza di determinati parametri nel file style.tex, tra cui la correttezza del nome del file;
@@ -527,7 +546,12 @@ Questo modulo viene incluso da un altro modulo "checks.py" il quale a sua volta 
 	\item Controllo della presenza dell'ultima versione nei file title\_page.tex e in style.tex;
 	\item Controllo del nome e della correttezza della versione del file pdf;
 	\item Controllo del rispetto della norma per le gli elenchi puntati e numerati (\ref{sec:elenchi_puntati_numerati}).
-\end{enumerate}
+\end{itemize}
+
+\paragraph{Glossario script\textsubscript{G}}\mbox{}\\
+Lo script\textsubscript{G} per le parole del glossario verifica queste ultime siano identificate correttamente all'interno dei documenti.\\
+In caso contrario il programma segnala l'errore (o warning in casi particolari) e consente di correggerlo.\\
+
 
 \subsubsection{Analisi dinamica}
 L'analisi dinamica si occupa di eseguire dei test sugli oggetti di verifica\textsubscript{G} che devono essere eseguiti. Questo permetterà al gruppo di accertarsi dell'assenza di errori noti.
