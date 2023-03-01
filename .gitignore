@@ -1,16 +1,11 @@
 #latex files
-*.aux
-*.fdb_latexmk
-*.fls
-*.log
-*.lof
-*.lot
-*.out
-*.toc
-*.synctex.gz
-
-#ignore vscode settings
-*.vscode
+*
+!.txt
+!.tex
+!readme.md
+!.pdf
+!*.png
+!*/
 
 #ignore python caching
 __pycache__

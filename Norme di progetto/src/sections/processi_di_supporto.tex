@@ -9,7 +9,7 @@ Lo scopo di questa sezione è definire gli standard necessari per la stesura di 
 Tutti i documenti prodotti dal team seguono il seguente ciclo di vita:
 \begin{itemize}
     \item \textbf{Stesura}: Il documento viene scritto utilizzando la metodologia AGILE, adottando sprint\textsubscript{G} di durata settimanale;
-    \item \textbf{Revisione}: I documenti modificati devono essere revisionati da un membro del gruppo diverso dal redattore. Solo dopo una revisione con esito positivo le modifiche e i nuovi contenuti possono essere integrati nel documento finale;
+    \item \textbf{Revisione}: I documenti modificati devono essere revisionati da un membro del gruppo diverso dal redattore. Solo dopo una revisione con esito positivo le modifiche e i nuovi contenuti possono essere integrati nel documento finale (implementazione di branch protection rules\textsubscript{G});
     \item \textbf{Verifica\textsubscript{G}}: La verifica dei documenti accompagna il progetto lungo tutta la sua durata. Tale attività viene svolta da almeno una persona. Il documento è considerato 
 	vericato quando i Verificatori dichiarano che le modifiche necessarie per renderlo coerente con tutte le norme sono state portate a termine; 
     \item \textbf{Approvazione}: Il Responsabile di Progetto dichiara che il documento è completo in ogni sua parte e pronto per essere rilasciato, marcandolo come approvato.
@@ -194,35 +194,37 @@ Di seguito vengono illustrati i conenuti dei repository:
 \begin{itemize}
 \item \textbf{Docs} è il repository\textsubscript{G} contenente documentazione riguardante:
 \begin{itemize}
-    \item \textbf{Assegnazione appalto}: Con al suo interno i documenti \textit{lettera_candidatura.pdf}, \textit{preventivo\_ore\_costi\_rischi.pdf}, \textit{motivazione\_capitolati.pdf};
+    \item \textbf{Assegnazione appalto}: Con al suo interno i documenti \textit{lettera\_candidatura.pdf}, 
+	\textit{preventivo\_ore\_costi\_rischi.pdf}, 
+	\textit{motivazione\_capitolati.pdf};
     \item \textbf{Norme di progetto};
     \item \textbf{Analisi dei requisiti\textsubscript{G}};
     \item \textbf{Piano di progetto};
     \item \textbf{Piano di qualifica};
     \item \textbf{Glossario};
-    \item \textbf{Link dei verbali interni ed esterni}.
+    \item \textbf{Link dei verbali interni ed esterni};
+    \item \textbf{Ricerce ed approfondimenti riguardanti nuove tecnologie da adottare}.
 \end{itemize}
-\item \textbf{PoC\textsubscript{G}} è il repository\textsubscript{G} contente il PoCtextsubscript{G} composto da:
+\item \textbf{PoC\textsubscript{G}} è il repository\textsubscript{G} contente il PoC\textsubscript{G} composto da:
 \item \begin{itemize}
 	\item PoC\textsubscript{G} Immagini;
 	\item PoC\textsubscript{G} Proof of work\textsubscript{G}.
 \end{itemize}
-\item \textbf{RTB} è il repository\textsubscript{G} contiene tutti i documenti (alla versione |1.0.0|) necessari per RTB.
+\item \textbf{RTB} è il repository\textsubscript{G} contiene tutti i documenti (alla versione \textit{1.0.0}) necessari per RTB.
 \end{itemize}
 \subsubsection{Struttura delle cartelle su Confluence}
 Confluence, un servizio fornito da JIRA\textsubscript{G} è utilizzato dal gruppo per la scrittura e l'organizzazione di:
 \begin{itemize}
 	\item \textbf{Verbali}: Interni ed esterni;
 	\item \textbf{Sprint\textsubscript{G} retrospective}: Contenente le varie analisi retrospettive del gruppo sugli sprint\textsubscript{G} svolti;
-	\item \textbf{Ricerche e documentazioni}: Contiene le documentazioni e analisi che il gruppo ha svolto su strumenti o tecnologie che possono essere utili allo sviluppo del progetto.
 \end{itemize}
 Tale scelta è stata guidata dalla qualità dei template forniti dallo strumento, i quali facilitano la scrittura e la comprensione di alcuni specifici documenti.
 
 \subsubsection{Gestione delle modifiche}
-Per evitare i conflitti tra le modifiche, mantenere in ordine i file e garantire che all'interno del branch\textsubscript{G} principale ci siano solo documenti verificati, il gruppo ha deciso che ogni qual volta sia necessaria una modifica in uno specifico documento deve essere creato un branch\textsubscript{G} per apportarla. La modifica in questione potrà essere integrata nel branch\textsubscript{G} principale solo dopo essere stata revisionata dal \textit{Ve}.
+Per evitare i conflitti tra le modifiche, mantenere in ordine i file e garantire che all'interno del branch\textsubscript{G} principale ci siano solo documenti verificati, il gruppo ha deciso che ogni qual volta sia necessaria una modifica in uno specifico documento deve essere creato un branch\textsubscript{G} per apportarla. La modifica in questione potrà essere integrata nel branch\textsubscript{G} principale soltanto se revisionata con successo dal \textit{Ve}.
 
 \subsubsection{Tipi di file presenti}
-Nella repository\textsubscript{G} \textit{catchEmAll-Docs} sono presenti esclusivamente file \textbf{.tex}, \textbf{.png} e \textbf{.pdf}. Altri file prodotti durante la stesura dei documenti con estensioni diverse da quelle citate sono escluse attraverso il file \textbf{.gitignore}.
+Nella repository\textsubscript{G} \textit{Docs} sono presenti esclusivamente file \textbf{.tex}, \textbf{.txt}, \textbf{.png} e \textbf{.pdf}. Altri file prodotti durante la stesura dei documenti con estensioni diverse da quelle citate sono escluse attraverso il file \textbf{.gitignore}.
 
 
 
