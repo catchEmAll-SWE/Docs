@@ -4,9 +4,11 @@ I requisiti\textsubscript{G} sono stati individuati e classificati durante l'att
 
 \subsection{Requisiti\textsubscript{G} funzionali}
 
-\renewcommand\tabularxcolumn[1]{>{\Centering}m{#1}}
+\setlength\extrarowheight{5pt}
+\rowcolors{2}{gray!10}{gray!40}
 \begin{tabularx}{\textwidth}{| c | c | X | X |} 
  \hline
+ \rowcolor{white}
  \textbf{ID\textsubscript{G} Requisito} & \textbf{Classificazione} & \textbf{Descrizione} & \textbf{Fonti} \\
  \hline
   RF-1 & Obbligatorio & L'utente deve potersi autenticare all'interno del sistema tramite un modulo di login &  UC1, Capitolato\\
@@ -55,13 +57,16 @@ I requisiti\textsubscript{G} sono stati individuati e classificati durante l'att
  \hline
  RF-23 & Opzionale & Il sistema deve offrire le funzionalità di verifica del calcolo del proof of work\textsubscript{G} & UC6, UC6.3, VE\_20221111\\
  \hline
+ \rowcolor{white}
  \caption{Requisiti\textsubscript{G} funzionali}
 \end{tabularx}
 
 \subsection{Requisiti\textsubscript{G} di qualità}
-\renewcommand\tabularxcolumn[1]{>{\Centering}m{#1}}
+\setlength\extrarowheight{5pt}
+\rowcolors{2}{gray!10}{gray!40}
 \begin{tabularx}{\textwidth}{| c | c | X | c |} 
  \hline
+ \rowcolor{white}
  \textbf{ID\textsubscript{G} Requisito} & \textbf{Classificazione} & \textbf{Descrizione} & \textbf{Fonti} \\
  \hline
  RQ-1 & Obbligatorio & Dovrà essere prodotto un manuale utente del prodotto & Capitolato\\
@@ -74,13 +79,16 @@ I requisiti\textsubscript{G} sono stati individuati e classificati durante l'att
  \hline
  RQ-5 & Obbligatorio & Dovrà essere condotta un'analisi sulle tecnologie utilizzate per la realizzazione del prodotto, in modo da giustificarne la scelta & Capitolato\\
  \hline
+ \rowcolor{white}
  \caption{Requisiti\textsubscript{G} di qualità}
 \end{tabularx}
 
 \subsection{Requisiti\textsubscript{G} di vincolo}
-\renewcommand\tabularxcolumn[1]{>{\Centering}m{#1}}
+\setlength\extrarowheight{3pt}
+\rowcolors{2}{gray!10}{gray!40}
 \begin{tabularx}{\textwidth}{| c | c | X | c |} 
  \hline
+ \rowcolor{white}
  \textbf{ID\textsubscript{G} Requisito} & \textbf{Classificazione} & \textbf{Descrizione} & \textbf{Fonti} \\
  \hline
  RV-1 & Obbligatorio &  Il sistema deve essere raggiungibile collegandosi dal browser & Capitolato\\
@@ -95,19 +103,20 @@ I requisiti\textsubscript{G} sono stati individuati e classificati durante l'att
  \hline
  RV-6 & Obbligatorio & La parte client deve essere sviluppata utilizzando i linguaggi HTML\textsubscript{G}, CSS\textsubscript{G}, JavaScript\textsubscript{G} & VE\_20221021, VI\_20230117\\
  \hline
+ \rowcolor{white}
  \caption{Requisiti\textsubscript{G} di vincolo}
 \end{tabularx}
 
 \subsection{Requisiti\textsubscript{G} prestazionali}
 Non sono stati individuati requisiti\textsubscript{G} prestazionali misurabili.
-
 \subsection{Tracciamento dei requisiti\textsubscript{G}}
-
 \subsubsection{Requisito - Fonti}
-\begin{table}[H]
-	\centering
-	\begin{tabular}{| p{0.5\textwidth} | p{0.5\textwidth} |} 
+\begin{center}
+	\setlength\extrarowheight{5pt}
+	\rowcolors{2}{gray!10}{gray!40}
+	\begin{xltabular}{\textwidth}{|X|X|}
 		\hline
+		\rowcolor{white}
 		\textbf{Requisito} & \textbf{Fonti} \\
 		\hline
 		RF-1 & UC1, Capitolato\\
@@ -125,44 +134,44 @@ Non sono stati individuati requisiti\textsubscript{G} prestazionali misurabili.
 		RF-7 & UC1.4, VE\_20221111\\
 		\hline
 		RF-8 & UC2\\
-        \hline
+		\hline
 		RF-9 & UC2.1, VI\_20230301\\
-        \hline
+		\hline
 		RF-10 & UC2.1, VI\_20230301\\
-        \hline
+		\hline
 		RF-11 & UC2.2\\
-        \hline
+		\hline
 		RF-12 & UC2.3\\
-        \hline
+		\hline
 		RF-13 & UC2.4\\
 		\hline
 		RF-14 & UC2.5, VI\_20221115\\
-         \hline
+		\hline
 		RF-15 & UC3, VI\_20221115\\
-        \hline
+		\hline
 		RF-16 & UC4\\
-         \hline
+		\hline
 		RF-17 & UC5, UC5.1, VE\_20221111\\
-        \hline
+		\hline
 		RF-18 & UC5, UC5.2, Vi\_20230117\\
-        \hline
+		\hline
 		RF-19 & UC5, UC5.3, VE\_20221111\\
-        \hline
+		\hline
 		RF-20 & UC5, UC5.3, Capitolato, VE\_20221111\\
-         \hline
+		\hline
 		RF-21 & UC6, UC6.1, VE\_20221111\\
-        \hline
+		\hline
 		RF-22 & UC6, UC6.2, VE\_20230117\\
-         \hline
+		\hline
 		RF-23 & UC6, UC6.3, VE\_20221111\\
 		\hline
-		RQ-1 & Capitolato
+		RQ-1 & Capitolato\\
 		\hline
 		RQ-2 & Capitolato\\
 		\hline
-		RQ-3 & VI_\20221115\\
+		RQ-3 & VI\_20221115\\
 		\hline
-		RQ-4 & VI_\20221115\\
+		RQ-4 & VI\_20221115\\
 		\hline
 		RQ-5 & Capitolato\\
 		\hline
@@ -178,23 +187,26 @@ Non sono stati individuati requisiti\textsubscript{G} prestazionali misurabili.
 		\hline
 		RV-6 & VE\_20221021, VI\_20230117\\
 		\hline
-	\end{tabular}
-	\caption{Tracciamento dei requisiti\textsubscript{G}}
-\end{table}
+		\rowcolor{white}
+		\caption{Tracciamento dei requisiti\textsubscript{G}}
+	\end{xltabular}
+\end{center}
 
 \subsubsection{Fonte - Requisiti\textsubscript{G}}
-\begin{table}[H]
-	\centering
-	\begin{tabular}{| p{0.5\textwidth} | p{0.5\textwidth} |} 
- \hline
- \textbf{Fonte} & \textbf{Requisiti\textsubscript{G}} \\
- \hline
+\begin{center}
+	\setlength\extrarowheight{5pt}
+	\rowcolors{2}{gray!10}{gray!40}
+	\begin{xltabular}{\textwidth}{|X|X|}
+	\hline
+	\rowcolor{white}
+	\textbf{Fonte} & \textbf{Requisiti\textsubscript{G}} \\
+	\hline
 	UC1 & RF-1\\
 	\hline
 	UC1.1 & RF-2, RF-3\\
-    \hline
+	\hline
 	UC1.1.1 & RF-2\\
-    \hline
+	\hline
 	UC1.1.2 & RF-3\\
 	\hline
 	UC1.2 & RF-4, RF-5\\
@@ -204,59 +216,63 @@ Non sono stati individuati requisiti\textsubscript{G} prestazionali misurabili.
 	UC1.4 & RF-7\\
 	\hline
 	UC2 & RF-8\\
- 	\hline
+	\hline
 	UC2.1 & RF-9, RF-10\\
- 	\hline
+	\hline
 	UC2.2 & RF-11\\
-  	\hline
+	\hline
 	UC2.3 & RF-12\\
-  	\hline
+	\hline
 	UC2.4 & RF-13\\
-  	\hline
+	\hline
 	UC2.5 & RF-14\\
 	\hline
 	UC3 & RF-15\\ 
 	\hline
 	UC4 & RF-16\\
- 	\hline
+	\hline
 	UC5 & RF-17, RF-18, RF-19, RF-20\\
- \hline
+	\hline
 	UC5.1 & RF-17\\
- \hline
+	\hline
 	UC5.2 & RF-18\\
- \hline
+	\hline
 	UC5.3 & RF-19, RF-20\\
- 	\hline
+	\hline
 	UC6 & RF-21, RF-22, RF-23\\
- \hline
+	\hline
 	UC6.1 & RF-21\\
- \hline
+	\hline
 	UC6.2 & RF-22\\
- \hline
+	\hline
 	UC6.3 & RF-23\\
 	\hline
 	Capitolato & RF-1, RF-2, RF-3, RF-4, RQ-1, RQ-2, RQ-5, RQ-7, RV-1, RV-3, RV-4\\
- 	\hline
+	\hline
 	VE\_20221021 & RV-5, RV-6\\
 	\hline
 	VE\_20221111 & RF-4, RF-5, RF-7, RF-17, RF-19, RF-20, RF-21, RF-23\\
 	\hline
 	VI\_20221115 & RF-14, RF-15, RQ-3, RQ-4, RV-2\\
-    \hline
+	\hline
 	VI\_20230117 & RF-6, RF-18, RF-22, RV-5, RV-6\\
- \hline
+	\hline
 	VI\_20230301 & RF-9, RF-10\\
 	\hline
-	\end{tabular}
+	\rowcolor{white}
 	\caption{Tracciamento dei requisiti\textsubscript{G}}
-\end{table}
+	\end{xltabular}
+\end{center}
 
 \subsection{Riepilogo dei requisiti\textsubscript{G}}
 
 \begin{table}[h]
 	\centering
+	\setlength\extrarowheight{5pt}
+	\rowcolors{2}{gray!10}{gray!40}
 	\begin{tabular}{| p{0.25\textwidth} | p{0.25\textwidth} | p{0.25\textwidth} | p{0.25\textwidth} |} 
 		\hline
+		\rowcolor{white}
 		\textbf{Classificazione} & \textbf{Obbligatorio} & \textbf{Opzionale} & \textbf{Totale} \\
 		\hline
 		Funzionali & 17 & 6 & 23\\
