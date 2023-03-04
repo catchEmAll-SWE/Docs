@@ -2,6 +2,7 @@
 \subsection{Obiettivi e metriche di qualità di processo}
 In questa sezione viene illustrato come il gruppo vuole verificare e misurare i progressi dei processi primari e di supporto nel corso del progetto. 
 \subsubsection{Obiettivi di qualità di processo}
+\subsubsubsection{Gestione processi}
 \begin{center}
 	\setlength\extrarowheight{5pt}
 	\rowcolors{2}{gray!10}{gray!40}
@@ -12,14 +13,46 @@ In questa sezione viene illustrato come il gruppo vuole verificare e misurare i 
 	\hline
 	OQPC01 & Miglioramento continuo & Il processo si deve poter valutare e migliorare continuamente & MQPC01 - SPICE\\
 	\hline
-	OQPC02 & Efficienza nell'utilizzo delle risorse & Le risorse disponibili durante la durata del progetto devono essere distribuite ed utilizzate al meglio & MQPC02 - Costo pianificato di progetto; MQPC03 - Costo pianificato di progetto svolto; \hspace{25pt} MQPC04 - Costo reale di progetto svolto \\
-	\hline
-	OQPC03 & Variazioni dalla pianificazione & Assicurare che le scadenze e i limiti di costi illustrati nel documento \textit{Piano di progetto} siano rispettati &  MPC05: Variazioni nella programmazione;\hspace{65pt} MPC06: Variazioni nei costi. \\
-	\hline
 	\rowcolor{white}
-	\caption{Obiettivi di qualità di processo.}
+	\caption{Obiettivi di qualità di gestione di processo.}
 	\end{tabularx}
 \end{center}
+\subsubsubsection{Pianificazione}
+\begin{center}
+	\setlength\extrarowheight{5pt}
+	\rowcolors{2}{gray!10}{gray!40}
+	\begin{tabularx}{\textwidth}{|c|X|X|X|}
+		\hline
+		\rowcolor{white}
+		\textbf{ID} & \textbf{Nome} & \textbf{Descrizione} & \textbf{Metriche associate}\\
+		\hline
+		OQPC02 & Efficienza nell'utilizzo delle risorse & Le risorse disponibili durante la durata del progetto devono essere distribuite ed utilizzate al meglio & MQPC02 - Costo pianificato di progetto; MQPC03 - Costo reale di progetto svolto;\\
+		\hline
+		OQPC03 & Variazioni dalla pianificazione & Assicurare che le scadenze e i limiti di costi illustrati nel documento \textit{Piano di progetto} siano rispettati &  MPC04: Variazioni nella programmazione;\hspace{65pt} MPC05: Variazioni nei costi. \\
+		\hline
+		\rowcolor{white}
+		\caption{Obiettivi di qualità di processo di pianificazione.}
+	\end{tabularx}
+\end{center}
+\newpage
+\subsubsubsection{Documentazione}
+\begin{center}
+	\setlength\extrarowheight{5pt}
+	\rowcolors{2}{gray!10}{gray!40}
+	\begin{tabularx}{\textwidth}{|c|X|X|X|}
+		\hline
+		\rowcolor{white}
+		\textbf{ID} & \textbf{Nome} & \textbf{Descrizione} & \textbf{Metriche associate}\\
+		\hline
+		OQPC04 & Leggibilità dei documenti & I documenti devono essere comprensibile all'utente medio & MQPC06 - Indice di Gulpease\\
+		\hline
+		OQPC05 & Correttezza ortografica & I documenti devono essere scritti senza errori ortografici & MQPC07 - Correttezza documento \\
+		\hline
+		\rowcolor{white}
+		\caption{Obiettivi di qualità del processo di documentazione.}
+	\end{tabularx}
+\end{center}
+
 
 \subsubsection{Metriche di qualità di processo}
 \begin{center}
@@ -34,13 +67,15 @@ In questa sezione viene illustrato come il gruppo vuole verificare e misurare i 
 		\hline
 		MQPC02 & Costo pianificato di progetto & OQPC02 - Efficienza nell'utilizzo delle risorse & $\geq$ 0 \& $\le$ 11.100 & $\geq$ 0 \& $\le$ 11.100\\
 		\hline
-		MQPC03 & Costo pianificato di progetto svolto & OQPC02 - Efficienza nell'utilizzo delle risorse & BCWS $ \pm $ 10\% & BCWS \\
+		MQPC03 & Costo reale di progetto svolto & OQPC02 - Efficienza nell'utilizzo delle risorse & BCWS $ \pm $ 15\% & BCWS \\
 		\hline
-		MQPC04 & Costo reale di progetto svolto & OQPC02 - Efficienza nell'utilizzo delle risorse & BCWS $ \pm $ 15\% & $\geq$ BCWS \\
+		MQPC04 & Variazioni nella pianificazione & OQPC03 - Rispetto della pianificazione & $ \pm $ 15\% & 0\% \\
 		\hline
-		MQPC05 & Variazioni nella pianificazione & OQPC03 - Rispetto della pianificazione & -15\% & 0\% \\
+		MQPC05 & Variazioni nei costi & OQPC03 - Rispetto della pianificazione & $ \pm $ 15\% & 0\% \\
 		\hline
-		MQPC06 & Variazioni nei costi & OQPC03 - Rispetto della pianificazione & -15\% & 0\% \\
+		MQPC06 & Indice di Gulpease & OQPC04 - Leggibilità dei documenti & $\geq$ 40 & $\geq$ 80 \\
+		\hline
+		MQPC07 & Numero errori ortografici & OQPC05 - Correttezza ortografica & 0 & 0 \\
 		\hline
 		\rowcolor{white}
 		\caption{Metriche di qualità di processo.}
@@ -50,23 +85,6 @@ In questa sezione viene illustrato come il gruppo vuole verificare e misurare i 
 \subsection{Obiettivi e metriche di qualità di prodotto}
 Riferendoci alla serie di standard ISO/IEC 25000 SQuaRE possiamo osservare un insieme di caratteristiche che il prodotto deve avere per essere considerato di qualità. Queste caratteristiche saranno misurabili tramite metriche apposite, le quali forniranno i valori accettabili per il raggiungimento dell'obiettivo.
 \subsubsection{Obiettivi di qualità di prodotto}
-\subsubsubsection{Documentazione}
-\begin{center}
-	\setlength\extrarowheight{5pt}
-	\rowcolors{2}{gray!10}{gray!40}
-	\begin{tabularx}{\textwidth}{|c|X|X|X|}
-		\hline
-		\rowcolor{white}
-		\textbf{ID} & \textbf{Nome} & \textbf{Descrizione} & \textbf{Metriche associate}\\
-		\hline
-		OQPD01 & Leggibilità dei documenti & I documenti devono essere comprensibile all'utente medio & MQPD01 - Indice di Gulpease\\
-		\hline
-		OQPD02 & Correttezza ortografica & I documenti devono essere scritti senza errori ortografici & MQPD02 - Correttezza documento \\
-		\hline
-		\rowcolor{white}
-		\caption{Obiettivi di qualità di processo specifici.}
-	\end{tabularx}
-\end{center}
 
 \subsubsubsection{Software}
 \begin{center}
@@ -106,10 +124,6 @@ Alcuni valori accettabili e ottimi per le metriche di qualità di prodotto verra
 		\hline
 		\rowcolor{white}
 		\textbf{ID} & \textbf{Descrizione} & \textbf{Obiettivo} & \textbf{Valore accettabile} & \textbf{Valore ottimo}\\
-		\hline
-		MQPD01 & Indice di Gulpease & OQPD01 - Leggibilità dei documenti & $\geq$ 40 & $\geq$ 80 \\
-		\hline
-		MQPD02 & Numero errori ortografici & OQPD02 - Correttezza ortografica & 0 & 0 \\
 		\hline
 		MQPD03 & Copertura funzionale & OQPD03 - Appropriatezza funzionale & 100\% dei requisiti obbligatori & 100\% di tutti i requisiti\\
 		\hline
