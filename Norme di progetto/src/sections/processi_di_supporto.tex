@@ -194,23 +194,31 @@ Di seguito vengono illustrati i conenuti dei repository:
 \begin{itemize}
 	\item \textbf{Docs} è il repository\textsubscript{G} contenente documentazione riguardante:
 	\begin{itemize}
-		\item \textbf{Assegnazione appalto}: Con al suo interno i documenti \textit{lettera\_candidatura.pdf}, 
+		\item Assegnazione appalto: Con al suo interno i documenti \textit{lettera\_candidatura.pdf}, 
 		\textit{preventivo\_ore\_costi\_rischi.pdf}, 
 		\textit{motivazione\_capitolati.pdf};
-		\item \textbf{Norme di progetto};
-		\item \textbf{Analisi dei requisiti\textsubscript{G}};
-		\item \textbf{Piano di progetto};
-		\item \textbf{Piano di qualifica};
-		\item \textbf{Glossario};
-		\item \textbf{Link dei verbali interni ed esterni};
-		\item \textbf{Ricerce ed approfondimenti riguardanti nuove tecnologie da adottare}.
+		\item Norme di progetto;
+		\item Analisi dei requisiti\textsubscript{G};
+		\item Piano di progetto;
+		\item Piano di qualifica;
+		\item Glossario;
+		\item Link dei verbali interni ed esterni;
+		\item Ricerce ed approfondimenti riguardanti nuove tecnologie da adottare.
 	\end{itemize}
 	\item \textbf{PoC\textsubscript{G}} è il repository\textsubscript{G} contente il PoC\textsubscript{G} composto da:
 	\begin{itemize}
 		\item PoC\textsubscript{G} Immagini;
 		\item PoC\textsubscript{G} Proof of work\textsubscript{G}.
 	\end{itemize}
-	\item \textbf{RTB} è il repository\textsubscript{G} contiene tutti i documenti (alla versione \textit{1.0.0}) necessari per RTB.
+	\item \textbf{RTB} è il repository\textsubscript{G} contiene tutti i documenti (alla versione \textit{1.0.0}) necessari per RTB e il link ai verbali che si trovano su Confluence. I quali sono:
+	\begin{itemize}
+		\item \textit{Norme\_di\_progetto v 1.0.0};
+		\item \textit{Piano\_di\_progetto v 1.0.0};
+		\item \textit{Analisi\_dei\_requisiti v 1.0.0};
+		\item \textit{Piano\_di\_qualifica v 1.0.0};
+		\item \textit{Glossario v 1.0.0};
+		\item Link ai verbali;
+	\end{itemize}
 \end{itemize}
 \subsubsection{Struttura delle cartelle su Confluence}
 Confluence, un servizio fornito da JIRA\textsubscript{G} è utilizzato dal gruppo per la scrittura e l'organizzazione di:
@@ -260,10 +268,11 @@ Le metriche di qualità a cui ogni processo deve essere conforme sono:
 \begin{itemize}
 	\item \textbf{SPICE}: Riferito alla metrica per misurare il miglioramento continuo (MQPC01);
 	\item \textbf{Costo pianificato di progetto}: Riferito alla metrica per misurare l'efficienza dell'utilizzo delle risorse (MQPC02);
-	\item \textbf{Costo pianificato di progetto svolto}: Riferito alla metrica per misurare l'efficienza dell'utilizzo delle risorse (MQPC03);
-	\item \textbf{Costo reale di progetto svolto}: Riferito alla metrica per misurare l'efficienza dell'utilizzo delle risorse (MQPC04);
-	\item \textbf{Variazioni nella pianificazione}: Riferito alla metrica per misurare le variazioni dalla pianificazione (MQPC05);
-	\item \textbf{Variazioni nei costi}: Riferito alla metrica per misurare le variazioni dalla pianificazione (MQPC06).
+	\item \textbf{Costo reale di progetto svolto}: Riferito alla metrica per misurare l'efficienza dell'utilizzo delle risorse (MQPC03);
+	\item \textbf{Variazioni nella pianificazione}: Riferito alla metrica per misurare le variazioni dalla pianificazione (MQPC04);
+	\item \textbf{Variazioni nei costi}: Riferito alla metrica per misurare le variazioni dei costi dalla pianificazione (MQPC05);
+	\item \textbf{Indice di Gulpease}: Riferito alla metrica per misurare l'indice di Gulpease(MQPC06);
+	\item \textbf{Correttezza ortografica}: Riferito alla metrica per controllare la correttezza ortografica (MQPC07).
 \end{itemize}
 \paragraph{SPICE}\mbox{}\\
 Questa metrica è di riferimento ai processi ed è stata scelta dal gruppo per verificare il grado di \textit{capability}\textsubscript{G} che ogni processo deve raggiungere. Lo standard definisce vari livelli di \textit{capability}\textsubscript{G}:
@@ -290,8 +299,6 @@ Per misurare la \textit{capability}\textsubscript{G} si utilizzano i vari attrib
 Ogni attributo di processo viene valutato su una scala di valutazione NPLF\textsubscript{G}.\\ Il gruppo si impegna a raggiungere un grado di \textit{capability}\textsubscript{G} minimo di 2 per ogni processo.
 \paragraph{Costo pianificato di progetto}\mbox{}\\
 Questa metrica è di riferimento ai processi ed è stata scelta dal gruppo per indicare il costo totale di progetto pianificato alla data corrente. Il valore si può osservare nella sezione \textit{Preventivo} del \textbf{Piano di progetto}. Questo valore deve essere $\geq$ 0 e minore del budget totale disponibile.
-\paragraph{Costo pianificato di progetto svolto}\mbox{}\\
-Questa metrica è di riferimento ai processi ed è stata scelta dal gruppo per indicare il valore effettivo del prodotto ottenuto fino alla data corrente.
 \paragraph{Costo reale di progetto svolto}\mbox{}\\
 Questa metrica è di riferimento ai processi ed è stata scelta dal gruppo per indicare il costo reale impiegato per svolgere il progetto fino alla data corrente. Il valore si può osservare nella sezione \textit{Consuntivo} del \textbf{Piano di progetto}. Questo valore deve essere un intorno\textsubscript{G} del BCWS con un errore non superiore al 20\%.
 \paragraph{Variazioni nella pianificazione}\mbox{}\\
@@ -318,18 +325,6 @@ Dove:
 	\item \textbf{ACWP} sta per \textit{Actual Cost of Work Performed};
 	\item \textbf{BCWS} sta per \textit{Budgeted Cost of Work Scheduled}.
 \end{itemize}
-\subsubsubsection{Metriche di prodotto}
-Le metriche di qualità a cui ogni prodotto deve essere conforme sono divisi in due categorie:
-\begin{itemize}
-	\item \textbf{Metriche per la qualità della documentazione};
-	\item \textbf{Metriche per la qualità del software}.
-\end{itemize}
-\subsubsubsection{Metriche di qualità della documentazione}
-Le metriche di qualità a cui solo la documentazione deve essere conforme sono:
-\begin{itemize}
-	\item \textbf{Indice di Gulpease}: Che fa riferimento alla metrica \textit{MQPD01};
-	\item \textbf{Correttezza ortografica}: Che fa riferimento alla metrica \textit{MQPD02}.
-\end{itemize}
 \paragraph{Indice di Gulpease}\mbox{}\\
 L'indice di Gulpease è una metrica di riferimento ai prodotti di documentazione che il gruppo ha scelto di utilizzare per verificare la leggibilità della documentazione prodotta. L'indice è tarato sulla lingua italiana e si calcola in questo modo:
 \begin{align*}
@@ -339,21 +334,21 @@ L'indice di Gulpease è una metrica di riferimento ai prodotti di documentazione
 Il gruppo ha scelto come valore minimo di accettabilità 40. Questo viene indicato come limite dato che un valore minore implica una difficoltà di lettura anche per chi ha conferito un diploma di scuola superiore.
 \paragraph{Correttezza ortografica}\mbox{}\\
 Questa metrica è di riferimento ai prodotti di documentazione ed è utilizzata dal gruppo per assicurare la correttezza ortografica di ogni parola presente nei documenti. Non devono esserci errori grammaticali per far sì che un documento sia accettato.
-\subsubsubsection{Metriche di qualità del software}
-Le metriche di qualità a cui solo il software deve essere conforme sono:
+\subsubsubsection{Metriche di prodotto}
+Le metriche di qualità a cui il prodotto software finale dovrà essere conforme sono:
 \begin{itemize}
-	\item \textbf{Copertura funzionale}: Che fa riferimento alla metrica \textit{MQPD03};
-	\item \textbf{Tempo di risposta dei servizi all'utente}: Che fa riferimento alla metrica \textit{MQPD04};
-	\item \textbf{Copertura dei test}: Che fa riferimento alla metrica \textit{MQPD05};
-	\item \textbf{Robustezza agli errori}: Che fa riferimento alla metrica \textit{MQPD06};
-	\item \textbf{Completezza di descrizione}: Che fa riferimento alla metrica \textit{MQPD07};
-	\item \textbf{Completezza della guida utente}: Che fa riferimento alla metrica \textit{MQPD08};
-	\item \textbf{Interfaccia utente auto-esplicativa}: Che fa riferimento alla metrica \textit{MQPD09};
-	\item \textbf{Procedure di autenticazione}: Che fa riferimento alla metrica \textit{MQPD10};
-	\item \textbf{Accoppiamento\textsubscript{G} di componenti}: Che fa riferimento alla metrica \textit{MQPD11};
-	\item \textbf{Adeguatezza della complessità ciclomatica}\textsubscript{G}: Che fa riferimento alla metrica \textit{MQPD12};
-	\item \textbf{Completezza della funzione di test}: Che fa riferimento alla metrica \textit{MQPD13};
-	\item \textbf{Browser supportati}: Che fa riferimento alla metrica \textit{MQPD14}.
+	\item \textbf{Copertura funzionale}: Che fa riferimento alla metrica \textit{MQPD01};
+	\item \textbf{Tempo di risposta dei servizi all'utente}: Che fa riferimento alla metrica \textit{MQPD02};
+	\item \textbf{Copertura dei test}: Che fa riferimento alla metrica \textit{MQPD03};
+	\item \textbf{Robustezza agli errori}: Che fa riferimento alla metrica \textit{MQPD04};
+	\item \textbf{Completezza di descrizione}: Che fa riferimento alla metrica \textit{MQPD05};
+	\item \textbf{Completezza della guida utente}: Che fa riferimento alla metrica \textit{MQPD06};
+	\item \textbf{Interfaccia utente auto-esplicativa}: Che fa riferimento alla metrica \textit{MQPD07};
+	\item \textbf{Procedure di autenticazione}: Che fa riferimento alla metrica \textit{MQPD08};
+	\item \textbf{Accoppiamento\textsubscript{G} di componenti}: Che fa riferimento alla metrica \textit{MQPD09};
+	\item \textbf{Adeguatezza della complessità ciclomatica}\textsubscript{G}: Che fa riferimento alla metrica \textit{MQPD10};
+	\item \textbf{Completezza della funzione di test}: Che fa riferimento alla metrica \textit{MQPD11};
+	\item \textbf{Browser supportati}: Che fa riferimento alla metrica \textit{MQPD12}.
 \end{itemize}
 \paragraph{Copertura funzionale}\mbox{}\\
 Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per verificare che tutti i requisiti obbligatori del progetto siano stati integrati nel prodotto finale. Questa metrica è calcolata attraverso il rapporto tra il numero di requisiti soddisfatti e quello di requisiti obbligatori totali:
@@ -378,7 +373,6 @@ Questa metrica è di riferimento ai prodotti software ed è utilizzata dal grupp
 	\textbf{RaE} = \frac{ErrCritGestiti}{ErrCritTotali}
 \end{align*}
 Dove \textbf{RaE} sta per \textit{Robustezza agli errori}.
-\newpage
 \paragraph{Completezza di descrizione}\mbox\\
 Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per verificare la percentuale degli scenari d’uso che è descritta nella documentazione rispetto al totale. Questo per poter garantire informazioni complete agli utilizzatori del prodotto. Questa metrica è calcolata attraverso il rapporto tra il numero di scenari descritti e il numero di scenari effettivamente presenti nel dominio\textsubscript{G}:
 \begin{align*}
@@ -409,7 +403,6 @@ Dove \textbf{AINB} sta per \textit{Accessi indesiderati non bloccati}.
 \paragraph{Accoppiamento\textsubscript{G} di componenti}\mbox{}\\
 Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per controllare quanti componenti del sistema sono strettamente  indipendenti e quanti sono esenti da impatti conseguenti a cambiamenti negli altri componenti.
 In futuro verrà definito un valore per misurarla al meglio. 
-\newpage
 \paragraph{Adeguatezza della complessità ciclomatica}\textsubscript{G}\mbox{}\\
 Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per verificare quanti moduli software hanno una complessità ciclomatica\textsubscript{G} accettabile. Per verificarla il gruppo deciderà una soglia di accettabilità per i vari linguaggi di programmazione e per il tipo di modulo o di funzione utilizzati durante il progetto.\\
 Nelle metriche software la complessità ciclomatica\textsubscript{G} è usata per valutare la complessità di un algoritmo ed è basata sulla struttura del grafo che rappresenta l’algoritmo da misurare. Per calcolarla si fa uso di questa formula:
