@@ -9,6 +9,13 @@
 *.toc
 *.synctex.gz
 
+!*.tex
+!*.pdf
+!*.txt
+!*.png
+!*.PNG
+!*.jpg
+
 #ignore vscode settings
 *.vscode
 
