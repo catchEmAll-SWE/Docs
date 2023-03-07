@@ -6,14 +6,16 @@ La verifica software serve per accertare che l'esecuzione delle attività attuat
 	\item Ripetibili;
 	\item Automatizzabili.
 \end{itemize}
-Gli oggetti della verifica saranno le unità\textsubscript{G} software, le integrazioni tra unità\textsubscript{G}, e anche l'intero sistema. Essendo invece il dominio delle esecuzioni possibili infinito, il gruppo selezionerà un insieme finito di casi da studiare, che dovrà essere sufficiente per garantire la qualità attesa.\\
+Gli oggetti della verifica saranno le unità\textsubscript{G} software, le integrazioni tra unità\textsubscript{G}, e anche l'intero sistema.\\
 La verifica software così descritta prepara il successo della validazione software, la quale invece servirà per accertare che il prodotto finale sia conforme alle aspettative.\\
-Le specifiche dei test verranno definite nelle prossime versioni del presente documento.
+Le specifiche dei test di integrazione ed unità\textsubscript{G} verranno definite nelle prossime versioni del presente documento.
 \subsection{Test di unità}
 Solitamente un'unità\textsubscript{G} software può essere realizzata da un singolo programmatore, e pertanto il test di unità, che ha il compito di verificare il comportamento di ogni unità\textsubscript{G} isolandola dalle altre, potrà essere a carico dello stesso autore. Il test di unità potrà considerarsi completo una volta che tutte le unità\textsubscript{G} software saranno state verificate.
 
 \subsection{Test di integrazione}
-Nei test di integrazione le singole unità\textsubscript{G} software che insieme realizzano una funzionalità del sistema vengono raggruppate nelle componenti individuate nella fase di progettazione architetturale. Servono quindi proprio per rilevare eventuali difetti di progettazione.
+I test di integrazione si applicano per testare la corretta interazione tra le componenti del sistema. Essi vengono definiti durante la progettazione architetturale e si basano sui componenti in essa specificati.
+Per definire i test di integrazione è necessario selezionare quali funzionalità integrare individuandone le componenti coinvolte e ordinandole per dipendenze crescenti.
+I problemi rilevati dai test di integrazione rappresentano difetti di progettazione o una scarsa qualità dei test di unità. Il numero dei test di integrazione è il necessario per accertare che i dati scambiati tra interfacce siano conformi e che i flussi di controllo siano tutti testati e funzionanti.
 
 \subsection{Test di sistema}
 I test di sistema sono finalizzati all'accertamento della copertura dei requisiti individuati nella fase di analisi, e sono quindi test propedeutici al collaudo.
