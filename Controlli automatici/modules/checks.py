@@ -157,7 +157,7 @@ def styleFileCorrectness(style_file, dir):
 def modificheFileCorrectness(modifiche_file):
     """Control sections/modifiche.tex correctness
     :param modifiche_file: modifiche file
-    :type modifiche_file: Path  
+    :type modifiche_file: Path  Version order not correct or same version used in
     """
     srules.modificheFileCorrectness(modifiche_file)
     versionsOrderInModificheFileCorrectness(modifiche_file)
