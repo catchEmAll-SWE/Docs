@@ -152,11 +152,11 @@ def getVersionsFromModificheFile(file):
     :param file: modifiche file
     :type file: Path
     """
-    return re.findall(r'\d\d?\.\d\d?\.\d\d?', file.read_text(encoding="utf-8"))
+    return re.findall(r'(?<!§)(?<=\s)\d\d?\.\d\d?\.\d\d?', file.read_text(encoding="utf-8"))
 
 
 def getLatestVersionFromModificheFile(file):
-    return re.search(r'\d\d?\.\d\d?\.\d\d?', file.read_text(encoding="utf-8")).group(0)
+    return re.search(r'(?<!§)(?<=\s)\d\d?\.\d\d?\.\d\d?', file.read_text(encoding="utf-8")).group(0)
 
 
 def listCorrectness(file):
