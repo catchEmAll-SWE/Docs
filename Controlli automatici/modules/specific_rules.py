@@ -1,7 +1,7 @@
 # In this file you can find function (them identify rules) for latex file's rules
 import re
 import github_action_utils as gha_utils
-from print_error import *
+from modules.print_error import *
 
 
 def fileNameCorrectness(file_name):
@@ -152,11 +152,11 @@ def getVersionsFromModificheFile(file):
     :param file: modifiche file
     :type file: Path
     """
-    return re.findall(r'\d\d?\.\d\d?\.\d\d?', file.read_text(encoding="utf-8"))
+    return re.findall(r'(?<!§)(?<=\s)\d\d?\.\d\d?\.\d\d?', file.read_text(encoding="utf-8"))
 
 
 def getLatestVersionFromModificheFile(file):
-    return re.search(r'\d\d?\.\d\d?\.\d\d?', file.read_text(encoding="utf-8")).group(0)
+    return re.search(r'(?<!§)(?<=\s)\d\d?\.\d\d?\.\d\d?', file.read_text(encoding="utf-8")).group(0)
 
 
 def listCorrectness(file):
