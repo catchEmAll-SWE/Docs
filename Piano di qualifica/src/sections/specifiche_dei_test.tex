@@ -1,22 +1,85 @@
 \section{Specifiche dei test}
 
 \subsection{Scopo della verifica\textsubscript{G} software}
-La verifica\textsubscript{G} software serve per accertare che l'esecuzione delle attività attuate nel periodo in esame non abbia introdotto errori. La forma di verifica software utilizzata dal gruppo \textit{Catch Em All} sarà l'Analisi Dinamica, che viene effettuata tramite test che richiedono l'esecuzione dell'oggetto di verifica. In particolare, i test dovranno essere:
+La verifica\textsubscript{G} software serve per accertare che l'esecuzione delle attività attuate nel periodo in esame non abbia introdotto errori. La forma di verifica\textsubscript{G} software utilizzata dal gruppo \textit{Catch Em All} sarà l'Analisi Dinamica, che viene effettuata tramite test che richiedono l'esecuzione dell'oggetto di verifica\textsubscript{G}. In particolare, i test dovranno essere:
 \begin{itemize}
 	\item Ripetibili;
 	\item Automatizzabili.
 \end{itemize}
-Gli oggetti della verifica saranno le unità\textsubscript{G} software, le integrazioni tra unità\textsubscript{G}, e anche l'intero sistema. Essendo invece il dominio\textsubscript{G} delle esecuzioni possibili infinito, il gruppo selezionerà un insieme finito di casi da studiare, che dovrà essere sufficiente per garantire la qualità attesa.\\
+Gli oggetti della verifica\textsubscript{G} saranno le unità\textsubscript{G} software, le integrazioni tra unità\textsubscript{G}, e anche l'intero sistema.\\
 La verifica\textsubscript{G} software così descritta prepara il successo della validazione\textsubscript{G} software, la quale invece servirà per accertare che il prodotto finale sia conforme alle aspettative.\\
-Le specifiche dei test verranno definite nelle prossime versioni del presente documento.
+Le specifiche dei test di integrazione ed unità\textsubscript{G} verranno definite nelle prossime versioni del presente documento.
 \subsection{Test di unità}
 Solitamente un'unità\textsubscript{G} software può essere realizzata da un singolo programmatore, e pertanto il test di unità, che ha il compito di verificare il comportamento di ogni unità\textsubscript{G} isolandola dalle altre, potrà essere a carico dello stesso autore. Il test di unità potrà considerarsi completo una volta che tutte le unità\textsubscript{G} software saranno state verificate.
 
 \subsection{Test di integrazione}
-Nei test di integrazione le singole unità\textsubscript{G} software che insieme realizzano una funzionalità del sistema vengono raggruppate nelle componenti individuate nella fase di progettazione architetturale. Servono quindi proprio per rilevare eventuali difetti di progettazione.
+I test di integrazione si applicano per testare la corretta interazione tra le componenti del sistema. Essi vengono definiti durante la progettazione architetturale e si basano sui componenti in essa specificati.
+Per definire i test di integrazione è necessario selezionare quali funzionalità integrare individuandone le componenti coinvolte e ordinandole per dipendenze crescenti.
+I problemi rilevati dai test di integrazione rappresentano difetti di progettazione o una scarsa qualità dei test di unità. Il numero dei test di integrazione è il necessario per accertare che i dati scambiati tra interfacce siano conformi e che i flussi di controllo siano tutti testati e funzionanti.
 
 \subsection{Test di sistema}
 I test di sistema sono finalizzati all'accertamento della copertura dei requisiti\textsubscript{G} individuati nella fase di analisi, e sono quindi test propedeutici al collaudo.
+\newpage
+\begin{center}
+	\setlength\extrarowheight{5pt}
+	\rowcolors{2}{gray!10}{gray!40}
+	\begin{xltabular}{\textwidth}{|c|X|c|c|}
+		\hline
+		\rowcolor{white}
+		\textbf{ID} & \textbf{Obiettivo test} & \textbf{Stato di implementazione} & \textbf{Requisito correlato}\\
+		\hline
+		TVS01 & Si verifica che l’utente riesca ad effettuare
+		il login in seguito alla corretta compilazione dei campi per le credenziali e del CAPTCHA\textsubscript{G} e dopo aver svolto il proof of work\textsubscript{G} & Non implementato & RF-1\\
+		\hline
+		TVS02 & Si verifica che l'utente possa inserire l'username nel campo corrispondente & Non implementato & RF-2\\
+		\hline
+		TVS03 & Si verifica che l'utente possa inserire la password nel campo corrispondente & Non implementato & RF-3\\
+		\hline
+		TVS04 & Si verifica che l'utente abbia superato con successo il CAPTCHA\textsubscript{G} in caso di autenticazione riuscita & Non implementato & RF-4\\
+		\hline
+		TVS05 & Si verifica che il margine di errore dato all'utente per la soluzione fornita sia calcolato correttamente & Non implementato & RF-5\\
+		\hline
+		TVS06 & Si verifica che l'utente abbia evitato l'honeypot\textsubscript{G} in caso di  autenticazione riuscita & Non implementato & RF-6\\
+		\hline
+		TVS07 & Si verifica che l'utente abbia completato il lavoro di proof of work\textsubscript{G} in caso di autenticazione riuscita & Non implementato & RF-7\\
+		\hline
+		TVS08 & Si verifica che all’utente venga mostrato un errore in caso di autenticazione fallita & Non implementato & RF-8\\
+		\hline
+		TVS09 & Si verifica che all’utente venga mostrato un errore in caso di inserimento di username non valido & Non implementato & RF-9\\
+		\hline
+		TVS10 & Si verifica che all’utente venga mostrato un errore in caso di inserimento di password non valida & Non implementato & RF-10\\
+		\hline
+		TVS11 & Si verifica che all’utente venga mostrato un errore in caso di non superamento del test CAPTCHA\textsubscript{G} immagini & Non implementato & RF-11\\
+		\hline
+		TVS12 & Si verifica che all’utente venga mostrato un errore in caso di non superamento del test honeypot\textsubscript{G} & Non implementato & RF-12\\
+		\hline
+		TVS13 & Si verifica che all’utente venga mostrato un errore in caso di non completamento del lavoro di proof of work\textsubscript{G} & Non implementato & RF-13\\
+		\hline
+		TVS14 & Si verifica che all’utente venga mostrato un errore in caso di superamento dei tentativi consentiti & Non implementato & RF-14\\
+		\hline
+		TVS15 & Si verifica che alla richiesta di un nuovo CAPTCHA\textsubscript{G} da parte dell'utente, questo venga generato correttamente & Non implementato & RF-15\\
+		\hline
+		TVS16 & Si verifica che all’utente venga mostrato un errore in caso di superamento delle richieste di generazione di nuovi CAPTCHA\textsubscript{G} & Non implementato & RF-16\\
+		\hline
+		TVS17 & Si verifica che il sistema fornisca correttamente i CAPTCHA\textsubscript{G} immagini & Non implementato & RF-17\\
+		\hline
+		TVS18 & Si verifica che il sistema generi correttamente la trappola honeypot\textsubscript{G} & Non implementato & RF-18\\
+		\hline
+		TVS19 & Si verifica che il sistema fornisca correttamente il test per il calcolo del proof of work\textsubscript{G} & Non implementato & RF-19\\
+		\hline
+		TVS20 & Si verifica che il sistema mitighi attacchi brute force\textsubscript{G} secondo le aspettative & Non implementato & RF-20\\
+		\hline
+		TVS21 & Si verifica che il sistema fornisca correttamente la funzionalità di verifica del CAPTCHA\textsubscript{G} & Non implementato & RF-21\\
+		\hline
+		TVS22 & Si verifica che il sistema fornisca correttamente la funzionalità di verifica della trappola honeypot\textsubscript{G} & Non implementato & RF-22\\
+		\hline
+		TVS23 & Si verifica che il sistema fornisca correttamente la funzionalità di verifica del proof of work\textsubscript{G} & Non implementato & RF-23\\
+		\hline
+		\rowcolor{white}
+		\caption{Test di sistema}
+	\end{xltabular}
+\end{center}
+
 
 \subsection{Test di regressione}
 I test di regressione vengono utilizzati per accertare che le modifiche effettuate per aggiunta, correzione o rimozione, non pregiudichino le funzionalità già verificate in un periodo precedente, causando regressione. Consistono nella ripetizione dei test già definiti ed eseguiti con esito positivo in precedenza.

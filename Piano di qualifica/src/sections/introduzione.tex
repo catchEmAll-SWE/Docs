@@ -4,24 +4,40 @@
 Questo documento ha come obiettivo quello di fissare gli standard che permetteranno al gruppo \textit{Catch Em All} di garantire qualità al prodotto e ai processi durante l'intera durata del progetto. Verranno quindi definiti metodi di verifica\textsubscript{G} e validazione\textsubscript{G} continui che permetteranno al gruppo di agire in modo rapido e incisivo nel momento in cui si dovranno fare delle correzioni su eventuali errori o andamenti indesiderati. Questo allo scopo di sprecare meno risorse possibili e produrre un prodotto che sia facilmente mantenibile. 
 
 \subsection{Scopo del prodotto}
-Gli attuali sistemi di rilevazione dei bot\textsubscript{G} rispetto agli esseri umani prevedono l'utilizzo di un test CAPTCHA\textsubscript{G}, progettato per cercare di bloccare azioni con fini malevoli nel web da parte di sistemi automatizzati. Nel capitolato “CAPTCHA: Umano o Sovrumano?” viene evidenziata una criticità presente in tali sistemi: grazie ai notevoli progressi nel campo dell’intelligenza artificiale si è nel tempo giunti al punto che i task\textsubscript{G} i quali si ritenevano impossibili (o quantomeno, molto difficili) da svolgere per una macchina ora vengono effettuate dai bot\textsubscript{G} talvolta persino meglio delle persone.
-Dal proponente “Zucchetti S.p.A” viene richiesto lo sviluppo di un'applicazione web contenente una pagina di login con un sistema in grado di rilevare i bot\textsubscript{G} rispetto agli esseri umani in maniera più efficace.
+Dal proponente Zucchetti S.p.A. viene evidenziato, nel capitolato da loro proposto, una criticità negli attuali sistemi di sicurezza sulla rilevazione dei bot\textsubscript{G} rispetto agli esseri umani. Oggi giorno il meccanismo più utilizzato per risolvere questo problema è il test CAPTCHA\textsubscript{G}.\\
+Un bot\textsubscript{G} non è altro che una procedura automatizzata che, in questo caso, ha fini malevoli, come per esempio:
+\begin{itemize}
+	\item Registrazione presso siti web;
+	\item Creazione di spam\textsubscript{G};
+	\item Violare sistemi di sicurezza.
+\end{itemize}
+I bot\textsubscript{G}, grazie alle nuove tecnologie sviluppate con sistemi che utilizzano principalmente l'intelligenza artificiale, riescono a svolgere compiti che fino a poco tempo fa venivano considerati impossibili da svolgere per una macchina.\\
+Ciò evidenzia che i CAPTCHA\textsubscript{G} attuali risultano sempre più obsoleti, non andando a individuare correttamente tutti i bot\textsubscript{G}, se non quasi nessuno.\\
+Un'altra criticità individuata dal proponente è il sistema di classificazione delle immagini che sta effettuando Google grazie al proprio reCAPTCHA\textsubscript{G}, che attualmente è il sistema più diffuso.\\
+Questa criticità nasce dal beneficio che questa big tech\textsubscript{G} ottiene dall'interazione degli utenti nel risolvere le task\textsubscript{G} proposte, che portano alla creazione di enormi dataset\textsubscript{G} di immagini classificate che possono essere utilizzate per l'apprendimento dei propri sistemi di machine learning o vendibili a terzi.\\
+Il capitolato C1 richiede di sviluppare una applicazione web costituita da una pagina di login provvista di questo sistema di rilevazione in grado di distinguere un utente umano da un bot\textsubscript{G}.\\
+L'utente quindi, dopo aver compilato il form in cui inserirà il nome utente e la password, dovrà svolgere una task\textsubscript{G} che sarà il cosiddetto test CAPTCHA\textsubscript{G}.
+
+
 
 \subsection{Glossario}
-Per risolvere ambiguità relative al linguaggio utilizzato nei documenti prodotti, è stato creato un documento denominato \textbf{Glossario v.1.0.0}. Questo documento fornisce le definizioni relative a tutti i termini tecnici utilizzati nei vari documenti, segnalando questi termini con pedice G accanto alla parola.
+Per evitare ambiguità relative al linguaggio utilizzato nei documenti prodotti, viene fornito il \textbf{Glossario v 1.0.0}. In questo documento sono contenuti tutti i termini tecnici, i quali avranno una definizione specifica per comprenderne al meglio il loro significato.\\
+Tutti i termini inclusi nel Glossario, vengono segnalati all'interno del documento Piano di qualifica con una G a pedice.
+
 
 \subsection{Standard di progetto}
-Per lo svolgimento del progetto il gruppo \textit{Catch Em All} ha scelto di utilizzare come riferimenti formativi la serie standard \textbf{ISO/IEC 25000 SQuaRE} per i requisiti\textsubscript{G} e valutazione della qualità di un prodotto e lo standard \textbf{ISO/IEC 15504 SPICE} per definire al meglio la qualità di un processo.
+Per lo svolgimento del progetto il gruppo \textit{Catch Em All} ha scelto di utilizzare come norme di riferimento informativo la serie di standard \textbf{ISO/IEC 25000 SQuaRE} per definire i requisiti\textsubscript{G} e le metriche per valutazione della qualità di un prodotto e lo standard \textbf{ISO/IEC 15504 SPICE} per definire al meglio la qualità e le metriche di un processo.
 
 \subsection{Riferimenti}
-\subsubsection{Riferimenti normativi}\:
+\subsubsection{Riferimenti normativi}
+Riferimenti normativi utilizzati:
 \begin{itemize}
 	\item Norme di Progetto v0.0.4;
 	\item Capitolato d'appalto C1 \textit{CAPTCHA: Umano o Sovrumano?} : \\
 		\url{https://www.math.unipd.it/~tullio/IS-1/2022/Progetto/C1.pdf}.
 \end{itemize}
-	
-\subsubsection{Riferimenti informativi}\:
+\subsubsection{Riferimenti informativi}
+Riferimenti informativi utilizzati:
 \begin{itemize}
 	\item Processi di ciclo di vita - Materiale didattico del corso di Ingegneria del Software: \\
 		\url{https://www.math.unipd.it/~tullio/IS-1/2022/Dispense/T03.pdf};
@@ -34,7 +50,7 @@ Per lo svolgimento del progetto il gruppo \textit{Catch Em All} ha scelto di uti
 	\item Standard SPICE: \\
 		\url{https://en.wikipedia.org/wiki/ISO/IEC_15504};
 	\item Matriche di prodotto: \\
-		\url{https://metriche-per-il-software-pa.readthedocs.io/it/latest/documento-in-consultazione/metriche-e-strumenti.html#misurazioni-di-manutenibilita}
+		\url{https://metriche-per-il-software-pa.readthedocs.io/it/latest/documento-in-consultazione/metriche-e-strumenti.html#misurazioni-di-manutenibilita};
 	\item Metriche di progetto: \\
 		\url{https://it.wikipedia.org/wiki/Metriche_di_progetto}.
 \end{itemize}
