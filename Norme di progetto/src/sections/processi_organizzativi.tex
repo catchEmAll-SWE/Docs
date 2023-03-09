@@ -40,7 +40,7 @@
 		\item L'analisi di metodi per la gestione della qualità.
 	\end{itemize}
 	\subsubsubsection{Analista}
-	L'analista si occupa di analizzare a fondo il problema e di individuare i vari requisiti\textsubscript{G} che dovrà avere il prodotto finale in base a ciò che si ricava dal capitolato e dai successivi incontri con il proponente. \\
+	A seguito di un'approfondita analisi del capitolato e dai diversi incontri effettuati con il proponente, si occuperà dell'individuazione dei vari requisiti. \\ 
 	L'analista quindi gestisce:
 	\begin{itemize}
 		\item Lo studio approfondito del dominio\textsubscript{G} del problema;
@@ -68,7 +68,7 @@
 	Il verificatore si occupa di tutte le operazioni di verifica\textsubscript{G} e validazione\textsubscript{G} dei vari prodotti parziali e finali del progetto. \\
 	Il verificatore quindi gestisce:
 	\begin{itemize}
-		\item La verifica\textsubscript{G} e validazione\textsubscript{G} dei prodotti parziali o finali in fase di revisione in modo che rispettino gli obiettivi di qualità imposti nel documento \textit{Piano\_di\_qualifica v 1.0.0}. I seguenti prodotti se a norma verranno di conseguenza integrati;
+		\item La verifica\textsubscript{G} e validazione\textsubscript{G} dei prodotti parziali o finali, in fase di revisione in modo che rispettino gli obiettivi di qualità imposti nel documento \textit{Piano\_di\_qualifica v 1.0.0}. I seguenti prodotti se a norma verranno di conseguenza integrati;
 		\item Segnalare gli eventuali errori riscontrati.
 	\end{itemize}
     \subsubsection{Gestione delle comunicazioni}
@@ -100,7 +100,7 @@
         \subsubsubsection{Incontri interni}
         Gli incontri interni sono necessari sia per una corretta adozione del \textit{framework Scrum\textsubscript{G}}
         sia per permettere al team di interagire direttamente, discutendo, proponendo e valutando idee, problematiche e possibili 
-        soluzioni: per questo si tratta di uno strumento largamente utilizzato
+        soluzioni: per questo si tratta di uno strumento largamente utilizzato.
         \newline
         Si predilige la modalità virtuale per comodità cercando di schedulare riunioni in cui tutti riescano a partecipare.
         \newline
@@ -109,19 +109,18 @@
             \item Canali testuali;
             \item Canali video (con possibilità di condivisione schermo).
         \end{itemize}
-        Al termine degli incontri il responsabile di progetto inserisce nello sprint\textsubscript{G} corrente il compito di redigere i verbali. 
+        Al termine degli incontri il responsabile di progetto assegna la task di redazione dei verbali a un componente del gruppo nello sprint\textsubscript{G} corrente. 
 
         \subsubsubsection{Incontri esterni}
         Gli incontri esterni sono schedulati in seguito alla presenza di dubbi (implementativi, riguardanti requisiti\textsubscript{G} o richieste di altro tipo) all'interno del 
         team: questi incontri sono preceduti dallo svolgimento di una o più riunioni interne nelle quali si affrontano e si definiscono tali problematiche.
         \newline
-        Per quanto riguarda l'organizzazione viene contattato tramite email il referente di progetto proponendogli diverse date e orari affinchè si trovi quella 
+        Per quanto riguarda l'organizzazione viene contattato tramite email il referente di progetto proponendogli diverse date e orari, affinchè si trovi quella 
         più comoda per entrambe le parti. 
         \newline
         Come per quelli interni gli incontri esterni sono tenuti in modalità virtuale ma a loro differenza si utilizza una riunione \textit{Zoom} definita dal gruppo. 
         \newline
-        I verbali hanno lo scopo di documentare in maniera dettagliata tutti gli argomenti trattati affinchè si possa costruire uno storico identificando
-        e motivando le decisioni prese.
+        I verbali hanno lo scopo di documentare in maniera dettagliata tutti gli argomenti trattati affinchè si possa costruire uno storico, il quale è volto a 	identificare e motivare le decisioni prese.
         \newline
         Come per quelli interni il responsabile di progetto inserisce nello sprint\textsubscript{G} corrente il compito di redigere tali documenti.
 
@@ -162,7 +161,7 @@ In JIRA\textsubscript{G} vengono create ed organizzate le issue\textsubscript{G}
 	\begin{lstlisting}
 		CEA-num #time ww dd hh mm <testo aggiuntivo>
 	\end{lstlisting}
-	Così facendo è permesso specificare a scelta settimane, giorni, ore e minuti di lavoro, ad esempio:
+	Così facendo è permesso specificare a libera scelta le settimane, giorni, ore e minuti di lavoro. Ad esempio:
 	\begin{lstlisting}
 		CEA-26 #time 1h aggiunto github Workflow\textsubscript{G}
 	\end{lstlisting}
@@ -172,8 +171,8 @@ In JIRA\textsubscript{G} vengono create ed organizzate le issue\textsubscript{G}
 		CEA-num #review #time ww dd hh mm <testo aggiuntivo>
 	\end{lstlisting}
 	Questo permette lo spostamento della issue\textsubscript{G} dallo stato "in progress" allo stato "in review".\\
-	Per permettere la revisione è necessario aprire una pull request, il titolo deve corrispondere al nome del branch\textsubscript{G}.
-	Una volta revisionata la issue\textsubscript{G}, se presenta qualche problema può essere spostata allo stato "in progress" dal pannello JIRA\textsubscript{G}. Altrimenti attraverso una pull request nel ramo "main" e con il seguente comando posto \textbf{nel TITOLO del commit\textsubscript{G} di chiusura della pull request} la issue\textsubscript{G} verrà chiusa e considerata completata:
+	Per permettere la revisione è necessario aprire una pull request. Il titolo deve corrispondere al nome del branch\textsubscript{G}.
+	Una volta revisionata la issue\textsubscript{G}, nel caso in cui presenti qualche problema può essere spostata allo stato "in progress" dal pannello JIRA\textsubscript{G}. Altrimenti attraverso una pull request nel ramo "main" e con il seguente comando posto \textbf{nel TITOLO del commit\textsubscript{G} di chiusura della pull request}, la issue\textsubscript{G} verrà chiusa e considerata completata:
 	\begin{lstlisting}
 		CEA-num #close <testo aggiuntivo>
 	\end{lstlisting}
@@ -187,8 +186,8 @@ In JIRA\textsubscript{G} vengono create ed organizzate le issue\textsubscript{G}
 	\end{figure}
 	\clearpage
 
-	\subsubsection{Issues tracking}
-	JIRA\textsubscript{G}, piattaforma che offre un servizio di \textit{Issue\textsubscript{G} Tracking} è il supporto scelto vista la qualità ed il numero di servizi ed estensioni che offre.
+	\subsubsection{Issue tracking}
+	JIRA\textsubscript{G}, piattaforma che offre un servizio di \textit{Issue\textsubscript{G} Tracking}, è il supporto scelto vista la qualità ed il numero di servizi ed estensioni che offre.
 	\newline
 	La definizione dei ticket è regolata dalla seguente convenzione:
 	\begin{itemize}
@@ -210,7 +209,7 @@ In JIRA\textsubscript{G} vengono create ed organizzate le issue\textsubscript{G}
 		\end{itemize}
 	\end{itemize}
 
-	JIRA\textsubscript{G} dispone di un'integrazione con github\textsubscript{G} che fornisce un meccanismo chiamato \textit{smart commit\textsubscript{G}} il quale permette la transizione dei ticket da uno stato ad un'altro attraverso comandi posti nei commit\textsubscript{G} stessi, la sintassi utilizzata è la seguente
+	JIRA\textsubscript{G} dispone di un'integrazione con github\textsubscript{G} che fornisce un meccanismo chiamato \textit{smart commit\textsubscript{G}}, il quale permette la transizione dei ticket da uno stato ad un altro, attraverso comandi posti nei commit\textsubscript{G} stessi, la sintassi utilizzata è la seguente:
 	\begin{lstlisting}
 	CEA-number #command <message body describing the commit\textsubscript{G}>
 	\end{lstlisting}
