@@ -1,7 +1,7 @@
 \section{Casi d'uso\textsubscript{G}}
 
 \subsection{Obiettivi}
-La sezione 3 Casi d'uso\textsubscript{G} ha come obiettivo l'identificazione e la descrizione di tutti i casi d'uso\textsubscript{G}, ovvero interazioni tra sistema ed attori\textsubscript{G}, individuati dagli analisti nel tempo tramite lo studio del capitolato d'appalto, del dominio\textsubscript{G}, e tramite incontri con il committente.
+Questa sezione ha come obiettivo l'identificazione e la descrizione di tutti i casi d'uso\textsubscript{G}, ovvero interazioni tra sistema ed attori\textsubscript{G}, individuati dagli analisti nel tempo tramite lo studio del capitolato d'appalto, del dominio\textsubscript{G}, e tramite incontri con il committente.
 
 \subsection{Attori\textsubscript{G}}
 Dato che il requisito obbligatorio richiede la costruzione di una pagina di login che presenti un sistema in grado di distinguere un utente umano da un robot, il prodotto presenterà due tipologie principali di attori\textsubscript{G}:
@@ -134,14 +134,14 @@ La WebApp, che potrà accedere alle funzionalità offerte dal servizio CAPTCHA\t
 
 \textbf{Generalizzazioni}: L'utente ha commesso uno dei seguenti errori:
 \begin{enumerate}
-	\item Ha inserito delle credenziali errate [UC2.1];
+	\item Ha inserito delle credenziali non valide [UC2.1];
 	\item Ha sbagliato la classificazione delle immagini [UC2.2];
 	\item E' caduto nella trappola honeypot\textsubscript{G} [UC2.3];
 	\item Non ha calcolato il proof of work\textsubscript{G} [UC2.4];
 	\item Ha superato il numero massimo di tentativi disponibili [UC2.5].
 \end{enumerate}
 
-\paragraph{UC2.1 - Credenziali errate}
+\paragraph{UC2.1 - Credenziali non valide}
 \textbf{Attore primario:} Utente generico.\\
 \textbf{Precondizioni}: L’utente non ha inserito le credenziali corrette.\\
 \textbf{Postcondizioni}: L’utente visualizza un messaggio di errore e l’operazione di autenticazione fallisce.\\
@@ -149,37 +149,7 @@ La WebApp, che potrà accedere alle funzionalità offerte dal servizio CAPTCHA\t
 \textbf{Scenario principale}:
 \begin{enumerate}
     \item L'utente inserisce credenziali non valide per l'autenticazione nel sistema;
-	\item L’utente visualizza un messaggio di errore;
-	\item Il numero di tentativi consecutivi compiuti dall’utente aumenta di 1.
-\end{enumerate}
-
-\textbf{Generalizzazioni}:
-\begin{enumerate}
-    \item L'utente inserisce un'username non valida per l'autenticazione [UC2.1.1];
-	\item L'utente inserisce una password non valida per l'autenticazione [UC2.1.2].
-\end{enumerate}
-
-\subparagraph{UC2.1.1 - } \textbf{Username errata}\\
-\textbf{Attore primario:} Utente generico.\\
-\textbf{Precondizioni}: L’utente ha inserito un'username non valida per l'autenticazione.\\
-\textbf{Postcondizioni}: L’utente visualizza un messaggio di errore e l’operazione di autenticazione fallisce.\\
-
-\textbf{Scenario principale}:
-\begin{enumerate}
-    \item L'utente inserisce un'username non riconosciuta dal sistema, compresa la possibilità che l'username sia vuota;
-	\item L’utente visualizza un messaggio di errore;
-	\item Il numero di tentativi consecutivi compiuti dall’utente aumenta di 1.
-\end{enumerate}
-
-\subparagraph{UC2.1.2 - } \textbf{Password errata}\\
-\textbf{Attore primario:} Utente generico.\\
-\textbf{Precondizioni}: L’utente ha inserito una password non valida per l'autenticazione.\\
-\textbf{Postcondizioni}: L’utente visualizza un messaggio di errore e l’operazione di autenticazione fallisce.\\
-
-\textbf{Scenario principale}:
-\begin{enumerate}
-    \item L'utente inserisce una password non corretta per l'username scelta, compresa la possibilità che la password sia vuota;
-	\item L’utente visualizza un messaggio di errore;
+	\item L’utente visualizza un generico messaggio di errore, con la finalità di non compromettere la sicurezza del sistema dando informazioni sugli account ad un potenziale attaccante;
 	\item Il numero di tentativi consecutivi compiuti dall’utente aumenta di 1.
 \end{enumerate}
 
@@ -286,8 +256,9 @@ La WebApp, che potrà accedere alle funzionalità offerte dal servizio CAPTCHA\t
 \textbf{Scenario principale}:
 \begin{enumerate}
     \item La WebApp richiede la generazione di un CAPTCHA\textsubscript{G};
-    \item Il CAPTCHA\textsubscript{G} immagini viene generato utilizzando le immagini presenti nel database interno, assieme ad un'immagine aggiuntiva che funge da honeypot\textsubscript{G} [UC5.1];
-    \item Viene generato il Proof of Work [UC5.2];
+    \item Il CAPTCHA\textsubscript{G} immagini viene generato utilizzando le immagini presenti nel database\textsubscript{G} interno;
+    \item Viene generata un'immagine aggiuntiva che funge da honeypot\textsubscript{G} [UC5.2];
+    \item Viene generato il Proof of Work\textsubscript{G} [UC5.3];
     \item Il CAPTCHA\textsubscript{G} viene restituito alla WebApp.
 \end{enumerate}
 
@@ -299,10 +270,21 @@ La WebApp, che potrà accedere alle funzionalità offerte dal servizio CAPTCHA\t
 \textbf{Scenario principale}:
 \begin{enumerate}
     \item La WebApp richiede la generazione del CAPTCHA\textsubscript{G} immagini;
-    \item Viene creato il CAPTCHA\textsubscript{G} immagini assieme all'immagine aggiuntiva che funge da honeypot.
+    \item Viene creato il CAPTCHA\textsubscript{G} immagini.
 \end{enumerate}
 
-\paragraph{UC5.2  - Generazione proof of work\textsubscript{G}}
+\paragraph{UC5.2  - Generazione honeypot\textsubscript{G}}
+\textbf{Attore primario:} WebApp.\\
+\textbf{Precondizioni}: La WebApp richiede la generazione dell'honeypot\textsubscript{G}.\\
+\textbf{Postcondizioni}: Viene generato l'honeypot\textsubscript{G}.\\
+
+\textbf{Scenario principale}:
+\begin{enumerate}
+    \item La WebApp richiede la generazione dell'honeypot\textsubscript{G};
+    \item Viene creato l'honeypot\textsubscript{G}.
+\end{enumerate}
+
+\paragraph{UC5.3  - Generazione proof of work\textsubscript{G}}
 \textbf{Attore primario:} WebApp.\\
 \textbf{Precondizioni}: La WebApp richiede la generazione del proof of work\textsubscript{G}.\\
 \textbf{Postcondizioni}: Viene generato il proof of work\textsubscript{G}.\\
@@ -330,13 +312,14 @@ La WebApp, che potrà accedere alle funzionalità offerte dal servizio CAPTCHA\t
     \item La WebApp richiede la verifica della corretteza del CAPTCHA\textsubscript{G} compilato;
     \item Viene verificata la correttezza di:
     \begin{itemize}
-		\item CAPTCHA\textsubscript{G} immagini e superamento honeypot [UC6.1];
-		\item Proof of work\textsubscript{G} [UC6.2].
+		\item CAPTCHA\textsubscript{G} immagini [UC6.1];
+        \item Superamento honeypot\textsubscript{G} [UC6.2];
+		\item Proof of work\textsubscript{G} [UC6.3].
     \end{itemize}
     \item Viene emesso il risultato booleano\textsubscript{G} e restituito alla WebApp.
 \end{enumerate}
 
-\paragraph{UC6.1 - Verifica CAPTCHA\textsubscript{G} immagini e superamento honeypot}
+\paragraph{UC6.1 - Verifica CAPTCHA\textsubscript{G} immagini}
 \textbf{Attore primario:} WebApp.\\
 \textbf{Precondizioni}: La WebApp richiede la verifica del CAPTCHA\textsubscript{G} immagini.\\
 \textbf{Postcondizioni}: Il superamento del CAPTCHA\textsubscript{G} immagini viene verificato.\\
@@ -344,10 +327,21 @@ La WebApp, che potrà accedere alle funzionalità offerte dal servizio CAPTCHA\t
 \textbf{Scenario principale}:
 \begin{enumerate}
     \item La WebApp richiede la verifica della corretteza del CAPTCHA\textsubscript{G} immagini;
-    \item In base alla percentuale di correttezza viene verificato se il CAPTCHA\textsubscript{G} immagini è stato superato o meno, e che l'honeypot sia stato superato.
+    \item In base alla percentuale di correttezza viene verificato se il CAPTCHA\textsubscript{G} immagini è stato superato o meno.
 \end{enumerate}
 
-\paragraph{UC6.2 - Verifica proof of work\textsubscript{G}}
+\paragraph{UC6.2 - Verifica superamento honeypot\textsubscript{G}}
+\textbf{Attore primario:} WebApp.\\
+\textbf{Precondizioni}: La WebApp richiede la verifica del superamento dell'honeypot\textsubscript{G}.\\
+\textbf{Postcondizioni}: Il superamento dell'honeypot\textsubscript{G} viene verificato.\\
+
+\textbf{Scenario principale}:
+\begin{enumerate}
+    \item La WebApp richiede la verifica del superamento dell'honeypot\textsubscript{G};
+    \item Viene verificato se l'honeypot\textsubscript{G} è stato superato.
+\end{enumerate}
+
+\paragraph{UC6.3 - Verifica proof of work\textsubscript{G}}
 \textbf{Attore primario:} WebApp.\\
 \textbf{Precondizioni}: La WebApp richiede la verifica del superamento del Proof of Work\textsubscript{G}.\\
 \textbf{Postcondizioni}: Il superamento del proof of work\textsubscript{G} viene verificato.\\

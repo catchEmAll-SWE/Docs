@@ -17,7 +17,7 @@ Verrà utilizzato il dataset\textsubscript{G} pubblico Unsplash, un dataset\text
 Il team si occuperà di generare un algoritmo\textsubscript{G} ad hoc, in linguaggio Python\textsubscript{G}, che presa un'immagine dal dataset\textsubscript{G} Unsplash, individua il soggetto dell'immagine per poi ridefinirne solo i contorni in bianco e lasciando tutto il resto dell'immagine in nero.  
 
 \subsubsection{Algoritmo\textsubscript{G} di controllo sulla correttezza della soluzione generata dall'utente}
-Ricevuta la soluzione generata dall'utente in risposta al CAPTCHA\textsubscript{G} fornitogli, vi è la necessità di creare un algoritmo\textsubscript{G} che verifichi la correttezza o meno della soluzione proposta. In caso di correttezza, l'utente effettuerà il login, altrimenti gli verrà generato un altro CAPTCHA\textsubscript{G} da risolvere, con immagini diverse e un'altra classe da individuare all'interno dell'insieme, diminuendo di un numero il numero di tentativi rimasti per autenticarsi. Al termine di questi tentativi, l'utente verrà bloccato per 20 minuti prima di poter riprovare ad accedere. 
+Ricevuta la soluzione generata dall'utente in risposta al CAPTCHA\textsubscript{G} fornitogli, vi è la necessità di creare un algoritmo\textsubscript{G} che verifichi la correttezza o meno della soluzione proposta. In caso di correttezza, l'utente effettuerà il login, altrimenti gli verrà generato un altro CAPTCHA\textsubscript{G} da risolvere, con immagini diverse e un'altra classe da individuare all'interno dell'insieme, il numero di tentativi rimasti per autenticarsi verrà diminuito di uno. Al termine di questi tentativi, l'utente verrà bloccato per 20 minuti prima di poter riprovare ad accedere. 
 
 \subsection{Obblighi di Progettazione:}\:
 \begin{itemize}
@@ -37,12 +37,13 @@ Ricevuta la soluzione generata dall'utente in risposta al CAPTCHA\textsubscript{
 \subsection{Tecnologie utilizzate}
 Per sviluppare la piattaforma verranno utilizzate le seguenti tecnologie:
 \begin{itemize}
-    \item Python\textsubscript{G}: Algoritmi di elaborazione delle immagini e controllo dei documenti;
-    \item PHP\textsubscript{G}: Sviluppo pagine web e backend;
-    \item HTML5\textsubscript{G}: Sviluppo interfaccia web;
-    \item JavaScript\textsubscript{G}: Sviluppo interfaccia web, calcolo proof of work\textsubscript{G} e sviluppo web worker;
-    \item CSS3\textsubscript{G}: Sviluppo interfaccia web;
-    \item Sql\textsubscript{G}: Per la creazione di database\textsubscript{G} interni.
+    \item \textbf{Python\textsubscript{G}}: Algoritmi di elaborazione delle immagini e controllo dei documenti;
+    \item \textbf{PHP\textsubscript{G}}: Sviluppo pagine web e backend;
+    \item \textbf{HTML5\textsubscript{G}}: Sviluppo interfaccia web;
+    \item \textbf{JavaScript\textsubscript{G}}: Sviluppo interfaccia web, calcolo proof of work\textsubscript{G} e sviluppo web worker;
+    \item \textbf{CSS3\textsubscript{G}}: Sviluppo interfaccia web;
+    \item \textbf{Sql\textsubscript{G}}: Per la creazione di database\textsubscript{G} interni;
+    \item \textbf{API\textsubscript{G} di Unsplash}: Per scaricare e ottenere le informazioni delle immagini dal database\textsubscript{G} di Unsplash.
 \end{itemize}
 
 
