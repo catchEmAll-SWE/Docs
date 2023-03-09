@@ -211,8 +211,7 @@ def titlePageVersionCorrectness(titlePage_file, version):
     :type version: str
     """
     if version:
-        version_search = re.findall(r'\\textbf\{Versione\}\s*&\s*\(' + version +
-                                    r'\)\s*\\\\\s*', titlePage_file.read_text(encoding="utf-8"))
+        version_search = re.findall(r'\\textbf\{Versione\}\s*&\s*.*' + version, titlePage_file.read_text(encoding="utf-8"))
         if len(version_search) > 1:
             PrintSimpleError.print_error(
                 'Multiple versions found in ' + str(titlePage_file) + ', check for duplicates')
