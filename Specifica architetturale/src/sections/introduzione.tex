@@ -1,0 +1,59 @@
+\section{Introduzione}
+
+\subsection{Scopo del documento}
+Questo documento ha lo scopo di servire da linea guida per gli sviluppatori che andranno ad estendere o manutenere il prodotto. 
+Di seguito lo sviluppatore troverà nel documento tutte le informazioni riguardanti i linguaggi e le tecnologie utilizzate, l’architettura del sistema e le scelte progettuali effettuate
+per il prodotto.
+
+\subsection{Scopo del prodotto}
+Dal proponente Zucchetti S.p.A. viene evidenziato, nel capitolato da loro proposto, una criticità negli attuali sistemi di sicurezza sulla rilevazione dei bot\textsubscript{G} rispetto agli esseri umani. Oggi giorno il meccanismo più utilizzato per risolvere questo problema è il test CAPTCHA\textsubscript{G}.\\
+Un bot\textsubscript{G} non è altro che una procedura automatizzata che, in questo caso, ha fini malevoli, come per esempio:
+\begin{itemize}
+	\item Registrazione presso siti web;
+	\item Creazione di spam\textsubscript{G};
+	\item Violare sistemi di sicurezza.
+\end{itemize}
+I bot\textsubscript{G}, grazie alle nuove tecnologie sviluppate con sistemi che utilizzano principalmente l'intelligenza artificiale, riescono a svolgere compiti che fino a poco tempo fa venivano considerati impossibili da svolgere per una macchina.\\
+Ciò evidenzia che i CAPTCHA\textsubscript{G} attuali risultano sempre più obsoleti, non andando a individuare correttamente tutti i bot\textsubscript{G}, se non quasi nessuno.\\
+Un'altra criticità individuata dal proponente è il sistema di classificazione delle immagini che sta effettuando Google grazie al proprio reCAPTCHA\textsubscript{G}, che attualmente è il sistema più diffuso.\\
+Questa criticità nasce dal beneficio che questa big tech\textsubscript{G} ottiene dall'interazione degli utenti nel risolvere le task\textsubscript{G} proposte, che portano alla creazione di enormi dataset\textsubscript{G} di immagini classificate che possono essere utilizzate per l'apprendimento dei propri sistemi di machine learning o vendibili a terzi.\\
+Il capitolato C1 richiede di sviluppare una applicazione web costituita da una pagina di login provvista di questo sistema di rilevazione in grado di distinguere un utente umano da un bot\textsubscript{G}.\\
+L'utente quindi, dopo aver compilato il form in cui inserirà il nome utente e la password, dovrà svolgere una task\textsubscript{G} che sarà il cosiddetto test CAPTCHA\textsubscript{G}.
+
+
+
+\subsection{Glossario}
+Per evitare ambiguità relative al linguaggio utilizzato nei documenti prodotti, viene fornito il \textbf{Glossario v 1.0.0}. In questo documento sono contenuti tutti i termini tecnici, i quali avranno una definizione specifica per comprenderne al meglio il loro significato.\\
+Tutti i termini inclusi nel Glossario, vengono segnalati all'interno del documento Piano di qualifica con una G a pedice.
+
+
+\subsection{Standard di progetto}
+Per lo svolgimento del progetto il gruppo \textit{Catch Em All} ha scelto di utilizzare come norme di riferimento informativo la serie di standard \textbf{ISO/IEC 25000 SQuaRE} per definire i requisiti\textsubscript{G} e le metriche per valutazione della qualità di un prodotto e lo standard \textbf{ISO/IEC 15504 SPICE} per definire al meglio la qualità e le metriche di un processo.
+
+\subsection{Riferimenti}
+\subsubsection{Riferimenti normativi}
+Riferimenti normativi utilizzati:
+\begin{itemize}
+	\item Norme di Progetto v0.0.4;
+	\item Capitolato d'appalto C1 \textit{CAPTCHA: Umano o Sovrumano?} : \\
+		\url{https://www.math.unipd.it/~tullio/IS-1/2022/Progetto/C1.pdf}.
+\end{itemize}
+\subsubsection{Riferimenti informativi}
+Riferimenti informativi utilizzati:
+\begin{itemize}
+	\item Processi di ciclo di vita - Materiale didattico del corso di Ingegneria del Software: \\
+		\url{https://www.math.unipd.it/~tullio/IS-1/2022/Dispense/T03.pdf};
+	\item Qualità di prodotto\textsubscript{G} - Materiale didattico del corso di Ingegneria del Software: \\
+		\url{https://www.math.unipd.it/~tullio/IS-1/2022/Dispense/T08.pdf};
+	\item Qualità di processo\textsubscript{G} - Materiale didattico del corso di Ingegneria del Software: \\
+		\url{https://www.math.unipd.it/~tullio/IS-1/2022/Dispense/T09.pdf};
+	\item Standard SQuaRE: \\
+		\url{http://www.iso25000.it/styled/};
+	\item Standard SPICE: \\
+		\url{https://en.wikipedia.org/wiki/ISO/IEC_15504};
+	\item Matriche di prodotto: \\
+		\url{https://metriche-per-il-software-pa.readthedocs.io/it/latest/documento-in-consultazione/metriche-e-strumenti.html#misurazioni-di-manutenibilita};
+	\item Metriche di progetto: \\
+		\url{https://it.wikipedia.org/wiki/Metriche_di_progetto}.
+\end{itemize}
+
