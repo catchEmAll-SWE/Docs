@@ -10,7 +10,7 @@ L'utente, dopo aver scelto la modalità di utilizzo desiderata, potrà consultar
 Di seguito vengono elencati i passaggi per avviare l'applicazione senza doverla installare:
 \begin{itemize}
 	\item Avviare uno dei browser\textsubscript{G} compatibili con l'applicazione;
-	\item Digitare il seguente indirizzo: \textbf{\href{https://swe.gdr00.it}}{https://swe.gdr00.it} 
+	\item Digitare il seguente indirizzo: \textbf{\href{https://swe.gdr00.it}}{https://swe.gdr00.it} .
 \end{itemize}    
 
 \subsection{Reinstallazione del prodotto software}
@@ -33,14 +33,14 @@ systemctl enable nginx.service && systemctl enable php-fpm php-dom
 \subsubsection{Verifica delle estensioni\textsubscript{G}}
 Verificare se le seguenti estensioni\textsubscript{G} sono abilitate, e in caso contrario abilitarle:
 \begin{itemize}
-	\item OpenSSL PHP Extension
-	\item PDO PHP Extension
- \item Mbstring PHP Extension
- \item Tokenizer PHP Extension
- \item XML PHP Extension
- \item Ctype PHP Extension
- \item JSON PHP Extension
- \item BCMath PHP Extension 
+	\item OpenSSL PHP Extension;
+	\item PDO PHP Extension;
+ \item Mbstring PHP Extension;
+ \item Tokenizer PHP Extension;
+ \item XML PHP Extension;
+ \item Ctype PHP Extension;
+ \item JSON PHP Extension;
+ \item BCMath PHP Extension.
 \end{itemize}   
 
 \subsubsection{Clonare il repository\textsubscript{G}}
@@ -76,8 +76,9 @@ sudo chmod -R 775 bootstrap/cache
 sudo chown -R username:www-data /full/path/to/dev/captcha/bootstrap/cache 
 sudo chown -R username:www-data /full/path/to/dev/captcha/storage
 \end{verbatim}
+Osservazione:
 \begin{itemize}
-	\item \textit{La parte \textbf{username} dei comandi \textbf{chown} va sostituita con l'effective userID\textsubscript{G}. Se non lo si conosce, lo si può ottenere con il comando \textbf{whoami}.} 
+	\item La parte \textbf{username} dei comandi \textbf{chown} va sostituita con l'effective userID\textsubscript{G}. Se non lo si conosce, lo si può ottenere con il comando \textbf{whoami}. 
 \end{itemize} 
 
 \subsubsection{Modificare il file di configurazione di Nginx\textsubscript{G}}
@@ -186,7 +187,7 @@ pwd
 \end{verbatim}
 
 \subsubsection{Modificare il file captcha.test}
-Aprire in modifica il file \textbf{captcha.test} che si trova al percorso \textit{/etc/nginx/sites-available/captcha.test } e impostarlo come segue:
+Aprire in modifica il file \textbf{captcha.test} che si trova al percorso \textit{/etc/nginx/sites-available/captcha.test } e impostarlo come segue. Attenzione: il percorso indicato alla voce \textbf{root} deve essere l'output del comando \textbf{pwd} ottenuto al precedente paragrafo \textbf{3.2.9}.
 \begin{verbatim}
 server {
     listen 80;
@@ -222,10 +223,6 @@ server {
 }
 \end{verbatim}
 
-\begin{itemize}
-	\item \textit{Il percorso indicato alla voce \textbf{root} deve essere l'output del comando \textbf{pwd} ottenuto al precedente paragrafo \textbf{3.2.9}.} 
-\end{itemize} 
-
 \subsubsection{Creare il link simbolico\textsubscript{G}}
 Eseguire il seguente comando per creare il link simbolico\textsubscript{G} del file \textbf{captcha.test} nella cartella \textbf{sites-enable} usata da Nginx\textsubscript{G}:
 \begin{verbatim}
@@ -248,5 +245,5 @@ Aprire in modifica il file \textbf{hosts} che si trova al percorso \textit{/etc/
 Se tutti i passaggi sono stati eseguiti correttamente, sarà possibile aprire l'applicazione seguendo questi passaggi:
 \begin{itemize}
 	\item Avviare uno dei browser\textsubscript{G} compatibili con l'applicazione;
-	\item Digitare il seguente indirizzo: \textbf{\href{captcha.test}}{captcha.test} 
+	\item Digitare il seguente indirizzo: \textbf{\href{captcha.test}}{captcha.test} .
 \end{itemize}    
