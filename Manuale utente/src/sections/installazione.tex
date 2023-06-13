@@ -1,0 +1,252 @@
+\section{Installazione}
+Il prodotto software fornito può essere utilizzato nelle seguenti modalità:
+\begin{itemize}
+	\item \textbf{Senza installazione}: per l'utente che preferisce utilizzare l'applicazione disponibile online digitando l'indirizzo nella barra di ricerca del proprio browser\textsubscript{G};
+	\item \textbf{Reinstallazione}: per l'utente che desidera installare il prodotto software in locale.
+\end{itemize}    
+L'utente, dopo aver scelto la modalità di utilizzo desiderata, potrà consultare la relativa sezione per ulteriori indicazioni.
+
+\subsection{Utilizzo dell'applicazione senza installazione}
+Di seguito vengono elencati i passaggi per avviare l'applicazione senza doverla installare:
+\begin{itemize}
+	\item Avviare uno dei browser\textsubscript{G} compatibili con l'applicazione;
+	\item Digitare il seguente indirizzo: \textbf{\href{https://swe.gdr00.it}}{https://swe.gdr00.it} 
+\end{itemize}    
+
+\subsection{Reinstallazione del prodotto software}
+Di seguito vengono elencati i passaggi per l'installazione dell'applicazione in un server\textsubscript{G} locale. Si consiglia di seguire i passaggi di questa sezione della guida nell'ordine in cui vengono presentati.
+
+\subsubsection{Installare il sistema operativo\textsubscript{G}}
+Sul computer scelto come server\textsubscript{G} dell'applicazione installare il seguente sistema operativo\textsubscript{G}:
+\begin{verbatim}
+Ubuntu 20.04.6 LTS (Focal Fossa)
+\end{verbatim} \\
+
+\subsubsection{Scaricare i pacchetti\textsubscript{G}}
+Eseguire il seguente comando per scaricare i pacchetti\textsubscript{G} per l'utilizzo di PHP\textsubscript{G}, Nginx\textsubscript{G}, sqlite3\textsubscript{G}, FPM\textsubscript{G}, cURL\textsubscript{G}, mbstring\textsubscript{G}:
+\begin{verbatim}
+sudo apt update && sudo apt full-upgrade -y && 
+apt install nginx php php-fpm php-sqlite3 php-curl php-mbstring -y && 
+systemctl enable nginx.service && systemctl enable php-fpm php-dom
+\end{verbatim}
+
+\subsubsection{Verifica delle estensioni\textsubscript{G}}
+Verificare se le seguenti estensioni\textsubscript{G} sono abilitate, e in caso contrario abilitarle:
+\begin{itemize}
+	\item OpenSSL PHP Extension
+	\item PDO PHP Extension
+ \item Mbstring PHP Extension
+ \item Tokenizer PHP Extension
+ \item XML PHP Extension
+ \item Ctype PHP Extension
+ \item JSON PHP Extension
+ \item BCMath PHP Extension 
+\end{itemize}   
+
+\subsubsection{Clonare il repository\textsubscript{G}}
+Spostarsi nella cartella \textit{/var/www} del web server\textsubscript{G}, in modo che poi esso abbia tutti i permessi necessari, e poi clonare il repository\textsubscript{G} da GitHub\textsubscript{G}:
+\begin{verbatim}
+cd /var/www
+git clone https://github.com/catchEmAll-SWE/dev.git
+\end{verbatim}
+
+\subsubsection{Installare il gestore di pacchetti\textsubscript{G} PHP\textsubscript{G}}
+\begin{verbatim}
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+sudo php composer-setup.php --install-dir=/bin --filename=composer
+composer global require laravel/installer
+echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
+source ~/.bashrc
+cd /dev/captcha
+cp .env.example .env
+composer install
+composer require --dev knuckleswtf/scribe
+php artisan key:generate
+php artisan scribe:generate
+\end{verbatim}
+
+\subsubsection{Impostazione dei permessi}
+Spostarsi nella cartella \textit{cd/dev/captcha} ed eseguire i seguenti comandi, in modo che Nginx\textsubscript{G} abbia i permessi per modificare i file nelle cartelle dedicate:
+\begin{verbatim}
+cd/dev/captcha
+
+sudo chmod -R 775 storage
+sudo chmod -R 775 bootstrap/cache
+
+sudo chown -R username:www-data /full/path/to/dev/captcha/bootstrap/cache 
+sudo chown -R username:www-data /full/path/to/dev/captcha/storage
+\end{verbatim}
+\begin{itemize}
+	\item \textit{La parte \textbf{username} dei comandi \textbf{chown} va sostituita con l'effective userID\textsubscript{G}. Se non lo si conosce, lo si può ottenere con il comando \textbf{whoami}.} 
+\end{itemize} 
+
+\subsubsection{Modificare il file di configurazione di Nginx\textsubscript{G}}
+Aprire in modifica il file \textbf{nginx.conf} che si trova al percorso \textit{/etc/nginx/nginx.conf} e impostarlo come segue:
+\begin{verbatim}
+#user www-data;
+worker_processes  1;
+
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+#pid        logs/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    charset utf-8;
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
+    server_tokens off;
+    log_not_found off;
+    types_hash_max_size 4096;
+    client_max_body_size 16M;
+
+    # MIME
+    include mime.types;
+    default_type application/octet-stream;
+
+    # logging
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log warn;
+
+    # load configs
+    include /etc/nginx/conf.d/*.conf;
+    include /etc/nginx/sites-enabled/*;
+
+    #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+    #                  '$status $body_bytes_sent "$http_referer" '
+    #                  '"$http_user_agent" "$http_x_forwarded_for"';
+
+    #access_log  logs/access.log  main;
+
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    server_names_hash_bucket_size 64;
+
+
+    # another virtual host using mix of IP-, name-, and port-based configuration
+    #
+    #server {
+    #    listen       8000;
+    #    listen       somename:8080;
+    #    server_name  somename  alias  another.alias;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+
+    # HTTPS server
+    #
+    #server {
+    #    listen       443 ssl;
+    #    server_name  localhost;
+
+    #    ssl_certificate      cert.pem;
+    #    ssl_certificate_key  cert.key;
+
+    #    ssl_session_cache    shared:SSL:1m;
+    #    ssl_session_timeout  5m;
+
+    #    ssl_ciphers  HIGH:!aNULL:!MD5;
+    #    ssl_prefer_server_ciphers  on;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+}
+\end{verbatim}
+
+\subsubsection{Creare il file captcha.test}
+Eseguire il seguente comando:
+\begin{verbatim}
+sudo touch /etc/nginx/sites-available/captcha.test 
+\end{verbatim}
+
+\subsubsection{Ottenere il percorso assoluto\textsubscript{G}}
+Eseguire i seguenti comandi, e salvare l'output del comando \textbf{pwd} che sarà utile nel paragrafo successivo \textbf{3.2.10}:
+\begin{verbatim}
+cd/dev/captcha/public
+pwd
+\end{verbatim}
+
+\subsubsection{Modificare il file captcha.test}
+Aprire in modifica il file \textbf{captcha.test} che si trova al percorso \textit{/etc/nginx/sites-available/captcha.test } e impostarlo come segue:
+\begin{verbatim}
+server {
+    listen 80;
+    listen [::]:80;
+    server_name captcha.test;
+    root /path/to/web/root/dev/captcha/public;
+ 
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+ 
+    index index.php;
+ 
+    charset utf-8;
+ 
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+ 
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+ 
+    error_page 404 /index.php;
+ 
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php-fpm/php-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+ 
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+\end{verbatim}
+
+\begin{itemize}
+	\item \textit{Il percorso indicato alla voce \textbf{root} deve essere l'output del comando \textbf{pwd} ottenuto al precedente paragrafo \textbf{3.2.9}.} 
+\end{itemize} 
+
+\subsubsection{Creare il link simbolico\textsubscript{G}}
+Eseguire il seguente comando per creare il link simbolico\textsubscript{G} del file \textbf{captcha.test} nella cartella \textbf{sites-enable} usata da Nginx\textsubscript{G}:
+\begin{verbatim}
+sudo ln -s /etc/nginx/sites-available/captcha.test /etc/nginx/sites-enabled
+\end{verbatim}
+
+\subsubsection{Riavviare Nginx\textsubscript{G}}
+Ora che la configurazione di Nginx\textsubscript{G} è completata, sarà necessario riavviare il servizio\textsubscript{G}:
+\begin{verbatim}
+sudo systemctl restart nginx.service
+\end{verbatim}
+
+\subsubsection{Configurare il file hosts}
+Aprire in modifica il file \textbf{hosts} che si trova al percorso \textit{/etc/hosts} e aggiungere la riga seguente, in modo da poter avviare l'applicazione più intuitivamente:
+\begin{verbatim}
+127.0.0.1 captcha.test
+\end{verbatim}
+
+\subsubsection{Utilizzo dell'applicazione dopo l'installazione}
+Se tutti i passaggi sono stati eseguiti correttamente, sarà possibile aprire l'applicazione seguendo questi passaggi:
+\begin{itemize}
+	\item Avviare uno dei browser\textsubscript{G} compatibili con l'applicazione;
+	\item Digitare il seguente indirizzo: \textbf{\href{captcha.test}}{captcha.test} 
+\end{itemize}    
