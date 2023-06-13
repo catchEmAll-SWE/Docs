@@ -66,7 +66,7 @@ php artisan scribe:generate
 \end{verbatim}
 
 \subsubsection{Impostazione dei permessi}
-Spostarsi nella cartella \textit{cd/dev/captcha} ed eseguire i seguenti comandi, in modo che Nginx\textsubscript{G} abbia i permessi per modificare i file nelle cartelle dedicate:
+Spostarsi nella cartella \textit{cd/dev/captcha} ed eseguire i seguenti comandi, in modo che Nginx\textsubscript{G} abbia i permessi per modificare i file nelle cartelle dedicate. Attenzione: la parte \textbf{username} dei comandi \textbf{chown} va sostituita con l'effective userID\textsubscript{G}. Se non lo si conosce, lo si può ottenere con il comando \textbf{whoami}. 
 \begin{verbatim}
 cd/dev/captcha
 
@@ -76,10 +76,6 @@ sudo chmod -R 775 bootstrap/cache
 sudo chown -R username:www-data /full/path/to/dev/captcha/bootstrap/cache 
 sudo chown -R username:www-data /full/path/to/dev/captcha/storage
 \end{verbatim}
-Osservazione:
-\begin{itemize}
-	\item La parte \textbf{username} dei comandi \textbf{chown} va sostituita con l'effective userID\textsubscript{G}. Se non lo si conosce, lo si può ottenere con il comando \textbf{whoami}. 
-\end{itemize} 
 
 \subsubsection{Modificare il file di configurazione di Nginx\textsubscript{G}}
 Aprire in modifica il file \textbf{nginx.conf} che si trova al percorso \textit{/etc/nginx/nginx.conf} e impostarlo come segue:
