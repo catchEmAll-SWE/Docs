@@ -1,6 +1,15 @@
 \section{Architettura}
-L'architettura del progetto è basato sul pattern Model-View-Controller (MVC), seguendo le linee guida del framework Laravel per la creazione della web application.
+L'obiettivo principale del progetto è la creazione di un servizio captcha insieme a un'applicazione web 
+dimostrativa che ne faccia uso, al fine di illustrarne il funzionamento. Per raggiungere questo obiettivo, 
+il prodotto è stato realizzato come un'API REST.
 
+La componente centrale dell'applicazione risiede nel back-end, dove è stato utilizzato il framework Laravel 
+per la codifica.
+
+La parte back-end è responsabile principalemnte della gestione delle richieste della generazione e della verifica del servizio captcha. 
+D'altro canto, per la parte front-end, è stata creata una semplice pagina HTML che utilizza JavaScript per fare 
+richieste all'API REST. Questa pagina fornisce un'interfaccia utente elementare attraverso la quale gli utenti possono 
+interagire con il servizio captcha.
 
 \subsection{Diagrammi delle classi}
 
@@ -13,7 +22,10 @@ Il diagramma delle classi si può suddividere in varie sezioni, le quali svolgon
     \item Download e elaborazione delle immagini.
 \end{itemize}
 
-Per lo sviluppo delle varie funzionalità elencate il gruppo ha sfruttato diversi strumenti forniti dal framework Laravel, come gli eloquent Model che forniscono un metodo semplice ed intuitivo per interagire con le entità presenti nel DB, e delle classi Controller per poter gestire la logica di gestione delle richieste nel modo più chiaro possibile. Infatti i Controllers possono raggruppare la logica di gestione delle richieste correlate in una singola classe.
+Per lo sviluppo delle varie funzionalità elencate il gruppo ha sfruttato diversi strumenti forniti dal framework Laravel, 
+come gli eloquent Model che forniscono un metodo semplice ed intuitivo per interagire con le entità presenti nel DB, e delle classi 
+Controller per poter gestire la logica di gestione delle richieste nel modo più chiaro possibile. Infatti i Controllers possono 
+raggruppare la logica di gestione delle richieste correlate in una singola classe.
 
 \subsubsection{Generazione del Captcha}
 
