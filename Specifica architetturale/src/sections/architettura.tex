@@ -120,8 +120,8 @@ In particolare:
     \item \textbf{UnsplashService}: download dell'immagine;
     \item \textbf{OutliningService}: elaborazione dell'immagine;
     \item \textbf{OutilningAlgorithm}: algoritmo di elaborazione dell'immagine;
-    \item \textbf{StoreImageInBase64Service}: conversione dell'immagine in base64;
-    \item \textbf{ImageDatabaseService}: salvataggio dell'immagine.
+    \item \textbf{StoreImageInBase64Service}: salvataggio dell'immagine in formato base64 usando come path \textit{classe/id immagine};
+    \item \textbf{ImageDatabaseService}: salvataggio dell'immagine nel database.
 \end{itemize}
 
 \subsection{Architettura di dettaglio}
@@ -134,9 +134,8 @@ In particolare:
     \caption{Strategy pattern dell'algoritmo di rielaborazione dell'immagine}
 \end{figure}
 
-Attualmente, la classe astratta "IOutliningAlgorithm" ha una sola classe concreta che rappresenta l'unico algoritmo 
-di scontornaggio implementato. Tuttavia, è progettata in modo da consentire l'estensione per l'implementazione di ulteriori 
-algoritmi di scontornaggio in futuro. Ciò significa che se si desidera aggiungere nuovi algoritmi di scontornaggio, 
+Attualmente, la classe astratta "IOutliningAlgorithm" ha una sola classe concreta che rappresenta l'unico algoritmo implementato. Tuttavia, è progettata in modo da consentire l'estensione per l'implementazione di ulteriori 
+algoritmi in futuro. Ciò significa che se si desidera aggiungere nuovi algoritmi, 
 sarà possibile creare nuove classi che estendono l'interfaccia astratta "IOutliningAlgorithm". 
 Questa flessibilità consente di espandere il sistema per includere più algoritmi di scontornaggio senza dover 
 modificare la struttura di base.
@@ -147,7 +146,7 @@ modificare la struttura di base.
     \caption{Strategy patter dell'algoritmo di criptaggio}
 \end{figure}
 
-Anche qua la classe astratta "EncryptionAlgorithm" ha una sola classe conreta per il motivo sopra citata.
+Come sopra, la classe astratta "EncryptionAlgorithm" ha una sola classe conreta per il motivo sopra citata.
 
 \subsubsection{Singleton}
 
