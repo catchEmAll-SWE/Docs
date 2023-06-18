@@ -148,10 +148,39 @@ modificare la struttura di base.
 
 Come sopra, la classe astratta "EncryptionAlgorithm" ha una sola classe conreta per il motivo sopra citata.
 
-\subsubsection{Singleton}
+\subsubsection{Dependency Injection}
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 1.0]{img/singleton.png}\\
     \caption{Singleton pattern}
 \end{figure}
+
+La costruzione di un'instanza di CaptchaImg è un'operazione che può essere considerata complessa in quanto
+bisogna tenere in considerazione variabili come numero di classi di immagine presenti e numero di immagini per classe,
+tali variabili devono a loro volta rispettare delle condizioni:
+\begin{itemize}
+    \item numero di classi tra 2 e 4 estremi compresi
+    \item 9 immagini totali
+    \item le immagini della classe target devono essere la metà + 1 affidabili
+    \item le immagini delle classi non target devono essere la metà affidabili
+\end{itemize}
+Per quanto sopra si è deciso si spezzare la complessità e creare una classe il cui compito è quello di rifornire il costruttore
+di CaptchaImg. 
+
+\subsubsection{Strategy Pattern}
+
+Il pattern Strategy è stato utilizzato per l'algoritmo di scontornamento delle immagini e per quello di cifratura.
+L'utilizzo di tale pattern permette una futura estensione delle famiglie degli algoritmi in questione.
+
+
+\subsubsection{Model-View-Controller}
+Il pattern architetturale su cui si basa il framework Laravel è \textit{Model-View-Controller}.
+Lo sviluppo del servizio API per la generazione e verifica del captcha sfrutta la classi messe a disposizione del framework:
+\begin{itemize}
+    \item Illuminate\Database\Eloquent\Model: classe astratta per lo sviluppo di modelli la quale fornisce attributi e metodi integrati per la comunicazione con il database
+    \item Illuminate\Routing\Controller: classe astratta per lo sviluppo di classi il cui compito è la gestione delle route e dei modelli
+\end{itemize}
+Le viste trattandosi di un API non sono state utilizzate.
+
+Questo pattern inoltre è alla base dello sviluppo dell'applicazione web utilizzata per testare il servizio di Captcha.
