@@ -61,6 +61,12 @@ In particolare:
 \end{itemize}
 
 \subsubsection{Captcha Resource}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale = 0.6]{img/captcha_resource.png}\\
+	\caption{Diagramma delle classi. Captcha resource}
+\end{figure}
+
 Nella figura sopra viene mostrata la logica utilizzata per la gestione delle informazioni che si vogliono passare all'utente al seguito di una richiesta. Infatti dopo la creazione di un captcha, viene creato dal Controller l'oggetto CaptchaResource, il quale sarà un json che contiene solamente le informazioni chiave per il caricamento del captcha lato front-end e la soluzione criptata che servirà durante la verifica del Captcha.
 
 In particolare:
@@ -70,15 +76,7 @@ In particolare:
 	\item \textbf{CaptchaImgResource}: Classe Eloquent Resource che seleziona le informazioni da inviare all'utente per la parte del Captcha immagini. Utilizza la classe ImageResource per le informazioni delle immagini contenute nel Captcha;
 	\item \textbf{ProofOfWorkDetailsResource}: Classe Eloquent Resource che seleziona le informazioni da inviare all'utente per la parte del proof of work;
 	\item \textbf{ImageResource}: Classe Eloquent Resource che seleziona le informazioni che ogni immagine dovrà avere nella risposta all'utente.
-	
-	
 \end{itemize}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale = 0.6]{img/captcha_resource.png}\\
-	\caption{Diagramma delle classi. Captcha resource}
-\end{figure}
 \newpage
 
 \subsubsection{Verifica del Captcha}
@@ -88,6 +86,22 @@ In particolare:
 	\includegraphics[scale = 0.45]{img/verify.png}\\
 	\caption{Diagramma delle classi. Verifica del Captcha}
 \end{figure}
+
+Nella figura sopra viene mostrata la logica utilizzata per la verifica dei Captcha inviati dagli utenti. Come punto centrale c'è sempre il CaptchaController che gestisce tutte le richieste. Quest'ultimo andrà a creare i vari verificatori che controlleranno se l'utente ha dato una risposta valida o no. Viene poi generato un json che verrà criptato e inviato come risposta.
+In particolare:
+\begin{itemize}
+	\item \textbf{CaptchaController}: Questa classe si occupa anche di gestire le richieste per la verifica di un Captcha, andando prima a validare se la risposta inviata coerente a quella aspettata e poi andando a creare i verificatori che andranno a controllare la correttezza effettiva del Captcha;
+	\item \textbf{VerifyCaptchaRequest}: Classe che controlla se la risposta inviata dall'utente è nel formato richiesto;
+	\item \textbf{CaptchaVerifier}: Questa classe utilizza i verificatori CaptchaImgVerifier e ProofOfWorkVerifier per controllare se la risposta dell'utente è corretta o meno;
+	\item \textbf{IComponentVerifier}: Questa classe possiede il metodo verify che verrà implementato dai due verificatori; 
+	\item \textbf{CaptchaImgVerifier}: Classe che verifica la correttezza della soluzione dell'utente per la parte del Captcha composto dalle immagini, andando inoltre ad utilizzare la classe ImageService per aggiornare l'affidabilità delle immagini nel DB;
+	\item \textbf{ProofOfWorkVerifier}: Classe che verifica la correttezza dei nonce calcolati dall'utente durante il proof of work;
+	\item \textbf{SolutionParser}: Classe utilizzata da CaptchaImgVerifier per decriptare la soluzione corretta del Captcha inviata alla'utente;
+	\item \textbf{CaptchaImgSolution}: Classe che contiene gli attributi della soluzione del Captcha. Creata da SolutionParser per fornire la soluzione decriptata a CaptchaImgVerifier;
+	\item \textbf{ImageService}: Classe utilizzata dal CaptchaImgVerifier per aggiornare l'affidabilità delle immagini all'interno del DB;
+	\item \textbf{ClassResultGenerator}: Classe che genera il json criptato che sarà dato in risposta alla soluzione inviata dall'utente. Questo json contiene il risultato dell'operazione di verifica.
+\end{itemize}
+
 \newpage
 
 \subsubsection{Gestione delle chiavi e dell'encrypting}
@@ -178,8 +192,8 @@ L'utilizzo di tale pattern permette una futura estensione delle famiglie degli a
 Il pattern architetturale su cui si basa il framework Laravel è \textit{Model-View-Controller}.
 Lo sviluppo del servizio API per la generazione e verifica del captcha sfrutta la classi messe a disposizione del framework:
 \begin{itemize}
-    \item Illuminate\Database\Eloquent\Model: classe astratta per lo sviluppo di modelli la quale fornisce attributi e metodi integrati per la comunicazione con il database
-    \item Illuminate\Routing\Controller: classe astratta per lo sviluppo di classi il cui compito è la gestione delle route e dei modelli
+    \item Illuminate\\Database\\Eloquent\\Model: classe astratta per lo sviluppo di modelli la quale fornisce attributi e metodi integrati per la comunicazione con il database
+    \item Illuminate\\Routing\\Controller: classe astratta per lo sviluppo di classi il cui compito è la gestione delle route e dei modelli
 \end{itemize}
 Le viste trattandosi di un API non sono state utilizzate.
 
