@@ -6,7 +6,7 @@ il prodotto è stato realizzato come un'API REST.
 La componente centrale dell'applicazione risiede nel back-end, dove è stato utilizzato il framework Laravel 
 per la codifica.
 
-La parte back-end è responsabile principalemnte della gestione delle richieste della generazione e della verifica del servizio captcha. 
+La parte back-end è responsabile principalmente della gestione delle richieste della generazione e della verifica del servizio captcha. 
 D'altro canto, per la parte front-end, è stata creata una semplice pagina HTML che utilizza JavaScript per fare 
 richieste all'API REST. Questa pagina fornisce un'interfaccia utente elementare attraverso la quale gli utenti possono 
 interagire con il servizio captcha.
@@ -151,16 +151,16 @@ In particolare:
 Attualmente, la classe astratta "IOutliningAlgorithm" ha una sola classe concreta che rappresenta l'unico algoritmo implementato. Tuttavia, è progettata in modo da consentire l'estensione per l'implementazione di ulteriori 
 algoritmi in futuro. Ciò significa che se si desidera aggiungere nuovi algoritmi, 
 sarà possibile creare nuove classi che estendono l'interfaccia astratta "IOutliningAlgorithm". 
-Questa flessibilità consente di espandere il sistema per includere più algoritmi di scontornaggio senza dover 
+Questa flessibilità consente di espandere il sistema per includere più algoritmi di scontorno delle immagini senza dover 
 modificare la struttura di base.
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 1.0]{img/criptStrategy.png}\\
-    \caption{Strategy patter dell'algoritmo di criptaggio}
+    \caption{Strategy patter dell'algoritmo per l'encrypting}
 \end{figure}
 
-Come sopra, la classe astratta "EncryptionAlgorithm" ha una sola classe conreta per il motivo sopra citata.
+Come sopra, la classe astratta "EncryptionAlgorithm" ha una sola classe concreta per il motivo sopra citata.
 
 \subsubsection{Dependency Injection}
 
