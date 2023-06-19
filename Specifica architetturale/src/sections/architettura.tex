@@ -48,14 +48,14 @@ Nella figura sopra viene mostrata la logica utilizzata per la generazione di un 
 
 In particolare:
 \begin{itemize}
-    \item \textbf{CaptchaController}: Classe cardine del progetto, la quale si occupa di gestire tutte le richieste che verranno fatte alla route dell'API. In questa classe è anche contenuto il metodo che ritornerà l'oggetto CaptchaResource a seguito di una richiesta da parte dell'utente;
+    \item \textbf{CaptchaController}: Classe cardine del progetto, la quale si occupa di gestire tutte le richieste che verranno fatte alla route dell'API. In questa classe è anche contenuto il metodo che ritornerà l'oggetto \textit{CaptchaResource} a seguito di una richiesta da parte dell'utente;
     \item \textbf{Captcha}: Classe che si occupa di mettere insieme tutti i pezzi che compongono il Captcha, ovvero immagini, honeypot e proof of work. Questa classe viene creata dal Controller quando viene richiesto un Captcha;
     \item \textbf{CaptchaImgBuilder}: Classe singleton che si occupa dell'effettiva creazione della parte del Captcha che contiene le immagini e l'honeypot. Fa inoltre utilizzo di una enumerazione per la gestione dell'affidabilità delle immagini;
     \item \textbf{ProofOfWorkDetails}: Classe che contiene i dati necessari per il calcolo dei nonce nel proof of work;
-    \item \textbf{ImageDetails}: Classe che contiene i dettagli utili alla creazione delle 9 immagini che comporranno il Captcha, quali il numero di classi e di immagini per classe che dovrà avere. Viene utilizzata dalla classe CaptchaImgBuilder;
-    \item \textbf{CaptchaImg}: Classe che contiene le varie informazioni che la parte del captcha composta dalle immagini deve avere. È l'oggetto che la classe CaptchaImgBuilder va a creare;
-    \item \textbf{ImageService}: Classe che contiene i metodi per le chiamate al DB riguardanti il Model delle immagini. Viene dalla classe CaptchaImgBuilder per recuperare le immagini da inserire nel Captcha;
-    \item \textbf{Image}: Eloquent Model che contiene le informazioni dell'oggetto immagine. Viene utilizzato da ImageService;
+    \item \textbf{ImageDetails}: Classe che contiene i dettagli utili alla creazione delle 9 immagini che comporranno il Captcha, quali il numero di classi e di immagini per classe che dovrà avere. Viene utilizzata dalla classe \textit{CaptchaImgBuilder};
+    \item \textbf{CaptchaImg}: Classe che contiene le varie informazioni che la parte del captcha composta dalle immagini deve avere. È l'oggetto che la classe \textit{CaptchaImgBuilder} va a creare;
+    \item \textbf{ImageService}: Classe che contiene i metodi per le chiamate al DB riguardanti il Model delle immagini. Viene dalla classe \textit{CaptchaImgBuilder} per recuperare le immagini da inserire nel Captcha;
+    \item \textbf{Image}: Eloquent Model che contiene le informazioni dell'oggetto immagine. Viene utilizzato da \textit{ImageService};
     \item \textbf{Solution Parser}: Classe che gestisce l'encrypting della soluzione, che è in formato json, così che l'utente non possa decifrarla;
     \item \textbf{CaptchaImgSolution}: Classe che contiene le informazioni della soluzione della parte del Captcha composta dalle immagini.
 \end{itemize}
@@ -67,13 +67,13 @@ In particolare:
 	\caption{Diagramma delle classi. Captcha resource}
 \end{figure}
 
-Nella figura sopra viene mostrata la logica utilizzata per la gestione delle informazioni che si vogliono passare all'utente al seguito di una richiesta. Infatti dopo la creazione di un captcha, viene creato dal Controller l'oggetto CaptchaResource, il quale sarà un json che contiene solamente le informazioni chiave per il caricamento del captcha lato front-end e la soluzione criptata che servirà durante la verifica del Captcha.
+Nella figura sopra viene mostrata la logica utilizzata per la gestione delle informazioni che si vogliono passare all'utente al seguito di una richiesta. Infatti dopo la creazione di un Captcha, viene creato dal Controller l'oggetto \textit{CaptchaResource}, il quale sarà un json che contiene solamente le informazioni chiave per il caricamento del captcha lato front-end e la soluzione criptata che servirà durante la verifica del Captcha.
 
 In particolare:
 \begin{itemize}
-	\item \textbf{CaptchaController}: Dopo aver creato il Captcha, genera l'oggetto CaptchaResource il quale contiene le varie informazioni da passare in risposta alla richiesta dell'utente;
-	\item \textbf{CaptchaResource}: Classe Eloquent Resource che utilizza le classi CaptchaImgResource e ProofOfWorkDetailsResource per generare il json che verrà poi inviato all'utente;
-	\item \textbf{CaptchaImgResource}: Classe Eloquent Resource che seleziona le informazioni da inviare all'utente per la parte del Captcha immagini. Utilizza la classe ImageResource per le informazioni delle immagini contenute nel Captcha;
+	\item \textbf{CaptchaController}: Dopo aver creato il Captcha, genera l'oggetto \textit{CaptchaResource} il quale contiene le varie informazioni da passare in risposta alla richiesta dell'utente;
+	\item \textbf{CaptchaResource}: Classe Eloquent Resource che utilizza le classi \textit{CaptchaImgResource} e \textit{ProofOfWorkDetailsResource} per generare il json che verrà poi inviato all'utente;
+	\item \textbf{CaptchaImgResource}: Classe Eloquent Resource che seleziona le informazioni da inviare all'utente per la parte del Captcha immagini. Utilizza la classe \textit{ImageResource} per le informazioni delle immagini contenute nel Captcha;
 	\item \textbf{ProofOfWorkDetailsResource}: Classe Eloquent Resource che seleziona le informazioni da inviare all'utente per la parte del proof of work;
 	\item \textbf{ImageResource}: Classe Eloquent Resource che seleziona le informazioni che ogni immagine dovrà avere nella risposta all'utente.
 \end{itemize}
@@ -87,18 +87,18 @@ In particolare:
 	\caption{Diagramma delle classi. Verifica del Captcha}
 \end{figure}
 
-Nella figura sopra viene mostrata la logica utilizzata per la verifica dei Captcha inviati dagli utenti. Come punto centrale c'è sempre il CaptchaController che gestisce tutte le richieste. Quest'ultimo andrà a creare i vari verificatori che controlleranno se l'utente ha dato una risposta valida o no. Viene poi generato un json che verrà criptato e inviato come risposta.
+Nella figura sopra viene mostrata la logica utilizzata per la verifica dei Captcha inviati dagli utenti. Come punto centrale c'è sempre il \textit{CaptchaController} che gestisce tutte le richieste. Quest'ultimo andrà a creare i vari verificatori che controlleranno se l'utente ha dato una risposta valida o no. Viene poi generato un json che verrà criptato e inviato come risposta.
 In particolare:
 \begin{itemize}
 	\item \textbf{CaptchaController}: Questa classe si occupa anche di gestire le richieste per la verifica di un Captcha, andando prima a validare se la risposta inviata coerente a quella aspettata e poi andando a creare i verificatori che andranno a controllare la correttezza effettiva del Captcha;
 	\item \textbf{VerifyCaptchaRequest}: Classe che controlla se la risposta inviata dall'utente è nel formato richiesto;
-	\item \textbf{CaptchaVerifier}: Questa classe utilizza i verificatori CaptchaImgVerifier e ProofOfWorkVerifier per controllare se la risposta dell'utente è corretta o meno;
-	\item \textbf{IComponentVerifier}: Questa classe possiede il metodo verify che verrà implementato dai due verificatori; 
-	\item \textbf{CaptchaImgVerifier}: Classe che verifica la correttezza della soluzione dell'utente per la parte del Captcha composto dalle immagini, andando inoltre ad utilizzare la classe ImageService per aggiornare l'affidabilità delle immagini nel DB;
+	\item \textbf{CaptchaVerifier}: Questa classe utilizza i verificatori \textit{CaptchaImgVerifier} e \textit{ProofOfWorkVerifier} per controllare se la risposta dell'utente è corretta o meno;
+	\item \textbf{IComponentVerifier}: Questa interfaccia possiede il metodo verify che verrà implementato dai due verificatori; 
+	\item \textbf{CaptchaImgVerifier}: Classe che verifica la correttezza della soluzione dell'utente per la parte del Captcha composto dalle immagini, andando inoltre ad utilizzare la classe \textit{ImageService} per aggiornare l'affidabilità delle immagini nel DB;
 	\item \textbf{ProofOfWorkVerifier}: Classe che verifica la correttezza dei nonce calcolati dall'utente durante il proof of work;
-	\item \textbf{SolutionParser}: Classe utilizzata da CaptchaImgVerifier per decriptare la soluzione corretta del Captcha inviata alla'utente;
-	\item \textbf{CaptchaImgSolution}: Classe che contiene gli attributi della soluzione del Captcha. Creata da SolutionParser per fornire la soluzione decriptata a CaptchaImgVerifier;
-	\item \textbf{ImageService}: Classe utilizzata dal CaptchaImgVerifier per aggiornare l'affidabilità delle immagini all'interno del DB;
+	\item \textbf{SolutionParser}: Classe utilizzata da \textit{CaptchaImgVerifier} per decriptare la soluzione corretta del Captcha inviata alla'utente;
+	\item \textbf{CaptchaImgSolution}: Classe che contiene gli attributi della soluzione del Captcha. Creata da \textit{SolutionParser} per fornire la soluzione decriptata a \textit{CaptchaImgVerifier};
+	\item \textbf{ImageService}: Classe utilizzata dal \textit{CaptchaImgVerifier} per aggiornare l'affidabilità delle immagini all'interno del DB;
 	\item \textbf{ClassResultGenerator}: Classe che genera il json criptato che sarà dato in risposta alla soluzione inviata dall'utente. Questo json contiene il risultato dell'operazione di verifica.
 \end{itemize}
 
@@ -111,6 +111,20 @@ In particolare:
 	\includegraphics[scale = 0.55]{img/key_manager.png}\\
 	\caption{Diagramma delle classi. Gestione delle chiavi e dell'encrypting}
 \end{figure}
+
+Nella figura sopra viene mostrata la logica utilizzata per la gestione delle chiavi con cui vengono criptate le soluzioni dei captcha creati, ma anche la struttura in cui alla base c'è l'algoritmo che cripta e decripta le soluzioni.
+
+In particolare:
+\begin{itemize}
+	\item \textbf{SolutionParser}: Questa classe si occupa di criptare e decriptare le soluzioni dei Captcha utilizzando la classe \textit{EncryptionService} e andando a creare l'oggetto che contiene l'algoritmo da utilizzare;
+	\item \textbf{EncryptionService}: Classe che implementa i metodi di crypt e decrypt per le diverse situazioni in cui sono richiesti. Utilizza i metodi implementati nella classe \textit{AES256Cipher};
+	\item \textbf{IEncryptionAlgorithm}: Questa interfaccia possiede i metodi crypt e decrypt che verranno implementati dalla classe \textit{AES256Cipher}; 
+	\item \textbf{AES256Cipher}: Classe che implementa i metodi di crypt e decrypt attraverso la chiave fornita e l'algoritmo di encrypting definito;
+	\item \textbf{KeyManager}: Classe che contiene i vari metodi che permettono di inserire, recuperare e aggiornare le chiavi nel DB;
+	\item \textbf{Key}: Eloquent Model che contiene i vari attributi che una chiave deve possedere. Utilizzato dalla classe \textit{KeyManager};
+	\item \textbf{UpdateKey}: Classe Command di Laravel che gestisce la chiamata del metodo per l'aggiornamento di una chiave nel DB presente in \textit{KeyManager}, così da poterlo fare secondo un intervallo fisso.
+\end{itemize}
+
 \newpage
 
 \subsubsection{Download e elaborazione delle immagini}
@@ -121,80 +135,73 @@ In particolare:
     \caption{Diagramma delle classi. Recupero delle immagini da Unsplash}
 \end{figure}
 
-La figura sopra riportata rappresenta il metodo di download delle immagini dal sito di Unsplash, la rielaborazione di tali immagini e il metodo di salvataggio. Vengono eseguiti con il seguente ordine:
+La figura sopra riportata rappresenta le varie classi e interfacce che sono utilizzate dallo script per il download delle immagini dal sito di Unsplash, la rielaborazione di tali immagini e il salvataggio di esse.\\ Questo processo segue il seguente ordine:
 \begin{enumerate}
-    \item Viene scaricato l'immagine di una determina classe;
-    \item Rielaborazione dell'immagine eliminando i colori e tenendo solo il contorno.
-    \item Conversione dell'immagine in base64;
-    \item Salvataggio dell'immagine del database.
+	\item Inizialmente viene fatto un controllo per vedere se ci sono immagini con un'affidabilità troppo bassa e quindi eliminarle dal DB;
+    \item Dopodiché viene scaricata una nuova immagine di una determina classe da Unsplash;
+    \item Viene compiuta l'elaborazione dell'immagine eliminando i colori e tenendo solo il contorno;
+    \item Viene quindi convertita in base64;
+    \item Infine l'immagine viene salvata e inserita nel DB.
 \end{enumerate}
 
 In particolare:
 \begin{itemize}
-    \item \textbf{UnsplashService}: download dell'immagine;
-    \item \textbf{OutliningService}: elaborazione dell'immagine;
-    \item \textbf{OutilningAlgorithm}: algoritmo di elaborazione dell'immagine;
-    \item \textbf{StoreImageInBase64Service}: salvataggio dell'immagine in formato base64 usando come path \textit{classe/id immagine};
-    \item \textbf{ImageDatabaseService}: salvataggio dell'immagine nel database.
+    \item \textbf{UnsplashService}: Classe che si occupa di fare la richiesta di un immagine al servizio di Unsplash;
+    \item \textbf{OutliningService}: Classe che si occupa dell'elaborazione dell'immagine;
+    \item \textbf{IOutliningAlgorithm}: Interfaccia che contiene il metodo che sarà poi implementato nella classe \textit{OutilningAlgorithm} per l'elaborazione delle immagini;
+    \item \textbf{OutilningAlgorithm}: Classe che implementa l'algoritmo di elaborazione dell'immagine;
+    \item \textbf{StoreImageInBase64Service}: Classe che si occupa della conversione e salvataggio dell'immagine in formato base64 usando come path \textit{classe/id\_immagine};
+    \item \textbf{ImageDatabaseService}: Classe che implementa i vari metodi per eliminare, inserire e fare controlli sulle immagini nel DB.
 \end{itemize}
-
+\newpage
 \subsection{Architettura di dettaglio}
 
 \subsubsection{Strategy pattern}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 1.0]{img/outlineStrategy.png}\\
+    \includegraphics[scale = 0.8]{img/outlineStrategy.png}\\
     \caption{Strategy pattern dell'algoritmo di rielaborazione dell'immagine}
 \end{figure}
 
-Attualmente, la classe astratta "IOutliningAlgorithm" ha una sola classe concreta che rappresenta l'unico algoritmo implementato. Tuttavia, è progettata in modo da consentire l'estensione per l'implementazione di ulteriori 
-algoritmi in futuro. Ciò significa che se si desidera aggiungere nuovi algoritmi, 
-sarà possibile creare nuove classi che estendono l'interfaccia astratta "IOutliningAlgorithm". 
+Attualmente, l'interfaccia \textit{IOutliningAlgorithm} ha una sola classe concreta che rappresenta l'unico algoritmo implementato. Tuttavia, è progettata in modo da consentire l'estensione per l'implementazione di ulteriori 
+algoritmi in futuro. Ciò significa che se si desidera aggiungere nuovi algoritmi di scontorno delle immagini , 
+sarà possibile farlo creando nuove classi che estendono l'interfaccia \textit{IOutliningAlgorithm}. 
 Questa flessibilità consente di espandere il sistema per includere più algoritmi di scontorno delle immagini senza dover 
 modificare la struttura di base.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 1.0]{img/criptStrategy.png}\\
+    \includegraphics[scale = 0.8]{img/cryptStrategy.png}\\
     \caption{Strategy patter dell'algoritmo per l'encrypting}
 \end{figure}
 
-Come sopra, la classe astratta "EncryptionAlgorithm" ha una sola classe concreta per il motivo sopra citata.
+L'interfaccia \textit{IEncryptionAlgorithm} possiede una sola classe concreta per lo stesso motivo citato precedentemente. In questa maniera, se ci fosse bisogno di implementare un nuovo algoritmo per criptare le chiave potrà essere fatto senza nessun problema.
 
 \subsubsection{Dependency Injection}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 1.0]{img/singleton.png}\\
-    \caption{Singleton pattern}
+    \includegraphics[scale = 0.8]{img/dependency_injection.png}\\
+    \caption{Dependency injection pattern}
 \end{figure}
 
-La costruzione di un'instanza di CaptchaImg è un'operazione che può essere considerata complessa in quanto
-bisogna tenere in considerazione variabili come numero di classi di immagine presenti e numero di immagini per classe,
-tali variabili devono a loro volta rispettare delle condizioni:
+La costruzione di un'istanza di \textit{CaptchaImg} è un'operazione che può essere considerata complessa in quanto bisogna tenere in considerazione diverse variabili, ad esempio il numero di classi di immagine presenti e numero di immagini per classe.
+Tali variabili devono a loro volta rispettare delle condizioni:
 \begin{itemize}
-    \item numero di classi tra 2 e 4 estremi compresi
-    \item 9 immagini totali
-    \item le immagini della classe target devono essere la metà + 1 affidabili
-    \item le immagini delle classi non target devono essere la metà affidabili
+    \item Numero di classi tra 2 e 4 estremi compresi;
+    \item 9 immagini totali;
+    \item Le immagini della classe target devono essere la metà + 1 affidabili;
+    \item Le immagini delle classi non target devono essere la metà affidabili.
 \end{itemize}
-Per quanto sopra si è deciso si spezzare la complessità e creare una classe il cui compito è quello di rifornire il costruttore
-di CaptchaImg. 
-
-\subsubsection{Strategy Pattern}
-
-Il pattern Strategy è stato utilizzato per l'algoritmo di scontornamento delle immagini e per quello di cifratura.
-L'utilizzo di tale pattern permette una futura estensione delle famiglie degli algoritmi in questione.
-
+Per quanto elencato sopra si è deciso quindi di spezzare la complessità e creare una classe il cui compito è quello di rifornire il costruttore di \textit{CaptchaImg}. 
 
 \subsubsection{Model-View-Controller}
 Il pattern architetturale su cui si basa il framework Laravel è \textit{Model-View-Controller}.
-Lo sviluppo del servizio API per la generazione e verifica del captcha sfrutta la classi messe a disposizione del framework:
+Lo sviluppo del servizio API per la generazione e verifica del Captcha sfrutta le classi messe a disposizione dal framework:
 \begin{itemize}
-    \item Illuminate\\Database\\Eloquent\\Model: classe astratta per lo sviluppo di modelli la quale fornisce attributi e metodi integrati per la comunicazione con il database
-    \item Illuminate\\Routing\\Controller: classe astratta per lo sviluppo di classi il cui compito è la gestione delle route e dei modelli
+    \item \textbf{Illuminate\textbackslash Database\textbackslash Eloquent\textbackslash Model}: Classe astratta per lo sviluppo di modelli la quale fornisce attributi e metodi integrati per la comunicazione con il database;
+    \item \textbf{Illuminate \textbackslash Routing\textbackslash Controller}: Classe astratta per lo sviluppo di classi il cui compito è la gestione delle route e dei modelli.
 \end{itemize}
-Le viste trattandosi di un API non sono state utilizzate.
-
+Le viste, trattandosi di un API, non sono state utilizzate.\\
 Questo pattern inoltre è alla base dello sviluppo dell'applicazione web utilizzata per testare il servizio di Captcha.
