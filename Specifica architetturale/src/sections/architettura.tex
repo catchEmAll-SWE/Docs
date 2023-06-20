@@ -7,7 +7,7 @@ Queste sono:
 \begin{itemize}
 	\item \textbf{Stateless}: Ogni richiesta del client al server deve contenere tutte le informazioni necessarie per comprendere e soddisfare la richiesta. Il server non deve mantenere alcun stato delle richieste precedenti del client. Ogni richiesta viene considerata isolata e indipendente dalle altre;
 	\item \textbf{Rappresentazione delle risorse}: Le risorse, come ad esempio i dati, sono rappresentate in un formato standard, come JSON o XML. Le rappresentazioni delle risorse possono essere trasferite tra client e server tramite richieste HTTP.
-	\item \textbf{Interfaccia uniforme}:  Un'API REST segue un insieme di operazioni standardizzate, tra cui GET, POST, PUT e DELETE, che sono applicate a risorse identificate da URL univoci. Questa interfaccia uniforme semplifica l'interazione tra client e server e rende l'API più intuitiva e prevedibile.
+	\item \textbf{Interfaccia uniforme}:  Un'API REST segue un insieme di operazioni standardizzate, tra cui GET, POST, PUT e DELETE, che sono applicate a risorse identificate da URL univoci. Questa interfaccia uniforme semplifica l'interazione tra client e server e rende l'API più intuitiva e prevedibile;
 	\item \textbf{Livelli}:  L'architettura API REST può essere composta da più livelli, come il bilanciamento del carico, i server intermedi e i servizi di cache, che possono essere utilizzati per migliorare la scalabilità, l'affidabilità e le prestazioni del sistema.\\
 \end{itemize}
 
@@ -43,14 +43,13 @@ raggruppare la logica di gestione delle richieste correlate in una singola class
 \newpage
 
 Nella figura sopra viene mostrata la logica utilizzata per la generazione di un  Captcha.
-\begin{itemize}
-    \item  Ogni Captcha è composto da:
-    \begin{itemize}
-        \item 9 immagini in bianco e nero con solo i contorni visibili;
-        \item L'immagine honeypot, invisibile all'utente;
-        \item Il proof of work.
-    \end{itemize}
-\end{itemize}
+Ogni Captcha è composto da:
+ \begin{itemize}
+     \item 9 immagini in bianco e nero con solo i contorni visibili;
+     \item L'immagine honeypot, invisibile all'utente;
+     \item Il proof of work.
+ \end{itemize}
+
 
 In particolare:
 \begin{itemize}
