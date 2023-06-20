@@ -160,7 +160,22 @@ In particolare:
 \end{itemize}
 \newpage
 \subsubsection{Front-end}
-Da definire in velocità domani mattina
+La parte del front-end del progetto, è completamente separata dall'API che offre il servizio Captcha ed è composta da:
+\begin{itemize}
+	\item Pagina di login, nella quale l'utente può richiedere un Captcha, 
+    compilarlo e fare di conseguenza l'accesso;
+    \item Un file JS che si occupa del calcolo del proof of work;
+    \item Un file JS che si occupa di inserire dinamicamente i dati ricevuti in risposta dal servizio nella pagina e di far iniziare il proof of work;
+\end{itemize}
+Il lato client, per poter fare le richieste al servizio, fa utilizzo anch'esso di una classe Controller, la quale possiede due metodi che vengono chiamati nel caso l'utente voglia generare un Captcha o di verificarne uno. Questi metodi si occupano di fare le richieste effettive all'API, ottenendo i dati in risposta che saranno poi gestiti tramite JS, nel caso della generazione o nel caso della verifica di reindirizzare l'utente in base alla correttezza o meno della risposta inviata.
+Anche questa classe è completamente sconnessa dall'API e si occupa solo di fare le richieste la servizio. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale = 0.8]{img/request_controller.png}\\
+	\caption{Controller per le richieste dell'utente}
+\end{figure}
+
 \subsection{Architettura di dettaglio}
 
 \subsubsection{Strategy pattern}
