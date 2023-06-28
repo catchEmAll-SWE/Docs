@@ -13,6 +13,7 @@ Una volta aperta la pagina web dell'applicazione viene visualizzata la pagina di
 	\item Inserire la password nell'apposito campo: \textbf{captcha};
     \item Premere il tasto \textbf{Genera captcha}.
 \end{itemize}    
+Per evitare un afflusso di richieste, prima di generare il captcha vengono verificate le credenziali. La richiesta verrà accettata solo nel caso queste ultime siano corrette.
 
 \begin{figure}[H]
     \centering
@@ -36,40 +37,46 @@ Per poter essere riconosciuto come utente umano e non come un bot\textsubscript{
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.6]{src/img/computerlaptop.png}
+    \includegraphics[scale=0.6]{img/captchaimg.png}
     \caption{Test immagini}
 \end{figure}
 
 \newpage
  
-L'utente dovrà selezionare solo le immagini che ritiene facciano parte della tipologia richiesta - per esempio, nell'immagine sottostante è richiesto di selezionare le immagini appartententi alla classe \textbf{laptop}, e le immagini corrette da selezionare vengono evidenziate in rosso:
+L'utente dovrà selezionare solo le immagini che ritiene facciano parte della tipologia richiesta - per esempio, nell'immagine sottostante è richiesto di selezionare le immagini appartenenti alla classe \textbf{laptop}, e le immagini corrette da selezionare vengono evidenziate in rosso:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.6]{src/img/computerlaptopevidenziati.png}
+    \includegraphics[scale=0.6]{img/captchaimgselezionato.png}
     \caption{Test immagini con soluzione evidenziata}
 \end{figure}
 
 \subsubsection{Attesa operazioni in background\textsubscript{G}}
-L'utente potrà procedere con il paragrafo seguente solo dopo che l'indicatore di progresso ha raggiunto il 100\%, come indicato nella seguente immagine:
+L'utente per poter completare il captcha dovrà svolgere un proof of work, permettendoci di avere uno strato di sicurezza in più contro degli attacchi burst. Infatti si potrà procedere all'operazione successiva solo dopo che l'indicatore di progresso ha raggiunto il 100\%, come indicato nella seguente immagine:
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{img/barra.png}
     \caption{Indicatore di progresso}
-\end{figure}    
+\end{figure} 
 
 Osservazione:
 \begin{itemize}
 	\item Questa è un'operazione che richiede pochi secondi, e normalmente quando l'utente ha terminato la compilazione del test immagini l'avanzamento ha già raggiunto il 100\%.
 \end{itemize}
 
-\subsection{Verifica delle credenziali e del superamento del test}
-Una volta effettuati i passaggi illustrati nei paragrafi precedenti, l'utente potrà procedere con l'autenticazione cliccando sul tasto \textbf{Login}. Se l'autenticazione è andata a buon fine, l'utente visualizzerà un messaggio di successo; altrimenti visualizzerà un messaggio di errore e potrà ritentare il login ripetendo i passaggi.
+\subsection{Verifica del test captcha}
+Una volta effettuati i passaggi illustrati nei paragrafi precedenti, l'utente potrà procedere con l'autenticazione cliccando sul tasto \textbf{Login}. Se questa è andata a buon fine, l'utente verrà reindirizzato ad una pagina con un messaggio che indica la riuscita dell'operazione; altrimenti visualizzerà un messaggio di errore e potrà ritentare il login ripetendo i passaggi.
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{img/tastologin.png}
     \caption{Pulsante di login}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{img/message.png}
+	\caption{Messaggio di errore}
 \end{figure}   
 
 \subsection{Problemi comuni}
