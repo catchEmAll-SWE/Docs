@@ -202,12 +202,12 @@ L'interfaccia \textit{IEncryptionAlgorithm} possiede una sola classe concreta pe
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.8]{img/dependency_injection.png}\\
+    \includegraphics[scale = 0.7]{img/dependency_injection.png}\\
     \caption{Dependency injection pattern}
 \end{figure}
 
-La costruzione di un'istanza di \textit{CaptchaImg} è un'operazione che può essere considerata complessa in quanto bisogna tenere in considerazione diverse variabili, ad esempio il numero di classi di immagine presenti e numero di immagini per classe.
-Tali variabili devono a loro volta rispettare delle condizioni:
+La costruzione di un'istanza di \textit{CaptchaImg} è un'operazione che può essere considerata complessa in quanto bisogna tenere in considerazione diverse variabili, ad esempio il numero di classi di immagine presenti e numero di immagini per classe. \\
+Tutte queste variabili sono contenute all'interno della classe \textit{ImageDetails} dove vengono definite le condizioni per ognuna di esse:
 \begin{itemize}
     \item Numero di classi tra 2 e 4 estremi compresi;
     \item 9 immagini totali;
@@ -215,14 +215,3 @@ Tali variabili devono a loro volta rispettare delle condizioni:
     \item Le immagini delle classi non target devono essere la metà affidabili.
 \end{itemize}
 Per quanto elencato sopra si è deciso quindi di spezzare la complessità e creare una classe il cui compito è quello di rifornire il costruttore di \textit{CaptchaImg}. 
-
-\subsubsection{Model-View-Controller}
-Il pattern architetturale su cui si basa il framework Laravel è \textit{Model-View-Controller}.
-Lo sviluppo del servizio API per la generazione e verifica del Captcha sfrutta le classi messe a disposizione dal framework:
-\begin{itemize}
-    \item \textbf{Illuminate\textbackslash Database\textbackslash Eloquent\textbackslash Model}: Classe astratta per lo sviluppo di modelli la quale fornisce attributi e metodi integrati per la comunicazione con il database;
-    \item \textbf{Illuminate\textbackslash Routing\textbackslash Controller}: Classe astratta per lo sviluppo di classi il cui compito è la gestione delle route e dei modelli.
-\end{itemize}
-Le viste, trattandosi di un API, non sono state utilizzate.
-\\\\
-Questo pattern inoltre è alla base dello sviluppo dell'applicazione web utilizzata per testare il servizio Captcha.
