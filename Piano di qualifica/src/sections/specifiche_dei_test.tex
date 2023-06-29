@@ -107,13 +107,17 @@ I problemi rilevati dai test di integrazione rappresentano difetti di progettazi
 		\hline
 		TVI04 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta in un formato non valido reindirizzi alla pagina contenente la documentazione & Superato\\
 		\hline
-		TVI05 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida e corretta ritorni uno status 200 & Superato\\
+		TVI05 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida e corretta ritorni uno status 200 e un json indicante il risultato positivo della verifica & Superato\\
 		\hline
-		TVI06 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida ma sbagliata ritorni uno status 404 & Superato\\
+		TVI06 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida ma con il proof of work calcolato in maniera errata ritorni uno status 200 e un json indicante il risultato negativo della verifica & Superato\\
 		\hline
-		TVI07 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida e corretta ritorni il json con il risultato nel formato corretto & Superato\\
+		TVI07 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida ma con le immagini selezionate in maniera errata ritorni uno status 200 e un json indicante il risultato negativo della verifica & Superato\\
 		\hline
-		TVI08 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida ma sbagliata ritorni il json con il risultato nel formato corretto & Non implementato\\
+		TVI08 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida ma con l'immagine honeypot selezionata ritorni uno status 200 e un json indicante il risultato negativo della verifica & Superato\\
+		\hline
+		TVI09 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA inesistente ritorni uno status 404 & Superato\\
+		\hline
+		TVI10 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida ritorni il json con il risultato nel formato corretto & Superato\\
 		\hline
 		\rowcolor{white}
 		\caption{Test di integrazione}
