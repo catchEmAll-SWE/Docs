@@ -19,11 +19,11 @@ Solitamente un'unità\textsubscript{G} software può essere realizzata da un sin
 		\rowcolor{white}
 		\textbf{ID} & \textbf{Obiettivo test} & \textbf{Stato di implementazione} \\
 		\hline
-		TVU01 & Si verifichi che il numero di classi presenti nel CAPTCHA sia compreso tra 2 e 4 & Superato\\
+		TVU01 & Si verifichi che il numero di classi presenti nel CAPTCHA\textsubscript{G} sia compreso tra 2 e 4 & Superato\\
 		\hline
-		TVU02 & Si verifichi che il numero di immagini per classe presenti nel CAPTCHA sia compreso tra 2 e 7 & Superato\\
+		TVU02 & Si verifichi che il numero di immagini per classe presenti nel CAPTCHA\textsubscript{G} sia compreso tra 2 e 7 & Superato\\
 		\hline
-		TVU03 & Si verifichi che il numero di immagini visibili all'utente che compongono il CAPTCHA sia sempre 9 & Superato\\
+		TVU03 & Si verifichi che il numero di immagini visibili all'utente che compongono il CAPTCHA\textsubscript{G} sia sempre 9 & Superato\\
 		\hline
 		TVU04 & Si verifichi che le classi vengano ritornate correttamente a seguito di un'interrogazione al DB & Superato\\
 		\hline
@@ -47,21 +47,21 @@ Solitamente un'unità\textsubscript{G} software può essere realizzata da un sin
 		\hline
 		TVU14 &  Si verifichi che l'operazione di modifica dell'affidabilità di un'immagine inesistente non produca alcune cambiamento & Superato\\
 		\hline
-		TVU15 &  Si verifichi che la costruzione della soluzione di un CAPTCHA ritorni il risultato desiderato & Superato\\
+		TVU15 &  Si verifichi che la costruzione della soluzione di un CAPTCHA\textsubscript{G} ritorni il risultato desiderato & Superato\\
 		\hline
-		TVU16 &  Si verifichi che la soluzione del CAPTCHA sia costruita nel formato corretto & Superato\\
+		TVU16 &  Si verifichi che la soluzione del CAPTCHA\textsubscript{G} sia costruita nel formato corretto & Superato\\
 		\hline
-		TVU17 &  Si verifichi che alla costruzione del CAPTCHA la soglia di affidabilità minima sia raggiunta & Superato\\
+		TVU17 &  Si verifichi che alla costruzione del CAPTCHA\textsubscript{G} la soglia di affidabilità minima sia raggiunta & Superato\\
 		\hline
-		TVU18 &  Si verifichi che alla costruzione del CAPTCHA la soglia di affidabilità minima per le immagini della classe target sia raggiunta & Superato\\
+		TVU18 &  Si verifichi che alla costruzione del CAPTCHA\textsubscript{G} la soglia di affidabilità minima per le immagini della classe target sia raggiunta & Superato\\
 		\hline
-		TVU19 &  Si verifichi che alla costruzione del CAPTCHA la soglia di affidabilità minima per le immagini della classe non target sia raggiunta & Superato\\
+		TVU19 &  Si verifichi che alla costruzione del CAPTCHA\textsubscript{G} la soglia di affidabilità minima per le immagini della classe non target sia raggiunta & Superato\\
 		\hline
-		TVU20 &  Si verifichi che le fixedString, utilizzate per il calcolo del proof of work siano costruite nella maniera corretta & Superato\\
+		TVU20 &  Si verifichi che le fixedString, utilizzate per il calcolo del proof of work\textsubscript{G} siano costruite nella maniera corretta & Superato\\
 		\hline
 		TVU21 & Si verifichi che data una soluzione corretta il risultato della verifica sia positivo  & Superato\\
 		\hline
-		TVU22 & Si verifichi che data una soluzione nella quale è stato selezionato l'honeypot il risultato della verifica sia negativo  & Superato\\
+		TVU22 & Si verifichi che data una soluzione nella quale è stato selezionato l'honeypot\textsubscript{G} il risultato della verifica sia negativo  & Superato\\
 		\hline
 		TVU23 & Si verifichi che data una soluzione nella quale non sono state selezionate le immagini target affidabili il risultato della verifica sia negativo  & Superato\\
 		\hline
@@ -71,9 +71,9 @@ Solitamente un'unità\textsubscript{G} software può essere realizzata da un sin
 		\hline
 		TVU26 & Si verifichi che data una soluzione nella quale il numero di immagini non affidabili appartenenti alla classe target selezionate sia superiore alla soglia minima il risultato della verifica sia positivo & Superato\\
 		\hline
-		TVU27 & Si verifichi che data una soluzione errata per il completamento del proof of work il risultato della verifica sia negativo & Superato\\
+		TVU27 & Si verifichi che data una soluzione errata per il completamento del proof of work\textsubscript{G} il risultato della verifica sia negativo & Superato\\
 		\hline
-		TVU28 & Si verifichi che data una soluzione corretta per il completamento del proof of work il risultato della verifica sia positivo & Superato\\
+		TVU28 & Si verifichi che data una soluzione corretta per il completamento del proof of work\textsubscript{G} il risultato della verifica sia positivo & Superato\\
 		\hline
 		TVU29 & Si verifichi che data una stringa criptata non valida, venga ritornato un errore nel momento dell'operazione di decrittazione & Superato\\
 		\hline
@@ -99,25 +99,25 @@ I problemi rilevati dai test di integrazione rappresentano difetti di progettazi
 		\rowcolor{white}
 		\textbf{ID} & \textbf{Obiettivo test} & \textbf{Stato di implementazione} \\
 		\hline
-		TVI01 & Si verifichi che il tentativo di richiesta per la generazione di un CAPTCHA senza il bearer token corretto reindirizzi alla pagina contenente la documentazione & Superato\\
+		TVI01 & Si verifichi che il tentativo di richiesta per la generazione di un CAPTCHA\textsubscript{G} senza il bearer token corretto reindirizzi alla pagina contenente la documentazione & Superato\\
 		\hline
-		TVI02 & Si verifichi che il tentativo di richiesta per la generazione di un CAPTCHA con tutti i parametri richiesti venga ritornato il json con i valori corretti & Superato\\
+		TVI02 & Si verifichi che il tentativo di richiesta per la generazione di un CAPTCHA\textsubscript{G} con tutti i parametri richiesti venga ritornato il json con i valori corretti & Superato\\
 		\hline
-		TVI03 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA senza il bearer token corretto reindirizzi alla pagina contenente la documentazione & Superato\\
+		TVI03 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA\textsubscript{G} senza il bearer token corretto reindirizzi alla pagina contenente la documentazione & Superato\\
 		\hline
-		TVI04 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta in un formato non valido reindirizzi alla pagina contenente la documentazione & Superato\\
+		TVI04 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA\textsubscript{G} con una risposta in un formato non valido reindirizzi alla pagina contenente la documentazione & Superato\\
 		\hline
-		TVI05 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida e corretta ritorni uno status 200 e un json indicante il risultato positivo della verifica & Superato\\
+		TVI05 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA\textsubscript{G} con una risposta valida e corretta ritorni uno status 200 e un json indicante il risultato positivo della verifica & Superato\\
 		\hline
-		TVI06 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida ma con il proof of work calcolato in maniera errata ritorni uno status 200 e un json indicante il risultato negativo della verifica & Superato\\
+		TVI06 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA\textsubscript{G} con una risposta valida ma con il proof of work\textsubscript{G} calcolato in maniera errata ritorni uno status 200 e un json indicante il risultato negativo della verifica & Superato\\
 		\hline
-		TVI07 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida ma con le immagini selezionate in maniera errata ritorni uno status 200 e un json indicante il risultato negativo della verifica & Superato\\
+		TVI07 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA\textsubscript{G} con una risposta valida ma con le immagini selezionate in maniera errata ritorni uno status 200 e un json indicante il risultato negativo della verifica & Superato\\
 		\hline
-		TVI08 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida ma con l'immagine honeypot selezionata ritorni uno status 200 e un json indicante il risultato negativo della verifica & Superato\\
+		TVI08 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA\textsubscript{G} con una risposta valida ma con l'immagine honeypot\textsubscript{G} selezionata ritorni uno status 200 e un json indicante il risultato negativo della verifica & Superato\\
 		\hline
-		TVI09 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA inesistente ritorni uno status 404 & Superato\\
+		TVI09 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA\textsubscript{G} inesistente ritorni uno status 404 & Superato\\
 		\hline
-		TVI10 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida ritorni il json con il risultato nel formato corretto & Superato\\
+		TVI10 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA\textsubscript{G} con una risposta valida ritorni il json con il risultato nel formato corretto & Superato\\
 		\hline
 		\rowcolor{white}
 		\caption{Test di integrazione}
