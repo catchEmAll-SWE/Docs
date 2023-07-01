@@ -12,7 +12,7 @@ Queste sono:
 \end{itemize}
 
 La componente centrale dell'applicazione risiede nel back-end, dove è stato utilizzato il framework\textsubscript{G} Laravel per la codifica.\\
-La parte back-end è responsabile principalmente della gestione delle richieste della generazione e verifica del CAPTCHA\textsubscript{G}. \\
+La parte back-end è responsabile principalmente della gestione delle richieste della generazione e verifica\textsubscript{G} del CAPTCHA\textsubscript{G}. \\
 D'altro canto, per la parte front-end, è stata creata una semplice pagina HTML per fare le richieste all'API\textsubscript{G}. Questa pagina fornisce un'interfaccia utente elementare attraverso la quale gli utenti possono interagire con il servizio CAPTCHA\textsubscript{G}.
 
 \subsection{Diagrammi delle classi}
@@ -23,7 +23,7 @@ Il diagramma delle classi della parte back-end si può suddividere in varie sezi
 \begin{itemize}
     \item Generazione del CAPTCHA\textsubscript{G};
     \item CAPTCHA\textsubscript{G} Resource;
-    \item Verifica del CAPTCHA\textsubscript{G};
+    \item Verifica\textsubscript{G} del CAPTCHA\textsubscript{G};
     \item Gestione delle chiavi per l'encrypt e decrypt della soluzione del CAPTCHA\textsubscript{G};
     \item Download ed elaborazione delle immagini.
 \end{itemize}
@@ -53,11 +53,11 @@ Ogni CAPTCHA\textsubscript{G} è composto da:
 
 In particolare:
 \begin{itemize}
-    \item \textbf{CaptchaController}: Classe cardine del progetto, la quale si occupa di gestire tutte le richieste che verranno fatte all'API\textsubscript{G}. In questa classe è anche contenuto il metodo che ritornerà l'oggetto \textit{CaptchaResource} a seguito di una richiesta da parte dell'utente;
+    \item \textbf{CaptchaController}: Classe cardine del progetto, la quale si occupa di gestire tutte le richieste che verranno fatte all'API\textsubscript{G}. In questa classe è anche contenuto il metodo che ritornerà l'oggetto \textit{Resource} a seguito di una richiesta da parte dell'utente;
     \item \textbf{CAPTCHA\textsubscript{G}}: Classe che si occupa di mettere insieme tutti i pezzi che compongono il CAPTCHA\textsubscript{G}, ovvero immagini, honeypot\textsubscript{G} e proof of work\textsubscript{G}. Questa classe viene creata dal Controller quando viene richiesto un CAPTCHA\textsubscript{G};
     \item \textbf{CaptchaImgBuilder}: Classe che utilizza il pattern dependency injection e si occupa dell'effettiva creazione della parte del CAPTCHA\textsubscript{G} che contiene le immagini e l'honeypot\textsubscript{G}. Fa inoltre utilizzo di una enumerazione per la gestione dell'affidabilità delle immagini;
     \item \textbf{ProofOfWorkDetails}: Classe che contiene i dati necessari per il calcolo dei nonce nel proof of work\textsubscript{G};
-    \item \textbf{ImageDetails}: Classe che contiene i dettagli utili alla creazione delle 9 immagini che comporranno il Captcha, quali il numero di classi e di immagini per classe che dovrà avere. Viene utilizzata dalla classe \textit{CaptchaImgBuilder};
+    \item \textbf{ImageDetails}: Classe che contiene i dettagli utili alla creazione delle 9 immagini che comporranno il Captcha\textsubscript{G}, quali il numero di classi e di immagini per classe che dovrà avere. Viene utilizzata dalla classe \textit{CaptchaImgBuilder};
     \item \textbf{CaptchaImg}: Classe che contiene le varie informazioni che la parte del CAPTCHA\textsubscript{G} composta dalle immagini deve avere. È l'oggetto che la classe \textit{CaptchaImgBuilder} va a creare;
     \item \textbf{ImageService}: Classe che si interfaccia il DB al fine di recuperare informazioni e immagini necessarie alla creazione del CAPTCHA\textsubscript{G}. Viene utilizzata dalla classe \textit{CaptchaImgBuilder};
     \item \textbf{Image}: Eloquent Model che contiene le informazioni dell'oggetto immagine. Viene utilizzato da \textit{ImageService};
@@ -72,34 +72,34 @@ In particolare:
 	\caption{Diagramma delle classi. Captcha resource}
 \end{figure}
 
-Nella figura sopra viene mostrata la logica utilizzata per la gestione delle informazioni che si vogliono passare all'utente al seguito di una richiesta. Infatti dopo la creazione di un CAPTCHA\textsubscript{G}, viene creato dal Controller l'oggetto \textit{CaptchaResource}, il quale sarà un JSON che contiene solamente le informazioni chiave per il caricamento del CAPTCHA\textsubscript{G} lato front-end e la soluzione criptata che servirà durante la verifica del Captcha. Le classi Resource, come suggerito dal framework\textsubscript{G} Laravel, vengono utilizzate per tradurre un Eloquent Model in formato JSON.
+Nella figura sopra viene mostrata la logica utilizzata per la gestione delle informazioni che si vogliono passare all'utente al seguito di una richiesta. Infatti dopo la creazione di un CAPTCHA\textsubscript{G}, viene creato dal Controller l'oggetto \textit{CaptchaResource}, il quale sarà un JSON che contiene solamente le informazioni chiave per il caricamento del CAPTCHA\textsubscript{G} lato front-end e la soluzione criptata che servirà durante la verifica\textsubscript{G} del Captcha\textsubscript{G}. Le classi Resource, come suggerito dal framework\textsubscript{G} Laravel, vengono utilizzate per tradurre un Eloquent Model in formato JSON.
 
 In particolare:
 \begin{itemize}
 	\item \textbf{CaptchaController}: Dopo aver creato il CAPTCHA\textsubscript{G}, genera l'oggetto \textit{CaptchaResource} il quale contiene le varie informazioni da passare in risposta alla richiesta dell'utente;
 	\item \textbf{CaptchaResource}: Classe Eloquent Resource che utilizza le classi \textit{CaptchaImgResource} e \textit{ProofOfWorkDetailsResource} per generare il JSON che verrà poi inviato all'utente;
-	\item \textbf{CaptchaImgResource}: Classe Eloquent Resource che seleziona le informazioni da inviare all'utente per la parte del CAPTCHA\textsubscript{G} immagini. Utilizza la classe \textit{ImageResource} per le informazioni delle immagini contenute nel Captcha;
+	\item \textbf{CaptchaImgResource}: Classe Eloquent Resource che seleziona le informazioni da inviare all'utente per la parte del CAPTCHA\textsubscript{G} immagini. Utilizza la classe \textit{ImageResource} per le informazioni delle immagini contenute nel Captcha\textsubscript{G};
 	\item \textbf{ProofOfWorkDetailsResource}: Classe Eloquent Resource che seleziona le informazioni da inviare all'utente per la parte del proof of work\textsubscript{G};
 	\item \textbf{ImageResource}: Classe Eloquent Resource che seleziona le informazioni che ogni immagine dovrà avere nella risposta all'utente.
 \end{itemize}
 \newpage
 
-\subsubsubsection{Verifica del CAPTCHA\textsubscript{G}}
+\subsubsubsection{Verifica\textsubscript{G} del CAPTCHA\textsubscript{G}}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale = 0.45]{img/verify.png}\\
-	\caption{Diagramma delle classi. Verifica del CAPTCHA\textsubscript{G}}
+	\caption{Diagramma delle classi. Verifica\textsubscript{G} del CAPTCHA\textsubscript{G}}
 \end{figure}
 
-Nella figura sopra viene mostrata la logica utilizzata per la verifica dei CAPTCHA\textsubscript{G} inviati dagli utenti. \textit{CaptchaController} riceve la richiesta e inizializza il verificatore passandogli i rispettivi verificatori del CAPTCHA\textsubscript{G} immagini e del proof of work\textsubscript{G}.
+Nella figura sopra viene mostrata la logica utilizzata per la verifica\textsubscript{G} dei CAPTCHA\textsubscript{G} inviati dagli utenti. \textit{CaptchaController} riceve la richiesta e inizializza il verificatore passandogli i rispettivi verificatori del CAPTCHA\textsubscript{G} immagini e del proof of work\textsubscript{G}.
 In particolare:
 \begin{itemize}
 	\item \textbf{VerifyCaptchaRequest}: Dopo aver ricevuto la richiesta, Laravel costruisce un oggetto di questa classe la quale estende la classe astratta \textit{Request}, verificando che sia conforme al set di regole specificato. Nel caso in cui il controllo fallisca, viene restituito un messaggio di errore con status code 400;
-	\item \textbf{CaptchaController}: Questa classe si occupa di gestire le richieste per la verifica di un CAPTCHA\textsubscript{G} andando a creare i verificatori che andranno a controllare la correttezza effettiva del CAPTCHA\textsubscript{G};
+	\item \textbf{CaptchaController}: Questa classe si occupa di gestire le richieste per la verifica\textsubscript{G} di un CAPTCHA\textsubscript{G} andando a creare i verificatori che andranno a controllare la correttezza effettiva del CAPTCHA\textsubscript{G};
 	\item \textbf{CaptchaVerifier}: Questa classe utilizza dei \textit{ComponentVerifier} per controllare se la risposta dell'utente è corretta o meno;
 	\item \textbf{IComponentVerifier}: Questa interfaccia possiede il metodo verify che verrà implementato dai due verificatori; 
-	\item \textbf{CaptchaImgVerifier}: Classe che verifica la correttezza della soluzione dell'utente per la parte del CAPTCHA\textsubscript{G} composto dalle immagini, andando inoltre ad utilizzare la classe \textit{ImageService} per aggiornare l'affidabilità delle immagini nel DB;
+	\item \textbf{CaptchaImgVerifier}: Classe che \textsubscript{G} la correttezza della soluzione dell'utente per la parte del CAPTCHA\textsubscript{G} composto dalle immagini, andando inoltre ad utilizzare la classe \textit{ImageService} per aggiornare l'affidabilità delle immagini nel DB;
 	\item \textbf{ProofOfWorkVerifier}: Classe che verifica la correttezza dei nonce calcolati dall'utente durante il proof of work\textsubscript{G};
 	\item \textbf{SolutionParser}: Classe utilizzata da \textit{CaptchaImgVerifier} per decriptare e costruire un'istanza della classe \textit{CaptchaImgSolution};
 	\item \textbf{CaptchaImgSolution}: Classe che contiene gli attributi della soluzione del CAPTCHA\textsubscript{G}. Creata da \textit{SolutionParser} per fornire la soluzione decriptata a \textit{CaptchaImgVerifier};
@@ -144,7 +144,7 @@ La figura sopra riportata rappresenta le varie classi e interfacce che sono util
 	\item Inizialmente viene fatto un controllo per vedere se ci sono immagini con un'affidabilità troppo bassa e quindi eliminarle dal DB;
     \item Dopodiché viene scaricata una nuova immagine di una determina classe da Unsplash;
     \item Viene compiuta l'elaborazione dell'immagine eliminando i colori e tenendo solo il contorno;
-    \item Viene quindi convertita in base64;
+    \item Viene quindi convertita in base64\textsubscript{G};
     \item Infine l'immagine viene salvata e inserita nel DB.
 \end{enumerate}
 \newpage
@@ -154,7 +154,7 @@ In particolare:
     \item \textbf{OutliningService}: Classe che si occupa dell'elaborazione dell'immagine;
     \item \textbf{IOutliningAlgorithm}: Interfaccia che contiene il metodo che sarà poi implementato nella classe \textit{OutilningAlgorithm} per l'elaborazione delle immagini;
     \item \textbf{OutilningAlgorithm}: Classe che implementa l'algoritmo\textsubscript{G} di elaborazione dell'immagine;
-    \item \textbf{StoreImageInBase64Service}: Classe si occupa della conversione in base64 dell'immagine e del suo salvataggio usando come path \textit{classe/id\_immagine};
+    \item \textbf{StoreImageInBase64Service}: Classe si occupa della conversione in base64\textsubscript{G} dell'immagine e del suo salvataggio usando come path \textit{classe/id\_immagine};
     \item \textbf{ImageDatabaseService}: Classe che implementa i vari metodi per eliminare, inserire e fare controlli sulle immagini nel DB.
 \end{itemize}
 \newpage
@@ -166,7 +166,7 @@ La parte del front-end del progetto, è completamente separata dall'API\textsubs
     \item Un file JS che si occupa del calcolo del proof of work\textsubscript{G};
     \item Un file JS che si occupa di inserire dinamicamente i dati ricevuti in risposta dal servizio nella pagina e di far iniziare il proof of work\textsubscript{G};
 \end{itemize}
-Il lato client, per poter fare le richieste al servizio, fa utilizzo anch'esso di una classe Controller, la quale possiede due metodi che vengono chiamati nel caso l'utente voglia generare un CAPTCHA\textsubscript{G} o di verificarne uno. Questi metodi si occupano di fare le richieste effettive all'API\textsubscript{G}, ottenendo i dati in risposta che saranno poi gestiti tramite JS, nel caso della generazione o nel caso della verifica di reindirizzare l'utente in base alla correttezza o meno della risposta inviata.
+Il lato client, per poter fare le richieste al servizio, fa utilizzo anch'esso di una classe Controller, la quale possiede due metodi che vengono chiamati nel caso l'utente voglia generare un CAPTCHA\textsubscript{G} o di verificarne uno. Questi metodi si occupano di fare le richieste effettive all'API\textsubscript{G}, ottenendo i dati in risposta che saranno poi gestiti tramite JS, nel caso della generazione o nel caso della verifica\textsubscript{G} di reindirizzare l'utente in base alla correttezza o meno della risposta inviata.
 Anche questa classe è completamente sconnessa dall'API\textsubscript{G} e si occupa solo di fare le richieste la servizio. 
 
 \begin{figure}[H]
