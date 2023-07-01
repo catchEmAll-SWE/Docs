@@ -61,7 +61,7 @@ Le varie pagine di contenuto sono costituite da:
 Tutti i documenti prodotti sono divisi in:
 \begin{itemize}
     \item \textbf{Uso interno}: Sono documenti finalizzati ad un uso interno al gruppo, ovvero \textit{Norme di progetto} e \textit{Verbali interni};
-    \item \textbf{Uso esterno}: Sono documenti di interesse a tutti gli stakeholder, ovvero \textit{Analisi dei requisiti\textsubscript{G}}, \textit{Verbali esterni}, \textit{Piano di progetto}, \textit{Piano di qualifica}, \textit{Glossario}.
+    \item \textbf{Uso esterno}: Sono documenti di interesse a tutti gli stakeholder, ovvero \textit{Analisi dei requisiti\textsubscript{G}}, \textit{Verbali esterni}, \textit{Piano di progetto}, \textit{Piano di qualifica}, \textit{Glossario}, \textit{Specifica architetturale}, \textit{Manuale utente}.
 \end{itemize}
 
 \subsubsection{Norme tipografiche}
@@ -188,9 +188,9 @@ Lo scopo di questa sezione è descrivere come il team ha deciso di mantenere tra
 
 \subsubsection{Sistemi software utilizzati}
 La gestione delle versioni dei documenti viene effettuata utilizzando il sistema di controllo di versione Git, attraverso il servizio di GitHub\textsubscript{G}. Per la scrittura dei verbali interni ed esterni si è deciso di utilizzare il servizio Confluence offerto da JIRA\textsubscript{G}.
-Al fine di una migliore organizzazione sono stati creati 3 repository per: documentazione, PoC\textsubscript{G} e RTB.
+Al fine di una migliore organizzazione sono stati creati 3 repository\textsubscript{G} per: documentazione, PoC\textsubscript{G} e RTB.
 \subsubsection{Strutture dei repository\textsubscript{G}}
-Di seguito vengono illustrati i conenuti dei repository:
+Di seguito vengono illustrati i contenuti dei repository\textsubscript{G}:
 \begin{itemize}
 	\item \textbf{Docs} è il repository\textsubscript{G} contenente documentazione riguardante:
 	\begin{itemize}
@@ -219,6 +219,11 @@ Di seguito vengono illustrati i conenuti dei repository:
 		\item \textit{Glossario v 1.0.0};
 		\item Link ai verbali.
 	\end{itemize}
+	\item \textbf{Dev} è il repository\textsubscript{G} contenente il codice utilizzato per lo sviluppo del prodotto. Al suo interno è presente:
+	\begin{itemize}
+		\item Script\textsubscript{G} per lo scontorno delle immagini;
+		\item Cartella contenente le parti frond-end e back-end del prodotto, sviluppate utilizzando il framework\textsubscript{G} Laravel\textsubscript{G}.
+	\end{itemize}
 \end{itemize}
 \subsubsection{Struttura delle cartelle su Confluence}
 Confluence, un servizio fornito da JIRA\textsubscript{G}, è utilizzato dal gruppo per la scrittura e l'organizzazione di:
@@ -239,7 +244,7 @@ Nella repository\textsubscript{G} \textit{Docs} sono presenti esclusivamente fil
 \subsection{Assicurazione della qualità}
 \subsubsection{Scopo}
 L'assicurazione della qualità ha lo scopo di accertare che tutti i processi e i prodotti siano conformi con gli obiettivi e le metriche definiti dal gruppo nel documento \textit{Piano\_di\_qualifica v 1.0.0}. 
-Devono essere continuamente osservate sia la qualità di processo\textsubscript{G}, per garantire una buona gestione del progetto, sia la qualità di prodotto, per assicurarsi di ottenere un prodotto finale conforme alle richieste del proponente.
+Devono essere continuamente osservate sia la qualità di processo\textsubscript{G}, per garantire una buona gestione del progetto, sia la qualità di prodotto\textsubscript{G}, per assicurarsi di ottenere un prodotto finale conforme alle richieste del proponente.
 \subsubsection{Denominazione obiettivi di qualità}
 Ogni obiettivo sarà contrassegnato da un codice univoco così composto:
 \begin{center}
@@ -344,11 +349,10 @@ Le metriche di qualità a cui il prodotto software finale dovrà essere conforme
 	\item \textbf{Completezza di descrizione}: Che fa riferimento alla metrica \textit{MQPD05};
 	\item \textbf{Completezza della guida utente}: Che fa riferimento alla metrica \textit{MQPD06};
 	\item \textbf{Interfaccia utente auto-esplicativa}: Che fa riferimento alla metrica \textit{MQPD07};
-	\item \textbf{Procedure di autenticazione}: Che fa riferimento alla metrica \textit{MQPD08};
-	\item \textbf{Accoppiamento\textsubscript{G} di componenti}: Che fa riferimento alla metrica \textit{MQPD09};
-	\item \textbf{Adeguatezza della complessità ciclomatica}\textsubscript{G}: Che fa riferimento alla metrica \textit{MQPD10};
-	\item \textbf{Completezza della funzione di test}: Che fa riferimento alla metrica \textit{MQPD11};
-	\item \textbf{Browser supportati}: Che fa riferimento alla metrica \textit{MQPD12}.
+	\item \textbf{Accoppiamento\textsubscript{G} di componenti}: Che fa riferimento alla metrica \textit{MQPD08};
+	\item \textbf{Adeguatezza della complessità ciclomatica}\textsubscript{G}: Che fa riferimento alla metrica \textit{MQPD09};
+	\item \textbf{Completezza della funzione di test}: Che fa riferimento alla metrica \textit{MQPD10};
+	\item \textbf{Browser supportati}: Che fa riferimento alla metrica \textit{MQPD11}.
 \end{itemize}
 \paragraph{Copertura funzionale}\mbox{}\\
 Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per verificare che tutti i requisiti obbligatori del progetto siano stati integrati nel prodotto finale. Questa metrica è calcolata attraverso il rapporto tra il numero di requisiti soddisfatti e quello di requisiti obbligatori totali:
@@ -360,7 +364,7 @@ Dove \textbf{CF} sta per \textit{Copertura funzionale}.
 \paragraph{Tempo di risposta dei servizi all'utente}\mbox{}\\
 Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per assicurare che i tempi di risposta del prodotto siano accettabili. Un tempo di risposta adeguato in un sistema CAPTCHA\textsubscript{G} è molto importante e per questo è un obiettivo fondamentale. Il valore accettabile verrà analizzato in una fase più avanzata di progetto.
 \paragraph{Copertura dei test}\mbox{}\\
-Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per verificare che i test svolti sul prodotto finale coprano tutti i requisiti e casi d’uso identificati. Questa metrica è calcolata attraverso il rapporto tra il numero di requisiti e casi d'uso testati e quello di requisiti e casi d'uso totali da testare:
+Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per verificare che i test svolti sul prodotto finale coprano tutti i requisiti e casi d’uso identificati. Questa metrica è calcolata attraverso il rapporto tra il numero di requisiti e casi d'uso\textsubscript{G} testati e quello di requisiti e casi d'uso\textsubscript{G} totali da testare:
 \begin{align*}
 	\centering
 	\textbf{CdT} = \frac{RqUCTestati}{RqUCTotali}
@@ -394,18 +398,12 @@ Questa metrica è di riferimento ai prodotti software ed è utilizzata dal grupp
 	\textbf{IUAE} = \frac{InfoFornite}{InfoRichieste}
 \end{align*}
 Dove \textbf{IUAE} sta per \textit{Interfaccia utente auto-esplicativa}.
-\paragraph{Procedure di autenticazione}\mbox{}\\
-Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per verificare il grado di efficacia del sistema CAPTCHA\textsubscript{G} implementato per l'autenticazione di un utente. Il gruppo definisce un grado di accettabilità per la percentuale di accessi indesiderati non bloccati:
-\begin{center}
-	\textbf{AINB} $\le$ 25\%
-\end{center}
-Dove \textbf{AINB} sta per \textit{Accessi indesiderati non bloccati}.
 \paragraph{Accoppiamento\textsubscript{G} di componenti}\mbox{}\\
 Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per controllare quanti componenti del sistema sono strettamente  indipendenti e quanti sono esenti da impatti conseguenti a cambiamenti negli altri componenti.
 In futuro verrà definito un valore per misurarla al meglio. 
 \paragraph{Adeguatezza della complessità ciclomatica\textsubscript{G}}\mbox{}\\
 Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per verificare quanti moduli software hanno una complessità ciclomatica\textsubscript{G} accettabile. Per verificarla il gruppo deciderà una soglia di accettabilità per i vari linguaggi di programmazione e per il tipo di modulo o di funzione utilizzati durante il progetto.\\
-Nelle metriche software la complessità ciclomatica\textsubscript{G} è usata per valutare la complessità di un algoritmo ed è basata sulla struttura del grafo che rappresenta l’algoritmo da misurare. Per calcolarla si fa uso di questa formula:
+Nelle metriche software la complessità ciclomatica\textsubscript{G} è usata per valutare la complessità di un algoritmo\textsubscript{G} ed è basata sulla struttura del grafo che rappresenta l’algoritmo\textsubscript{G} da misurare. Per calcolarla si fa uso di questa formula:
 \begin{align*}
 	\centering
 	\textbf{v(G)} = L - N + 2 * P
@@ -477,7 +475,7 @@ l’intero arco di vita del progetto), il gruppo si è impegnato nello sviluppo 
 uno riguardante i documenti e l'altro per le parole del Glossario.\\
 Etrambi gli script\textsubscript{G} sono eseguibili da qualunque ambiente di sviluppo e sono stati sviluppati in Python\textsubscript{G}.\\
 La loro semplice e breve esecuzione permette un controllo frequente.\\
-Sono stati, inoltre, integrati e resi obbligatori nel repository pubblico attraverso le branch protection rules\textsubscript{G} di GitHub\textsubscript{G}.
+Sono stati, inoltre, integrati e resi obbligatori nel repository\textsubscript{G} pubblico attraverso le branch protection rules\textsubscript{G} di GitHub\textsubscript{G}.
 \paragraph{File correctness script\textsubscript{G}}\mbox{}\\
 Questo script\textsubscript{G} permette di controllare la correttezza dei file di testo (ad esempio i file .tex) e delle cartelle.\\
 Il programma permette di verificare determinati elementi:
@@ -583,7 +581,25 @@ Informazioni più dettagliate sui vari test, strumenti e metriche utilizzate per
 
 \subsection{Validazione\textsubscript{G} e collaudo}
 \subsubsection{Scopo}
-Lo scopo di questo processo è quello di confermare che tutti i requisiti\textsubscript{G} siano stati soddisfatti con la realizzazione del prodotto finale, il quale deve essere conforme alle richieste del proponente. Si arriva alla validazione\textsubscript{G} e al collaudo dopo aver svolto tutti i test di verifica\textsubscript{G}. La verifica verifica\textsubscript{G} è infatti strettamente legata alla validazione\textsubscript{G}, in quanto un'attenta verifica\textsubscript{G} durante il corso del progetto permette di superare con successo anche il processo di validazione\textsubscript{G}.
+Lo scopo di questo processo è quello di confermare che tutti i requisiti\textsubscript{G} siano stati soddisfatti con la realizzazione del prodotto finale, il quale deve essere conforme alle richieste del proponente. Si arriva alla validazione\textsubscript{G} e al collaudo dopo aver svolto tutti i test di verifica\textsubscript{G}. La verifica\textsubscript{G} è infatti strettamente legata alla validazione\textsubscript{G}, in quanto un'attenta verifica\textsubscript{G} durante il corso del progetto permette di superare con successo anche il processo di validazione\textsubscript{G}.
+Sarà il responsabile di progetto che avrà la responsabilità di controllare i risultati decidendo se:
+\begin{itemize}
+	\item Accettare il prodotto;
+	\item Rifiutarlo richiedendo una nuova verifica.
+\end{itemize}
+\subsubsection{Aspettative}
+Il gruppo dovrà assicurarsi che i seguenti punti siano rispettati:
+\begin{itemize}
+	\item Il prodotto software sia conforme con i requisiti riportati nel documento Analisi\_dei\_requisiti v 2.0.0;
+	\item Dimostrare la correttezza delle attività svolte durante il periodo di verifica.
+\end{itemize}
+\subsubsection{Validazione della documentazione}
+Al termine della stesura di un documento il responsabile si occupa di rileggerlo controllandone anche la correttezza grammaticale, ne calcola l’indice di
+Gulpease e si assicura che gli obiettivi stabiliti siano stati raggiunti. Se il documento soddisfa le attese
+allora viene approvato per il rilascio, invece se non le soddisfa il responsabile assegna il compito di
+sistemare le parti carenti e la procedura si ripete.
+\subsubsection{Validazione del codice}
+Il verificatore esegue i test di unità, integrazione, sistema e di accettazione e si assicura che il tasso di superamento sia conforme alle metriche definite.
 
 \subsection{Usabilità}
 \subsubsection{Scopo}
