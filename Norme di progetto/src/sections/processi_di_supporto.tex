@@ -188,9 +188,9 @@ Lo scopo di questa sezione è descrivere come il team ha deciso di mantenere tra
 
 \subsubsection{Sistemi software utilizzati}
 La gestione delle versioni dei documenti viene effettuata utilizzando il sistema di controllo di versione Git, attraverso il servizio di GitHub\textsubscript{G}. Per la scrittura dei verbali interni ed esterni si è deciso di utilizzare il servizio Confluence offerto da JIRA\textsubscript{G}.
-Al fine di una migliore organizzazione sono stati creati 3 repository per: documentazione, PoC\textsubscript{G} e RTB.
+Al fine di una migliore organizzazione sono stati creati 3 repository\textsubscript{G} per: documentazione, PoC\textsubscript{G} e RTB.
 \subsubsection{Strutture dei repository\textsubscript{G}}
-Di seguito vengono illustrati i conenuti dei repository:
+Di seguito vengono illustrati i contenuti dei repository\textsubscript{G}:
 \begin{itemize}
 	\item \textbf{Docs} è il repository\textsubscript{G} contenente documentazione riguardante:
 	\begin{itemize}
@@ -221,8 +221,8 @@ Di seguito vengono illustrati i conenuti dei repository:
 	\end{itemize}
 	\item \textbf{Dev} è il repository\textsubscript{G} contenente il codice utilizzato per lo sviluppo del prodotto. Al suo interno è presente:
 	\begin{itemize}
-		\item Script per lo scontorno delle immagini;
-		\item Cartella contenente le parti frond-end e back-end del prodotto, sviluppate utilizzando il framework Laravel.
+		\item Script\textsubscript{G} per lo scontorno delle immagini;
+		\item Cartella contenente le parti frond-end e back-end del prodotto, sviluppate utilizzando il framework\textsubscript{G} Laravel\textsubscript{G}.
 	\end{itemize}
 \end{itemize}
 \subsubsection{Struttura delle cartelle su Confluence}
@@ -244,7 +244,7 @@ Nella repository\textsubscript{G} \textit{Docs} sono presenti esclusivamente fil
 \subsection{Assicurazione della qualità}
 \subsubsection{Scopo}
 L'assicurazione della qualità ha lo scopo di accertare che tutti i processi e i prodotti siano conformi con gli obiettivi e le metriche definiti dal gruppo nel documento \textit{Piano\_di\_qualifica v 1.0.0}. 
-Devono essere continuamente osservate sia la qualità di processo\textsubscript{G}, per garantire una buona gestione del progetto, sia la qualità di prodotto, per assicurarsi di ottenere un prodotto finale conforme alle richieste del proponente.
+Devono essere continuamente osservate sia la qualità di processo\textsubscript{G}, per garantire una buona gestione del progetto, sia la qualità di prodotto\textsubscript{G}, per assicurarsi di ottenere un prodotto finale conforme alle richieste del proponente.
 \subsubsection{Denominazione obiettivi di qualità}
 Ogni obiettivo sarà contrassegnato da un codice univoco così composto:
 \begin{center}
@@ -364,7 +364,7 @@ Dove \textbf{CF} sta per \textit{Copertura funzionale}.
 \paragraph{Tempo di risposta dei servizi all'utente}\mbox{}\\
 Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per assicurare che i tempi di risposta del prodotto siano accettabili. Un tempo di risposta adeguato in un sistema CAPTCHA\textsubscript{G} è molto importante e per questo è un obiettivo fondamentale. Il valore accettabile verrà analizzato in una fase più avanzata di progetto.
 \paragraph{Copertura dei test}\mbox{}\\
-Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per verificare che i test svolti sul prodotto finale coprano tutti i requisiti e casi d’uso identificati. Questa metrica è calcolata attraverso il rapporto tra il numero di requisiti e casi d'uso testati e quello di requisiti e casi d'uso totali da testare:
+Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per verificare che i test svolti sul prodotto finale coprano tutti i requisiti e casi d’uso identificati. Questa metrica è calcolata attraverso il rapporto tra il numero di requisiti e casi d'uso\textsubscript{G} testati e quello di requisiti e casi d'uso\textsubscript{G} totali da testare:
 \begin{align*}
 	\centering
 	\textbf{CdT} = \frac{RqUCTestati}{RqUCTotali}
@@ -403,7 +403,7 @@ Questa metrica è di riferimento ai prodotti software ed è utilizzata dal grupp
 In futuro verrà definito un valore per misurarla al meglio. 
 \paragraph{Adeguatezza della complessità ciclomatica\textsubscript{G}}\mbox{}\\
 Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per verificare quanti moduli software hanno una complessità ciclomatica\textsubscript{G} accettabile. Per verificarla il gruppo deciderà una soglia di accettabilità per i vari linguaggi di programmazione e per il tipo di modulo o di funzione utilizzati durante il progetto.\\
-Nelle metriche software la complessità ciclomatica\textsubscript{G} è usata per valutare la complessità di un algoritmo ed è basata sulla struttura del grafo che rappresenta l’algoritmo da misurare. Per calcolarla si fa uso di questa formula:
+Nelle metriche software la complessità ciclomatica\textsubscript{G} è usata per valutare la complessità di un algoritmo\textsubscript{G} ed è basata sulla struttura del grafo che rappresenta l’algoritmo\textsubscript{G} da misurare. Per calcolarla si fa uso di questa formula:
 \begin{align*}
 	\centering
 	\textbf{v(G)} = L - N + 2 * P
@@ -475,7 +475,7 @@ l’intero arco di vita del progetto), il gruppo si è impegnato nello sviluppo 
 uno riguardante i documenti e l'altro per le parole del Glossario.\\
 Etrambi gli script\textsubscript{G} sono eseguibili da qualunque ambiente di sviluppo e sono stati sviluppati in Python\textsubscript{G}.\\
 La loro semplice e breve esecuzione permette un controllo frequente.\\
-Sono stati, inoltre, integrati e resi obbligatori nel repository pubblico attraverso le branch protection rules\textsubscript{G} di GitHub\textsubscript{G}.
+Sono stati, inoltre, integrati e resi obbligatori nel repository\textsubscript{G} pubblico attraverso le branch protection rules\textsubscript{G} di GitHub\textsubscript{G}.
 \paragraph{File correctness script\textsubscript{G}}\mbox{}\\
 Questo script\textsubscript{G} permette di controllare la correttezza dei file di testo (ad esempio i file .tex) e delle cartelle.\\
 Il programma permette di verificare determinati elementi:
