@@ -6,9 +6,9 @@ Un'architettura\textsubscript{G} API\textsubscript{G} REST (Representational Sta
 Queste sono:
 \begin{itemize}
 	\item \textbf{Stateless}: Ogni richiesta del client al server deve contenere tutte le informazioni necessarie per comprendere e soddisfare la richiesta. Il server non deve mantenere alcun stato delle richieste precedenti del client. Ogni richiesta viene considerata isolata e indipendente dalle altre;
-	\item \textbf{Rappresentazione delle risorse}: Le risorse, come ad esempio i dati, sono rappresentate in un formato standard, come JSON o XML. Le rappresentazioni delle risorse possono essere trasferite tra client e server tramite richieste HTTP.
+	\item \textbf{Rappresentazione delle risorse}: Le risorse, come ad esempio i dati, sono rappresentate in un formato standard, come JSON o XML. Le rappresentazioni delle risorse possono essere trasferite tra client e server tramite richieste HTTP;
 	\item \textbf{Interfaccia uniforme}:  Un'API\textsubscript{G} REST segue un insieme di operazioni standardizzate, tra cui GET, POST, PUT e DELETE, che sono applicate a risorse identificate da URL univoci. Questa interfaccia uniforme semplifica l'interazione tra client e server e rende l'API\textsubscript{G} più intuitiva e prevedibile;
-	\item \textbf{Livelli}:  L'architettura\textsubscript{G} API\textsubscript{G} REST può essere composta da più livelli, come il bilanciamento del carico, i server intermedi e i servizi di cache, che possono essere utilizzati per migliorare la scalabilità, l'affidabilità e le prestazioni del sistema.\\
+	\item \textbf{Livelli}:  L'architettura\textsubscript{G} API\textsubscript{G} REST può essere composta da più livelli, come il bilanciamento del carico, i server intermedi e i servizi di cache, che possono essere utilizzati per migliorare la scalabilità, l'affidabilità e le prestazioni del sistema.
 \end{itemize}
 
 La componente centrale dell'applicazione risiede nel back-end, dove è stato utilizzato il framework\textsubscript{G} Laravel per la codifica.\\
@@ -98,7 +98,7 @@ In particolare:
 	\item \textbf{VerifyCaptchaRequest}: Dopo aver ricevuto la richiesta, Laravel costruisce un oggetto di questa classe la quale estende la classe astratta \textit{Request}, verificando che sia conforme al set di regole specificato. Nel caso in cui il controllo fallisca, viene restituito un messaggio di errore con status code 400;
 	\item \textbf{CaptchaController}: Questa classe si occupa di gestire le richieste per la verifica\textsubscript{G} di un CAPTCHA\textsubscript{G} andando a creare i verificatori che andranno a controllare la correttezza effettiva del CAPTCHA\textsubscript{G};
 	\item \textbf{CaptchaVerifier}: Questa classe utilizza dei \textit{ComponentVerifier} per controllare se la risposta dell'utente è corretta o meno;
-	\item \textbf{IComponentVerifier}: Questa interfaccia possiede il metodo verify che verrà implementato dai due verificatori; 
+	\item \textbf{IComponentVerifier}: Questa interfaccia possiede il metodo verify che verrà implementato dai due verificatori;
 	\item \textbf{CaptchaImgVerifier}: Classe che \textsubscript{G} la correttezza della soluzione dell'utente per la parte del CAPTCHA\textsubscript{G} composto dalle immagini, andando inoltre ad utilizzare la classe \textit{ImageService} per aggiornare l'affidabilità delle immagini nel DB;
 	\item \textbf{ProofOfWorkVerifier}: Classe che verifica la correttezza dei nonce calcolati dall'utente durante il proof of work\textsubscript{G};
 	\item \textbf{SolutionParser}: Classe utilizzata da \textit{CaptchaImgVerifier} per decriptare e costruire un'istanza della classe \textit{CaptchaImgSolution};
@@ -121,8 +121,8 @@ Nella figura sopra viene mostrata la logica utilizzata per la gestione delle chi
 In particolare:
 \begin{itemize}
 	\item \textbf{SolutionParser}: Questa classe si occupa di criptare e decriptare le soluzioni dei CAPTCHA\textsubscript{G} utilizzando la classe \textit{EncryptionService};
-	\item \textbf{EncryptionService}: Classe che implementa i metodi crypt e decrypt per le diverse situazioni in cui sono richiesti.
-	\item \textbf{IEncryptionAlgorithm}: Questa interfaccia possiede i metodi crypt e decrypt che verranno implementati dalla classe \textit{AES256Cipher}; 
+	\item \textbf{EncryptionService}: Classe che implementa i metodi crypt e decrypt per le diverse situazioni in cui sono richiesti;
+	\item \textbf{IEncryptionAlgorithm}: Questa interfaccia possiede i metodi crypt e decrypt che verranno implementati dalla classe \textit{AES256Cipher};
 	\item \textbf{AES256Cipher}: Classe che implementa i metodi crypt e decrypt attraverso la chiave fornita e l'algoritmo\textsubscript{G} AES256;
 	\item \textbf{KeyManager}: Classe che contiene i vari metodi che permettono di inserire, recuperare e aggiornare le chiavi nel DB;
 	\item \textbf{Key}: Eloquent Model che contiene i vari attributi che una chiave deve possedere. Utilizzato dalla classe \textit{KeyManager};
@@ -164,7 +164,7 @@ La parte del front-end del progetto, è completamente separata dall'API\textsubs
 	\item Pagina di login, nella quale l'utente può richiedere un CAPTCHA\textsubscript{G}, 
     compilarlo e fare di conseguenza l'accesso;
     \item Un file JS che si occupa del calcolo del proof of work\textsubscript{G};
-    \item Un file JS che si occupa di inserire dinamicamente i dati ricevuti in risposta dal servizio nella pagina e di far iniziare il proof of work\textsubscript{G};
+    \item Un file JS che si occupa di inserire dinamicamente i dati ricevuti in risposta dal servizio nella pagina e di far iniziare il proof of work\textsubscript{G}.
 \end{itemize}
 Il lato client, per poter fare le richieste al servizio, fa utilizzo anch'esso di una classe Controller, la quale possiede due metodi che vengono chiamati nel caso l'utente voglia generare un CAPTCHA\textsubscript{G} o di verificarne uno. Questi metodi si occupano di fare le richieste effettive all'API\textsubscript{G}, ottenendo i dati in risposta che saranno poi gestiti tramite JS, nel caso della generazione o nel caso della verifica\textsubscript{G} di reindirizzare l'utente in base alla correttezza o meno della risposta inviata.
 Anche questa classe è completamente sconnessa dall'API\textsubscript{G} e si occupa solo di fare le richieste la servizio. 
