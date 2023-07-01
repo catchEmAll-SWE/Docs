@@ -21,7 +21,7 @@ def checkGlossaryWordPresenceInOfficialDocs(word: str) -> bool:
     possible_duplicate = {'github' : ['workflow'], 'framework' : ['scrum']} #must be lowercase
     errors = []
     warnings = []
-    official_docs_dirs = ['Analisi dei requisiti/', 'Norme di progetto/', 'Piano di progetto/', 'Piano di qualifica/']
+    official_docs_dirs = ['Specifica architetturale/']
     official_dirs = [Path('.')/dir_name for dir_name in official_docs_dirs]
     for dir in official_dirs:
         if dir.exists():
