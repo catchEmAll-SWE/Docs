@@ -11,15 +11,121 @@ La verifica\textsubscript{G} software così descritta prepara il successo della 
 Le specifiche dei test di integrazione ed unità\textsubscript{G} verranno definite nelle prossime versioni del presente documento.
 \subsection{Test di unità}
 Solitamente un'unità\textsubscript{G} software può essere realizzata da un singolo programmatore, e pertanto il test di unità, che ha il compito di verificare il comportamento di ogni unità\textsubscript{G} isolandola dalle altre, potrà essere a carico dello stesso autore. Il test di unità potrà considerarsi completo una volta che tutte le unità\textsubscript{G} software saranno state verificate.
+\begin{center}
+	\setlength\extrarowheight{5pt}
+	\rowcolors{2}{gray!10}{gray!40}
+	\begin{xltabular}{\textwidth}{|c|X|c|}
+		\hline
+		\rowcolor{white}
+		\textbf{ID} & \textbf{Obiettivo test} & \textbf{Stato di implementazione} \\
+		\hline
+		TVU01 & Si verifichi che il numero di classi presenti nel CAPTCHA sia compreso tra 2 e 4 & Superato\\
+		\hline
+		TVU02 & Si verifichi che il numero di immagini per classe presenti nel CAPTCHA sia compreso tra 2 e 7 & Superato\\
+		\hline
+		TVU03 & Si verifichi che il numero di immagini visibili all'utente che compongono il CAPTCHA sia sempre 9 & Superato\\
+		\hline
+		TVU04 & Si verifichi che le classi vengano ritornate correttamente a seguito di un'interrogazione al DB & Superato\\
+		\hline
+		TVU05 & Si verifichi che il numero di classi ritornato sia uguale a quello richiesto in seguito ad un'interrogazione al DB & Superato\\
+		\hline
+		TVU06 & Si verifichi che a seguito di una richiesta con un numero negativo di classi sia ritornato un errore OutOfBoundsException & Superato\\
+		\hline
+		TVU07 & Si verifichi che a seguito di una richiesta di immagini appartenenti alla stessa classe e con una specifica affidabilità, queste vengano ritornate nel formato corretto & Superato\\
+		\hline
+		TVU08 &  Si verifichi che a seguito di una richiesta di immagini appartenenti alla stessa classe e con una specifica affidabilità, il numero queste ultime sia corretto & Superato\\
+		\hline
+		TVU09 &  Si verifichi che a seguito di una richiesta di immagini appartenenti alla stessa classe e con una specifica affidabilità, la classe di ognuna sia corretta & Superato\\
+		\hline
+		TVU10 &  Si verifichi che a seguito di una richiesta di immagini appartenenti alla stessa classe e con una specifica affidabilità, l'affidabilità di ognuna sia corretta & Superato\\
+		\hline
+		TVU11 &  Si verifichi che a seguito di una richiesta di immagini appartenenti ad una classe inesistente sia ritornato un errore InvalidArgumentException & Superato\\
+		\hline
+		TVU12 &  Si verifichi che a seguito di una richiesta di un numero di immagini superiore a quello presente nel DB sia ritornato un errore InvalidArgumentException & Superato\\
+		\hline
+		TVU13 &  Si verifichi che l'operazione di modifica dell'affidabilità di un'immagine sia svolta correttamente & Superato\\
+		\hline
+		TVU14 &  Si verifichi che l'operazione di modifica dell'affidabilità di un'immagine inesistente non produca alcune cambiamento & Superato\\
+		\hline
+		TVU15 &  Si verifichi che la costruzione della soluzione di un CAPTCHA ritorni il risultato desiderato & Superato\\
+		\hline
+		TVU16 &  Si verifichi che la soluzione del CAPTCHA sia costruita nel formato corretto & Superato\\
+		\hline
+		TVU17 &  Si verifichi che alla costruzione del CAPTCHA la soglia di affidabilità minima sia raggiunta & Superato\\
+		\hline
+		TVU18 &  Si verifichi che alla costruzione del CAPTCHA la soglia di affidabilità minima per le immagini della classe target sia raggiunta & Superato\\
+		\hline
+		TVU19 &  Si verifichi che alla costruzione del CAPTCHA la soglia di affidabilità minima per le immagini della classe non target sia raggiunta & Superato\\
+		\hline
+		TVU20 &  Si verifichi che le fixedString, utilizzate per il calcolo del proof of work siano costruite nella maniera corretta & Superato\\
+		\hline
+		TVU21 & Si verifichi che data una soluzione corretta il risultato della verifica sia positivo  & Superato\\
+		\hline
+		TVU22 & Si verifichi che data una soluzione nella quale è stato selezionato l'honeypot il risultato della verifica sia negativo  & Superato\\
+		\hline
+		TVU23 & Si verifichi che data una soluzione nella quale non sono state selezionate le immagini target affidabili il risultato della verifica sia negativo  & Superato\\
+		\hline
+		TVU24 & Si verifichi che data una soluzione nella quale sono state selezionate immagini non target affidabili il risultato della verifica sia negativo & Superato\\
+		\hline
+		TVU25 & Si verifichi che data una soluzione nella quale il numero di immagini non affidabili appartenenti alla classe target selezionate sia inferiore alla soglia minima il risultato della verifica sia negativo & Superato\\
+		\hline
+		TVU26 & Si verifichi che data una soluzione nella quale il numero di immagini non affidabili appartenenti alla classe target selezionate sia superiore alla soglia minima il risultato della verifica sia positivo & Superato\\
+		\hline
+		TVU27 & Si verifichi che data una soluzione errata per il completamento del proof of work il risultato della verifica sia negativo & Superato\\
+		\hline
+		TVU28 & Si verifichi che data una soluzione corretta per il completamento del proof of work il risultato della verifica sia positivo & Superato\\
+		\hline
+		TVU29 & Si verifichi che data una stringa criptata non valida, venga ritornato un errore nel momento dell'operazione di decrittazione & Superato\\
+		\hline
+		TVU30 & Si verifichi che data una stringa criptata valida, venga ritornata la stringa originale a seguito dell'operazione di decrittazione & Superato\\
+		\hline
+		TVU31 & Si verifichi che l'operazione di decrittazione ritorni sempre l'originale & Superato\\
+		\hline
+		\rowcolor{white}
+		\caption{Test di unità}
+	\end{xltabular}
+\end{center}
+
 
 \subsection{Test di integrazione}
 I test di integrazione si applicano per testare la corretta interazione tra le componenti del sistema. Essi vengono definiti durante la progettazione architetturale e si basano sui componenti in essa specificati.
 Per definire i test di integrazione è necessario selezionare quali funzionalità integrare individuandone le componenti coinvolte e ordinandole per dipendenze crescenti.
 I problemi rilevati dai test di integrazione rappresentano difetti di progettazione o una scarsa qualità dei test di unità. Il numero dei test di integrazione è il necessario per accertare che i dati scambiati tra interfacce siano conformi e che i flussi di controllo siano tutti testati e funzionanti.
+\begin{center}
+	\setlength\extrarowheight{5pt}
+	\rowcolors{2}{gray!10}{gray!40}
+	\begin{xltabular}{\textwidth}{|c|X|c|}
+		\hline
+		\rowcolor{white}
+		\textbf{ID} & \textbf{Obiettivo test} & \textbf{Stato di implementazione} \\
+		\hline
+		TVI01 & Si verifichi che il tentativo di richiesta per la generazione di un CAPTCHA senza il bearer token corretto reindirizzi alla pagina contenente la documentazione & Superato\\
+		\hline
+		TVI02 & Si verifichi che il tentativo di richiesta per la generazione di un CAPTCHA con tutti i parametri richiesti venga ritornato il json con i valori corretti & Superato\\
+		\hline
+		TVI03 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA senza il bearer token corretto reindirizzi alla pagina contenente la documentazione & Superato\\
+		\hline
+		TVI04 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta in un formato non valido reindirizzi alla pagina contenente la documentazione & Superato\\
+		\hline
+		TVI05 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida e corretta ritorni uno status 200 e un json indicante il risultato positivo della verifica & Superato\\
+		\hline
+		TVI06 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida ma con il proof of work calcolato in maniera errata ritorni uno status 200 e un json indicante il risultato negativo della verifica & Superato\\
+		\hline
+		TVI07 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida ma con le immagini selezionate in maniera errata ritorni uno status 200 e un json indicante il risultato negativo della verifica & Superato\\
+		\hline
+		TVI08 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida ma con l'immagine honeypot selezionata ritorni uno status 200 e un json indicante il risultato negativo della verifica & Superato\\
+		\hline
+		TVI09 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA inesistente ritorni uno status 404 & Superato\\
+		\hline
+		TVI10 & Si verifichi che il tentativo di richiesta per la verifica di un CAPTCHA con una risposta valida ritorni il json con il risultato nel formato corretto & Superato\\
+		\hline
+		\rowcolor{white}
+		\caption{Test di integrazione}
+	\end{xltabular}
+\end{center}
 
 \subsection{Test di sistema}
 I test di sistema sono finalizzati all'accertamento della copertura dei requisiti\textsubscript{G} individuati nella fase di analisi, e sono quindi test propedeutici al collaudo.
-\newpage
 \begin{center}
 	\setlength\extrarowheight{5pt}
 	\rowcolors{2}{gray!10}{gray!40}

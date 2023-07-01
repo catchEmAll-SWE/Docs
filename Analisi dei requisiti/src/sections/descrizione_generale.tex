@@ -9,6 +9,8 @@ L'obiettivo di questo progetto è la creazione di un CAPTCHA\textsubscript{G} ch
 Il test CAPTCHA\textsubscript{G} pensato richiederà all'utente di svolgere una task\textsubscript{G} di classificazione.\\
 In particolare verrà fornito un insieme di 9 immagini, ognuna con una propria classe di appartenenza, con un totale di classi, presenti nell'insieme fornito, che può variare tra 2 ad un massimale di 4.\\
 All'utente, come task\textsubscript{G}, verrà richiesto di selezionare le immagini appartenenti ad una particolare classe presente nell'insieme.
+Inoltre vi sarà una parte di proof of work\textsubscript{G} per aumentare la sicurezza del sistema.
+Per fare ciò il gruppo ha scelto di sviluppare un API\textsubscript{G} alla quale il client farà le richieste di generazione e verifica di un CAPTCHA\textsubscript{G}.
 
 \subsubsection{Dataset\textsubscript{G} di immagini}
 Verrà utilizzato il dataset\textsubscript{G} pubblico Unsplash, un dataset\textsubscript{G} di immagini senza copyright\textsubscript{G}, il quale fornisce un'API\textsubscript{G} che permette il prelevamento di immagini dato un ID\textsubscript{G} o una query\textsubscript{G}, la cui immagine risultante sarà fatta corrispondere ad una classe di appartenenza nel nostro database\textsubscript{G}.
@@ -17,7 +19,7 @@ Verrà utilizzato il dataset\textsubscript{G} pubblico Unsplash, un dataset\text
 Il team si occuperà di generare un algoritmo\textsubscript{G} ad hoc, in linguaggio Python\textsubscript{G}, che presa un'immagine dal dataset\textsubscript{G} Unsplash, individua il soggetto dell'immagine per poi ridefinirne solo i contorni in bianco e lasciando tutto il resto dell'immagine in nero.  
 
 \subsubsection{Algoritmo\textsubscript{G} di controllo sulla correttezza della soluzione generata dall'utente}
-Ricevuta la soluzione generata dall'utente in risposta al CAPTCHA\textsubscript{G} fornitogli, vi è la necessità di creare un algoritmo\textsubscript{G} che verifichi la correttezza o meno della soluzione proposta. In caso di correttezza, l'utente effettuerà il login, altrimenti gli verrà generato un altro CAPTCHA\textsubscript{G} da risolvere, con immagini diverse e un'altra classe da individuare all'interno dell'insieme, il numero di tentativi rimasti per autenticarsi verrà diminuito di uno. Al termine di questi tentativi, l'utente verrà bloccato per 20 minuti prima di poter riprovare ad accedere. 
+Ricevuta la soluzione generata dall'utente in risposta al CAPTCHA\textsubscript{G} fornitogli, vi è la necessità di creare un algoritmo\textsubscript{G} che verifichi la correttezza o meno della soluzione proposta. In caso di correttezza, l'utente effettuerà il login, altrimenti gli verrà generato un altro CAPTCHA\textsubscript{G} da risolvere, con immagini diverse e un'altra classe da individuare all'interno dell'insieme. L'utente avrà a disposizione una quantità limitata di richieste al minuto, così da non sovraccaricare il sistema.
 
 \subsection{Obblighi di Progettazione:}\:
 \begin{itemize}
@@ -39,10 +41,11 @@ Per sviluppare la piattaforma verranno utilizzate le seguenti tecnologie:
 \begin{itemize}
     \item \textbf{Python\textsubscript{G}}: Algoritmi di elaborazione delle immagini e controllo dei documenti;
     \item \textbf{PHP\textsubscript{G}}: Sviluppo pagine web e backend;
+    \item \textbf{Laravel\textsubscript{G}}: Sviluppo backend;
     \item \textbf{HTML5\textsubscript{G}}: Sviluppo interfaccia web;
     \item \textbf{JavaScript\textsubscript{G}}: Sviluppo interfaccia web, calcolo proof of work\textsubscript{G} e sviluppo web worker;
     \item \textbf{CSS3\textsubscript{G}}: Sviluppo interfaccia web;
-    \item \textbf{Sql\textsubscript{G}}: Per la creazione di database\textsubscript{G} interni;
+    \item \textbf{SQLite\textsubscript{G}}: Per la creazione di database\textsubscript{G} interni;
     \item \textbf{API\textsubscript{G} di Unsplash}: Per scaricare e ottenere le informazioni delle immagini dal database\textsubscript{G} di Unsplash.
 \end{itemize}
 

@@ -400,7 +400,16 @@ Questa metrica è di riferimento ai prodotti software ed è utilizzata dal grupp
 Dove \textbf{IUAE} sta per \textit{Interfaccia utente auto-esplicativa}.
 \paragraph{Accoppiamento\textsubscript{G} di componenti}\mbox{}\\
 Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per controllare quanti componenti del sistema sono strettamente  indipendenti e quanti sono esenti da impatti conseguenti a cambiamenti negli altri componenti.
-In futuro verrà definito un valore per misurarla al meglio. 
+I gradi di accoppiamento sono definiti su una scala di valori indicata qui di seguito:
+\begin{itemize}
+	\item Message Coupling (livello ottimale);
+	\item Data Coupling;
+	\item Stamp Coupling;
+	\item Control Coupling (accettabile);
+	\item External Coupling;
+	\item Common Coupling;
+	\item Content Coupling.
+\end{itemize}
 \paragraph{Adeguatezza della complessità ciclomatica\textsubscript{G}}\mbox{}\\
 Questa metrica è di riferimento ai prodotti software ed è utilizzata dal gruppo per verificare quanti moduli software hanno una complessità ciclomatica\textsubscript{G} accettabile. Per verificarla il gruppo deciderà una soglia di accettabilità per i vari linguaggi di programmazione e per il tipo di modulo o di funzione utilizzati durante il progetto.\\
 Nelle metriche software la complessità ciclomatica\textsubscript{G} è usata per valutare la complessità di un algoritmo\textsubscript{G} ed è basata sulla struttura del grafo che rappresenta l’algoritmo\textsubscript{G} da misurare. Per calcolarla si fa uso di questa formula:

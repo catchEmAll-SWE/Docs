@@ -101,13 +101,11 @@ Riferendoci alla serie di standard ISO/IEC\textsubscript{G} 25000 SQuaRE possiam
 		\hline
 		OQPD05 & Affidabilità & Si vuole che il prodotto fornito sia sempre disponibile e con meno errori possibili. Nel caso se ne verifichino il prodotto deve poter rispondere adeguatamente. & MQPD05 - Copertura dei test, MQPD06 - Robustezza agli errori\\
 		\hline
-		OQPD06 & Usabilità & Si vuole realizzare un prodotto facilmente usabile dagli utenti e che non richieda sforzi nel capire il suo funzionamento. & MQPD07 - Completezza di descrizione, MQPD08 - Completezza della guida utente\\
+		OQPD06 & Usabilità & Si vuole realizzare un prodotto facilmente usabile dagli utenti e che non richieda sforzi nel capire il suo funzionamento. & MQPD07 - Completezza di descrizione, MQPD08 - Completezza della guida utente, MQPD09 - Interfaccia utente auto-esplicativa\\
 		\hline
-		QQPD07 & Sicurezza & Si vuole realizzare un prodotto che garantisca la sicurezza dei sistemi e degli utenti che interagiscono con quest'ultimo. & MQPD10 - Procedure di autenticazione \\
+		OQPD07 & Manutenibilità & Si vuole ottenere un prodotto riutilizzabile e facilmente migliorabile in futuro. & MQPD10 - Accoppiamento\textsubscript{G} di componenti, MQPD11 - Adeguatezza della complessità ciclomatica\textsubscript{G}, MQPD12 - Completezza della funzione di test\\
 		\hline
-		OQPD08 & Manutenibilità & Si vuole ottenere un prodotto riutilizzabile e facilmente migliorabile in futuro. & MQPD11 - Accoppiamento\textsubscript{G} di componenti, MQPD12 - Adeguatezza della complessità ciclomatica\textsubscript{G}, MQPD13 - Completezza della funzione di test\\
-		\hline
-		OQPD09 & Compatibilità & Il prodotto dovrà essere accessibile al numero più elevato di utenti possibile, garantendo quindi la compatibilità con tutti i browser più diffusi. & MQPD14 - Browser supportati \\
+		OQPD08 & Compatibilità & Il prodotto dovrà essere accessibile al numero più elevato di utenti possibile, garantendo quindi la compatibilità con tutti i browser più diffusi. & MQPD13 - Browser supportati \\
 		\hline
 		\rowcolor{white}
 		\caption{Obiettivi di qualità di prodotto\textsubscript{G}.}
@@ -127,27 +125,25 @@ Alcuni valori accettabili e ottimi per le metriche di qualità di prodotto\texts
 		\hline
 		MQPD03 & Copertura funzionale & OQPD03 - Appropriatezza funzionale & 100\% dei requisiti\textsubscript{G} obbligatori & 100\% di tutti i requisiti\textsubscript{G}\\
 		\hline
-		MQPD04 & Tempo di risposta dei servizi all'utente & OQPD04 - Efficienza & - & - \\
+		MQPD04 & Tempo di risposta medio dei servizi all'utente & OQPD04 - Efficienza & 1s & 2s \\
 		\hline
-		MQPD05 & Copertura dei test & OQPD05 - Affidabilità & 100\% & 100\% \\
+		MQPD05 & Copertura dei test & OQPD05 - Affidabilità & 80\% & 100\% \\
 		\hline
 		MQPD06 & Robustezza agli errori & OQPD05 - Affidabilità & 80\% & 100\% \\
 		\hline
 		MQPD07 & Completezza di descrizione & OQPD06 - Usabilità & 100\% &  100\% \\
 		\hline
-		MQPD08 & Completezza della guida utente & OQPD06 - Usabilità & 80\% &  100\% \\
+		MQPD08 & Completezza della guida utente & OQPD06 - Usabilità & 90\% &  100\% \\
 		\hline
-		MQPD09 & Interfaccia utente auto-esplicativa & OQPD06 - Usabilità & 70\% &  100\% \\
+		MQPD09 & Interfaccia utente auto-esplicativa & OQPD06 - Usabilità & 85\% &  100\% \\
 		\hline
-		MQPD10 & Procedure di autenticazione & OQPD07 - Sicurezza & 25\% &  0\% \\
+		MQPD10 & Accoppiamento\textsubscript{G} di componenti & OQPD07 - Manutenibilità & Message Coupling (1) & Control Coupling (4)\\
 		\hline
-		MQPD11 & Accoppiamento\textsubscript{G} di componenti & OQPD08 - Manutenibilità & - & - \\
+		MQPD11 & Adeguatezza della complessità ciclomatica\textsubscript{G} & OQPD07 - Manutenibilità & $\le$10 & $\le$15 \\
 		\hline
-		MQPD12 & Adeguatezza della complessità ciclomatica\textsubscript{G} & OQPD08 - Manutenibilità & - & - \\
+		MQPD12 & Completezza della funzione di test & OQPD07 - Manutenibilità & 90\% & 100\% \\
 		\hline
-		MQPD13 & Completezza della funzione di test & OQPD08 - Manutenibilità & 90\% & 100\% \\
-		\hline
-		MQPD14 & Browser supportati & OQPD09 - Compatibilità & 75\% & 100\% \\
+		MQPD13 & Browser supportati & OQPD09 - Compatibilità & 75\% & 100\% \\
 		\hline
 		\rowcolor{white}
 		\caption{Metriche di qualità di prodotto\textsubscript{G}}
