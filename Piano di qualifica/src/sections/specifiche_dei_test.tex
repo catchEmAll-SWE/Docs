@@ -71,15 +71,19 @@ Solitamente un'unità\textsubscript{G} software può essere realizzata da un sin
 		\hline
 		TVU26 & Si verifichi che data una soluzione nella quale il numero di immagini non affidabili appartenenti alla classe target selezionate sia superiore alla soglia minima il risultato della verifica sia positivo & Superato\\
 		\hline
-		TVU27 & Si verifichi che data una soluzione errata per il completamento del proof of work\textsubscript{G} il risultato della verifica sia negativo & Superato\\
+		TVU27 & Si verifichi che data una soluzione nella quale il numero di immagini non affidabili non appartenenti appartenenti alla classe target non selezionate sia inferiore alla soglia minima il risultato della verifica sia positivo & Non Implementato\\
 		\hline
-		TVU28 & Si verifichi che data una soluzione corretta per il completamento del proof of work\textsubscript{G} il risultato della verifica sia positivo & Superato\\
+		TVU28 &  Si verifichi che data una soluzione nella quale il numero di immagini non affidabili appartenenti alla classe target selezionate sia inferiore alla soglia minima il risultato della verifica sia negativo & Non Implementato\\
 		\hline
-		TVU29 & Si verifichi che data una stringa criptata non valida, venga ritornato un errore nel momento dell'operazione di decrittazione & Superato\\
+		TVU29 & Si verifichi che data una soluzione errata per il completamento del proof of work\textsubscript{G} il risultato della verifica sia negativo & Superato\\
 		\hline
-		TVU30 & Si verifichi che data una stringa criptata valida, venga ritornata la stringa originale a seguito dell'operazione di decrittazione & Superato\\
+		TVU30 & Si verifichi che data una soluzione corretta per il completamento del proof of work\textsubscript{G} il risultato della verifica sia positivo & Superato\\
 		\hline
-		TVU31 & Si verifichi che l'operazione di decrittazione ritorni sempre l'originale & Superato\\
+		TVU31 & Si verifichi che data una stringa criptata non valida, venga ritornato un errore nel momento dell'operazione di decrittazione & Superato\\
+		\hline
+		TVU32 & Si verifichi che data una stringa criptata valida, venga ritornata la stringa originale a seguito dell'operazione di decrittazione & Superato\\
+		\hline
+		TVU33 & Si verifichi che l'operazione di decrittazione ritorni sempre l'originale & Superato\\
 		\hline
 		\rowcolor{white}
 		\caption{Test di unità}
